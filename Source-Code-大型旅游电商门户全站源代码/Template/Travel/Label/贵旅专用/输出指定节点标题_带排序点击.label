@@ -1,0 +1,31 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <Table>
+    <LabelID>840</LabelID>
+    <LabelName>输出指定节点标题_带排序点击</LabelName>
+    <LabelType>2</LabelType>
+    <LabelCate>贵旅专用</LabelCate>
+    <LabelDesc />
+    <LabelParam>NodeID,1,1,节点ID|TitleNum,30,1,标题长|ShowNum,10,1,显示数</LabelParam>
+    <LabelTable>{table1}.dbo.ZL_CommonModel</LabelTable>
+    <LabelField>GeneralID,Hits,NodeID,Title</LabelField>
+    <LabelWhere>(NodeID=@NodeID or FirstNodeID=@NodeID) And Status=99</LabelWhere>
+    <LabelOrder>Hits DESC</LabelOrder>
+    <LabelContent>{Repeate}
+&lt;li&gt;&lt;span&gt;{ZL:jsq}&lt;/span&gt;&lt;a href="{ZL:GetInfoUrl({Field="GeneralID"/})/}" target="{ZL:GetInfoOpen({Field="NodeID"/})/}"&gt;{ZL:CutText({Field="Title"/},@TitleNum,)/}&lt;/a&gt;&lt;strong class="pull-right"&gt;{Field="Hits"/}&lt;/strong&gt;&lt;/li&gt;{/Repeate}</LabelContent>
+    <LabelCount>@ShowNum</LabelCount>
+    <LabelAddUser>0</LabelAddUser>
+    <LabelNodeID>0</LabelNodeID>
+    <Modeltypeinfo>计数判断</Modeltypeinfo>
+    <addroot>循环计算</addroot>
+    <setroot>等于</setroot>
+    <Modelvalue>0</Modelvalue>
+    <Valueroot />
+    <IsOpen>0</IsOpen>
+    <FalseContent />
+    <DataSourceType>GZTravel</DataSourceType>
+    <ConnectString>DBO</ConnectString>
+    <ProceName />
+    <ProceParam>{"PureT1":"ZL_CommonModel","PureT2":"","T1":"GZTravel.dbo.ZL_CommonModel","T2":"","JoinType":"left join","OnField1":"because_back","OnField2":""}</ProceParam>
+  </Table>
+</NewDataSet>

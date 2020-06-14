@@ -1,0 +1,44 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <Table>
+    <LabelID>885</LabelID>
+    <LabelName>根据节点名称输出指定地点美食特产</LabelName>
+    <LabelType>2</LabelType>
+    <LabelCate>贵旅专用</LabelCate>
+    <LabelDesc />
+    <LabelParam>NodeID,0,1,节点ID|TitleNum,30,1,标题长|SysNum,100,1,简介数|ClassName,col-lg-3 col-md-3 col-sm-3 col-xs-12 padding10,1,Class|TypeID,5,1,类别</LabelParam>
+    <LabelTable>{table1}.dbo.ZL_CommonModel left join {table1}.dbo.ZL_C_Article on {table1}.dbo.ZL_CommonModel.ItemID={table1}.dbo.ZL_C_Article.ID</LabelTable>
+    <LabelField>{table1}.dbo.ZL_CommonModel.GeneralID,{table1}.dbo.ZL_CommonModel.Hits,{table1}.dbo.ZL_CommonModel.NodeID,{table1}.dbo.ZL_CommonModel.Title,{table1}.dbo.ZL_C_Article.pic,{table1}.dbo.ZL_C_Article.synopsis</LabelField>
+    <LabelWhere>(NodeID=@TypeID or FirstNodeID=@TypeID) And ModelID=2 And dsgz like '%'+(select NodeName from ZL_Node where NodeID=@NodeID)+'%'</LabelWhere>
+    <LabelOrder>{table1}.dbo.ZL_CommonModel.CreateTime DESC</LabelOrder>
+    <LabelContent>{Repeate}
+&lt;li class="@ClassName"&gt;
+&lt;div class="food_list_c"&gt;
+&lt;div class="food_list_cm"&gt;
+&lt;a href="{ZL:GetInfoUrl({Field="GeneralID"/})/}" title="{Field="Title"/}" &gt;&lt;img src="{ZL:GetPicUrl({Field="pic"/})/}" alt="{Field="Title"/}" onerror="javascript:this.src='/UploadFiles/nopic.gif';"&gt;&lt;/a&gt;
+&lt;/div&gt;
+&lt;div class="food_list_ct"&gt;
+&lt;h4&gt;&lt;a href="{ZL:GetInfoUrl({Field="GeneralID"/})/}" title="{Field="Title"/}"&gt;{ZL:CutText({Field="Title"/},@TitleNum,)/}&lt;/a&gt;&lt;/h4&gt;
+&lt;span&gt;&lt;i class="fa fa-eye"&gt;&lt;/i&gt; {Field="Hits"/}&lt;/span&gt;&lt;span&gt;&lt;i class="fa fa-comments"&gt;&lt;/i&gt; {ZL.Label id="输出指定ID内容评论总数" GID="{Field="GeneralID"/}" /}&lt;/span&gt;
+&lt;/div&gt;
+&lt;div class="food_list_cb"&gt;
+&lt;p&gt;{ZL:CutText({Field="synopsis"/},@SysNum,...)/}&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/li&gt;{/Repeate}</LabelContent>
+    <LabelCount>0</LabelCount>
+    <LabelAddUser>0</LabelAddUser>
+    <LabelNodeID>0</LabelNodeID>
+    <Modeltypeinfo>计数判断</Modeltypeinfo>
+    <addroot>循环计算</addroot>
+    <setroot>等于</setroot>
+    <Modelvalue>0</Modelvalue>
+    <Valueroot />
+    <IsOpen>0</IsOpen>
+    <FalseContent />
+    <DataSourceType>GZTravel</DataSourceType>
+    <ConnectString>DBO</ConnectString>
+    <ProceName />
+    <ProceParam>{"PureT1":"ZL_CommonModel","PureT2":"ZL_C_Article","T1":"GZTravel.dbo.ZL_CommonModel","T2":"GZTravel.dbo.ZL_C_Article","JoinType":"left join","OnField1":"ItemID","OnField2":"ID"}</ProceParam>
+  </Table>
+</NewDataSet>

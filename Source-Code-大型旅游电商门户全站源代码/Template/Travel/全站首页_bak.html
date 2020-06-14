@@ -1,0 +1,1100 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta property="qc:admins" content="30406632376470167211356375" />  
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{$SiteName/}_首页</title>
+{$MetaKeywords/}
+{$MetaDescription/}
+{ZL:Boot()/}
+<link href="{$CssDir/}global.css?id={ZL.Label id="前端样式版本号"/}" rel="stylesheet"/>
+<script src="/js/scrolltopcontrol.js" type="text/javascript"></script>
+<script src="{$CssDir/}js/common.js" type="text/javascript"></script>
+<script src="{$CssDir/}js/new_page.js" type="text/javascript"></script>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ynCD23qRFoyWBYk0M3bF1VEk"></script>
+<script src="/JS/ZL_ValidateCode.js"></script>
+<script src="/JS/Modal/APIResult.js"></script>
+<script src="/JS/Controls/B_User.js"></script>
+<script src="/JS/Controls/Control.js"></script>
+</head>
+<body>
+<div class="home_top">
+<div class="container">
+<ul class="list-unstyled pull-right">
+{ZL.Label id="用户登录状态"/}
+</ul>
+</div>
+</div>
+<!--home_top end-->
+
+<div class="relative">
+<nav class="navbar navbar-default" id="home_nav">
+<div class="container">
+<!-- Brand and toggle get grouped for better mobile display -->
+<div class="navbar-header">
+<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+<span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+<a class="navbar-brand" href="/"><img src="{$LogoUrl/}" alt="{$SiteName/}" /></a>
+</div>
+<!-- Collect the nav links, forms, and other content for toggling -->
+<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+<ul class="nav navbar-nav">
+<li class="active"><a href="/">首页</a></li>
+<li><a href="{ZL:GetNodeLinkUrl(1)/}">目的地</a></li>
+<li><a href="{ZL:GetNodeLinkUrl(2)/}">攻略</a></li>
+<li><a href="{ZL:GetNodeLinkUrl(3)/}">事件</a></li>
+<li><a href="{ZL:GetNodeLinkUrl(4)/}">画册</a></li>
+<li><a href="/Ask" target="_blank">问答</a></li>
+<li><a href="{ZL:GetNodeLinkUrl(5)/}">美食</a></li>
+<li><a href="{ZL:GetNodeLinkUrl(6)/}">特产</a></li>
+</ul>
+</div><!-- /.navbar-collapse -->
+</div><!-- /.container-fluid -->
+</nav>
+</div>
+<!--导航结束-->
+
+<div class="relative">
+<div class="home_map" style="display:none;">
+<div class="text-center">
+<div style="display:inline-table; position:relative;">
+<img class="img-responsive center-block" src="{$CssDir/}images/home_map1.jpg" alt="手绘地图" />
+<div class="home_map_d">
+<div class="home_map_dc home_map_dc1">
+<div class="home_map_dct"><i class="fa fa-map-marker"></i></div>
+<div class="home_map_dcj" style="display:none;">
+<span class="map_bg"></span>
+{ZL.Label id="首页获取指定景点信息" GeneralID="163" TitleNum="30" SysNum="60" /}
+</div>
+</div>
+<div class="home_map_dc home_map_dc2">
+<div class="home_map_dct"><i class="fa fa-map-marker"></i></div>
+<div class="home_map_dcj" style="display:none;">
+<span class="map_bg"></span>
+{ZL.Label id="首页获取指定景点信息" GeneralID="164" TitleNum="30" SysNum="60" /}
+</div>
+</div>
+<div class="home_map_dc home_map_dc3">
+<div class="home_map_dct"><i class="fa fa-map-marker"></i></div>
+<div class="home_map_dcj" style="display:none;">
+<span class="map_bg"></span>
+{ZL.Label id="首页获取指定景点信息" GeneralID="165" TitleNum="30" SysNum="60" /}
+</div>
+</div>
+<div class="home_map_dc home_map_dc4">
+<div class="home_map_dct"><i class="fa fa-map-marker"></i></div>
+<div class="home_map_dcj" style="display:none;">
+<span class="map_bg"></span>
+{ZL.Label id="首页获取指定景点信息" GeneralID="167" TitleNum="30" SysNum="60" /}
+</div>
+</div>
+<div class="home_map_dc home_map_dc5">
+<div class="home_map_dct"><i class="fa fa-map-marker"></i></div>
+<div class="home_map_dcj" style="display:none;">
+<span class="map_bg"></span>
+{ZL.Label id="首页获取指定景点信息" GeneralID="75" TitleNum="30" SysNum="60" /}
+</div>
+</div>
+<div class="home_map_dc home_map_dc6">
+<div class="home_map_dct"><i class="fa fa-map-marker"></i></div>
+<div class="home_map_dcj" style="display:none;">
+<span class="map_bg"></span>
+{ZL.Label id="首页获取指定景点信息" GeneralID="166" TitleNum="30" SysNum="60" /}
+</div>
+</div>
+<div class="home_map_dc home_map_dc7">
+<div class="home_map_dct"><i class="fa fa-map-marker"></i></div>
+<div class="home_map_dcj" style="display:none;">
+<span class="map_bg"></span>
+{ZL.Label id="首页获取指定景点信息" GeneralID="168" TitleNum="30" SysNum="60" /}
+</div>
+</div>
+<div class="home_map_dc home_map_dc8">
+<div class="home_map_dct"><i class="fa fa-map-marker"></i></div>
+<div class="home_map_dcj" style="display:none;">
+<span class="map_bg"></span>
+{ZL.Label id="首页获取指定景点信息" GeneralID="169" TitleNum="30" SysNum="60" /}
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="closemap" style="display:none;"><a href="javascript:;" onClick="CloseMap();"></a></div>
+</div>
+
+<div id="carousel-example-generic" class="carousel slide home_banner" data-ride="carousel" data-interval="false">
+<ol class="carousel-indicators">
+<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+<li data-target="#carousel-example-generic" data-slide-to="2"></li>
+<li data-target="#carousel-example-generic" data-slide-to="3"></li>
+</ol>
+<div class="carousel-inner" role="listbox">
+{ZL.Label id="首页输出推荐游记列表" NodeID="2" ShowNum="4" TitleNum="30" SysNum="100" /}
+</div>
+<a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+<span class="sr-only">Previous</span>
+</a>
+<a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+<span class="sr-only">Next</span>
+</a>
+<div class="home_banner_s">
+<div class="home_search">
+<h4>不一样的旅行指南</h4>
+<form role="search" action="/Search/SearchList.aspx" method="get" target="_blank">
+<input type="text" class="form-control input-lg" placeholder="全站检索" id="keyword" name="keyword" />
+<button type="submit" class="btn btn-warning btn-lg"><i class="fa fa-search"></i></button>
+<div class="iframe_search" style="display:none;">
+<iframe src="/Class_1/NodePage.aspx" scrolling="no" frameborder="0" width="100%"></iframe>
+</div>
+</form>
+<p><a href="/Search/SearchList.aspx?KeyWord={$GetUrlencode(黄果树瀑布)$}" target="_blank">黄果树瀑布</a><a href="/Search/SearchList.aspx?KeyWord={$GetUrlencode(西江千户苗寨)$}" target="_blank">西江千户苗寨</a><a href="/Search/SearchList.aspx?KeyWord={$GetUrlencode(大草原)$}" target="_blank">大草原</a><a href="/Search/SearchList.aspx?KeyWord={$GetUrlencode(天星桥)$}" target="_blank">天星桥</a></p>
+</div>
+</div>
+<div class="showmap"><a href="javascript:;" onClick="ShowMap();"><img src="{$CssDir/}images/showmap.jpg" alt="显示地图" /><span>点击展开地图</span></a></div>
+</div>
+<!--首页顶部banner结束-->
+<div id="allmap"></div>
+
+<div class="container home_news">
+<div class="home_newsc">
+<div class="row">
+<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 home_news_l">
+<div class="home_news_lt">景区<span>动态</span></div>
+<ul class="media-list">
+{ZL.Label id="首页新闻_带图列表" NodeID="13" ShowNum="4" TitleNum="26" syslength="60" /}
+</ul>
+<div class="text-center"><a href="{ZL:GetNodeLinkUrl(13)/}">更多 <i class="fa fa-angle-right"></i></a></div>
+</div>
+<div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 home_news_m">
+<div class="home_news_mf">
+{ZL.Label id="首页输出最新推荐新闻列表" NodeID="13" ShowNum="1" TitleNum="30" TopNum="0" /}
+</div>
+<div class="row">
+<ul class="list-unstyled">
+<li class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+{ZL.Label id="首页输出最新推荐新闻列表" NodeID="13" ShowNum="1" TitleNum="40" TopNum="1" /}
+</li>
+<li class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+{ZL.Label id="首页输出最新推荐新闻列表" NodeID="13" ShowNum="1" TitleNum="40" TopNum="2" /}
+</li>
+</ul>
+</div>
+</div>
+<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 ">
+<div class="home_news_r">
+<div class="home_news_rt">行业<span>资讯</span><i class="fa fa-sort-down"></i></div>
+<ul class="list-unstyled">
+{ZL.Label id="输出指定节点标题_无时间属性" NodeID="11" TitleNum="52" ShowNum="7" /}
+</ul>
+<a href="{ZL:GetNodeLinkUrl(11)/}" class="home_news_rm">更多 <i class="fa fa-angle-right"></i></a>
+</div>
+</div>
+
+</div>
+</div>
+
+</div><!--home_news end-->
+
+<div class="container home_ad"><a href="#"><img src="{$CssDir/}images/home_ad1.jpg" alt="" /></a></div>
+
+<div class="home_place">
+<div class="container">
+<div class="home_place_t text-center"><h3><i class="fa fa-circle"></i><span>目的地</span>DESTINATION<i class="fa fa-circle" style="left:auto; right:0;"></i></h3></div>
+</div>
+<div class="newTrend newTrendIndex">
+<!--主体内容beg-->
+<div class="mos_main" id="mos_main">
+<div class="pic_main">
+<div class="mos_list">
+<ul >
+<!--贵阳-->
+<li>
+<div class="sm_pic sm_pic_current">
+<img src="{$CssDir/}images/place1.jpg" alt="贵阳" />
+<div class="pd_text">
+<p class="yw_name">贵阳</p>
+<p class="zw_name">该目的地有<span>{ZL.Label id="输出指定节点景点总数" NodeID="20" /}</span>个景区，<span>{ZL.Label id="输出指定地区游记总数" NodeID="2" Area="贵阳" /}</span>篇游记</p>
+</div>
+</div>
+<div style="display: none;" class="big_pic"><img src="{$CssDir/}images/place1_bg.jpg" alt="" /></div>
+<div style="display: none;" class="close_bt"></div>
+<div style="display: none;" class="mos_tc">
+<div class="mos_tcc">
+<div class="mos_title">
+<div class="mos_title_left"><span class="mos_lg">贵阳</span></div>
+</div>
+<div class="mos_xx">
+<p>贵阳处于贵州中部，是贵州省省会。贵阳四周被山环绕，是名副其实的山城，贵阳又称作“林城”，被誉为“高原第二春城”，相比“第一春城”昆明的热情浓艳，贵阳则美得灵秀洁净。对于大多数旅游者来说，贵阳只是旅途上的一座中转站，很少有人认真地了解贵阳，但却丝毫遮掩不了贵阳的淳朴之美。市内景区大多以“公园”命名，尤以喀斯特地貌著名，连绵不尽的葱翠山峰、碧湖溶洞，好山好水无处不在。除却山清水秀，惬意自在是贵阳的另一张名片，整个城市生活节奏舒缓，不像大都市那样紧张。入夜，从小吃街到洒吧街，热闹非凡，这慵懒闲散的大度和包容，可能是这座城市的另一种姿态。</p>
+<p>景区个数：<span>{ZL.Label id="输出指定节点景点总数" NodeID="20" /}</span>个</p>
+<p>最佳季节：四季皆宜</p>
+<p>建议游玩：4天</p>
+<a href="{ZL:GetNodeLinkUrl(20)/}" title="就去这里">就去这里</a>
+</div>
+</div>
+</div>
+</li>
+<!--六盘水-->
+<li>
+<div class="sm_pic sm_pic_current">
+<img src="{$CssDir/}images/place2.jpg" alt="六盘水" />
+<div class="pd_text">
+<p class="yw_name">六盘水</p>
+<p class="zw_name">该目的地有<span>{ZL.Label id="输出指定节点景点总数" NodeID="21" /}</span>个景区，<span>{ZL.Label id="输出指定地区游记总数" NodeID="2" Area="六盘水" /}</span>篇游记</p>
+</div>
+</div>
+<div style="display: none;" class="big_pic"><img src="{$CssDir/}images/place2_bg.jpg" alt="六盘水" /></div>
+<div style="display: none;" class="close_bt"></div>
+<div style="display: none;" class="mos_tc">
+<div class="mos_tcc">
+<div class="mos_title">
+<div class="mos_title_left"><span class="mos_lg">六盘水</span></div>
+</div>
+
+<div class="mos_xx">
+<p>六盘水位于贵州省西部、云贵高原一、二级台地斜坡上，是贵州省第三大城市，国家西电东送的主要基地，国家西部大开发南、贵、昆经济带的重要结点城市。六盘水地处华南、西南铁路大通道交汇点，有“四省立交”的美誉。六盘水资源丰富，风光秀美，境内有玉舍国家森林公园、玉舍滑雪场、乌蒙山国家地质公园、明湖国家湿地公园、韭菜坪景区、月亮河夜郎布依文化生态园等多处著名景点，六盘山因风光秀美，气候宜人，连续多次入选国家十大避暑旅游城市榜。</p>
+<p>景区个数：<span>{ZL.Label id="输出指定节点景点总数" NodeID="21" /}</span>个</p>
+<p>最佳季节：夏秋最佳</p>
+<p>建议游玩：1天</p>
+<a href="{ZL:GetInfoUrl(75)/}" title="就去这里">就去这里</a>
+</div>
+</div>
+</div>
+</li>
+<!--遵义-->
+<li>
+<div class="sm_pic sm_pic_current">
+<img src="{$CssDir/}images/place3.jpg" alt="遵义" />
+<div class="pd_text">
+<p class="yw_name">遵义</p>
+<p class="zw_name">该目的地有<span>{ZL.Label id="输出指定节点景点总数" NodeID="22" /}</span>个景区，<span>{ZL.Label id="输出指定地区游记总数" NodeID="2" Area="遵义" /}</span>篇游记</p>
+</div>
+</div>
+<div style="display: none;" class="big_pic"><img src="{$CssDir/}images/place3_bg.jpg" alt="遵义" /></div>
+<div style="display: none;" class="close_bt"></div>
+<div style="display: none;" class="mos_tc">
+<div class="mos_tcc">
+<div class="mos_title">
+<div class="mos_title_left"><span class="mos_lg">遵义</span></div>
+</div>
+
+<div class="mos_xx">
+<p>曾经70多年前红军长征途中一次影响深远的会议，让世人都知道了这个有红色圣地称号的城市——遵义。在我们到遵义会址感叹着历史悠久的同时，这座城市别具一格的美也同样使人流连忘返：红军山的肃穆凄美，凤凰山的一览众山小，闻名于世的贵州茅台，遍布市区的让人垂涎欲滴的特色美食羊肉粉、豆花面……无一不使人流连于这座集自然美景与历史遗迹于一身的黔北小城。</p>
+<p>景区个数：<span>{ZL.Label id="输出指定节点景点总数" NodeID="22" /}</span>个</p>
+<p>最佳季节：四季皆宜</p>
+<p>建议游玩：4天</p>
+<a href="{ZL:GetNodeLinkUrl(22)/}" title="就去这里">就去这里</a>
+</div>
+</div>
+</div>
+</li>
+<!--安顺-->
+<li>
+<div class="sm_pic sm_pic_current">
+<img src="{$CssDir/}images/place4.jpg" alt="安顺" />
+<div class="pd_text">
+<p class="yw_name">安顺</p>
+<p class="zw_name">该目的地有<span>{ZL.Label id="输出指定节点景点总数" NodeID="23" /}</span>个景区，<span>{ZL.Label id="输出指定地区游记总数" NodeID="2" Area="安顺" /}</span>篇游记</p>
+</div>
+</div>
+<div style="display: none;" class="big_pic"><img src="{$CssDir/}images/place4_bg.jpg" alt="安顺" /></div>
+<div style="display: none;" class="close_bt"></div>
+<div style="display: none;" class="mos_tc">
+<div class="mos_tcc">
+<div class="mos_title">
+<div class="mos_title_left"><span class="mos_lg">安顺</span></div>
+</div>
+
+<div class="mos_xx">
+<p>安顺，中国优秀旅游城市，全国甲类旅游开放城市，安顺市是贵州省第三大城市，全国唯一的“深化改革，促进多种经济成分共生繁荣，加快发展”改革试验区，民 用航空产业国家高技术产业基地，贵州历史文化名城，是“贵州加快发展的经济特区”，世界喀斯特风光旅游优选地区，全国 六大黄金旅游热线之一和贵州西部旅游中心。</p>
+<p>景区个数：<span>{ZL.Label id="输出指定节点景点总数" NodeID="23" /}</span>个</p>
+<p>最佳季节：春秋最佳</p>
+<p>建议游玩：3天</p>
+<a href="{ZL:GetNodeLinkUrl(23)/}" title="就去这里">就去这里</a>
+</div>
+</div>
+</div>
+</li>
+<!--毕节-->
+<li>
+<div class="sm_pic sm_pic_current">
+<img src="{$CssDir/}images/place5.jpg" alt="毕节" />
+<div class="pd_text">
+<p class="yw_name">毕节</p>
+<p class="zw_name">该目的地有<span>{ZL.Label id="输出指定节点景点总数" NodeID="24" /}</span>个景区，<span>{ZL.Label id="输出指定地区游记总数" NodeID="2" Area="毕节" /}</span>篇游记</p>
+</div>
+</div>
+<div style="display: none;" class="big_pic"><img src="{$CssDir/}images/place5_bg.jpg" alt="毕节" /></div>
+<div style="display: none;" class="close_bt"></div>
+<div style="display: none;" class="mos_tc">
+<div class="mos_tcc">
+<div class="mos_title">
+<div class="mos_title_left"><span class="mos_lg">毕节</span></div>
+</div>
+
+<div class="mos_xx">
+<p>毕节冬无严寒、夏无酷暑，到处都是浓郁的彝族、苗族风情，自然风光优美，成了集避暑、休闲、度假于一体的旅游胜地。著名景点有百里杜鹃风景区、慕俄格古城、九洞天风景区、油杉河风景区、支嘎阿鲁湖、织金洞、草海、韭菜坪、总溪河、冷水河、响水潭、扁扁洞遗址、青场老鸦洞遗址、凤凰穿洞遗址等。</p>
+<p>景区个数：<span>{ZL.Label id="输出指定节点景点总数" NodeID="24" /}</span>个</p>
+<p>最佳季节：春秋最佳</p>
+<p>建议游玩：1天</p>
+<a href="{ZL:GetNodeLinkUrl(25)/}" title="就去这里">就去这里</a>
+</div>
+</div>
+</div>
+</li>
+<!--铜仁-->
+<li>
+<div class="sm_pic sm_pic_current">
+<img src="{$CssDir/}images/place6.jpg" alt="铜仁" />
+<div class="pd_text">
+<p class="yw_name">铜仁</p>
+<p class="zw_name">该目的地有<span>{ZL.Label id="输出指定节点景点总数" NodeID="25" /}</span>个景区，<span>{ZL.Label id="输出指定地区游记总数" NodeID="2" Area="铜仁" /}</span>篇游记</p>
+</div>
+</div>
+<div style="display: none;" class="big_pic"><img src="{$CssDir/}images/place6_bg.jpg" alt="铜仁" /></div>
+<div style="display: none;" class="close_bt"></div>
+<div style="display: none;" class="mos_tc">
+<div class="mos_tcc">
+<div class="mos_title">
+<div class="mos_title_left"><span class="mos_lg">铜仁</span></div>
+</div>
+
+<div class="mos_xx">
+<p>铜仁市位于贵州高原东部，武陵山区腹地，因其高原山水、曲径通幽的独特魅力，更其在武陵山脉有一座充满神秘色彩而又雄奇伟岸的山峰梵净山而被美誉为“梵天净土、桃源铜仁”。铜仁老城一面倚山，三面临水，沿岸有壮观雄奇的六龙山溶洞群和九龙洞大峡谷，铜仁同时还有大名边城，楼上古寨，中南门古商埠文化街区等文化历史旅游景点。</p>
+<p>景区个数：<span>{ZL.Label id="输出指定节点景点总数" NodeID="25" /}</span>个</p>
+<p>最佳季节：春秋最佳</p>
+<p>建议游玩：2天</p>
+<a href="{ZL:GetNodeLinkUrl(25)/}" title="就去这里">就去这里</a>
+</div>
+</div>
+</div>
+</li>
+<!--黔西南-->
+<li>
+<div class="sm_pic sm_pic_current">
+<img src="{$CssDir/}images/place7.jpg" alt="兴义" />
+<div class="pd_text">
+<p class="yw_name">黔西南</p>
+<p class="zw_name">该目的地有<span>{ZL.Label id="输出指定节点景点总数" NodeID="26" /}</span>个景区，<span>{ZL.Label id="输出指定地区游记总数" NodeID="2" Area="黔西南" /}</span>篇游记</p>
+</div>
+</div>
+<div style="display: none;" class="big_pic"><img src="{$CssDir/}images/place7_bg.jpg" alt="黔西南" /></div>
+<div style="display: none;" class="close_bt"></div>
+<div style="display: none;" class="mos_tc">
+<div class="mos_tcc">
+<div class="mos_title">
+<div class="mos_title_left"><span class="mos_lg">黔西南</span></div>
+</div>
+
+<div class="mos_xx">
+<p>黔西南州，是中国贵州省下辖的一个自治州，有着浓郁的少数民族风情，境内山川秀美、景色迷人，旅游资源丰富，有国家级风景区马岭河峡谷、万峰林、万峰湖，还有万峰林、仙鹤坪、贞丰三岔河、安龙招堤、兴义云湖山等奇特的自然风光，是世界锥状喀斯特地质地貌的典型代表。黔西南州历史悠久，古迹颇多，有“贵州龙”化石群、“兴义人”古人类文化遗址、夜郎文化遗址、南明历史遗迹“十八先生墓”、“永历皇宫”和抗战公路遗迹“晴隆二十四道拐”、何应钦故居等历史文化。</p>
+<p>景区个数：<span>{ZL.Label id="输出指定节点景点总数" NodeID="26" /}</span>个</p>
+<p>最佳季节：四季皆宜，景色各不相同</p>
+<p>建议游玩：2天</p>
+<a href="{ZL:GetNodeLinkUrl(26)/}" title="就去这里">就去这里</a>
+</div>
+</div>
+</div>
+</li>
+<!--黔东南-->
+<li>
+<div class="sm_pic sm_pic_current">
+<img src="{$CssDir/}images/place8.jpg" alt="黔东南" />
+<div class="pd_text">
+<p class="yw_name">黔东南</p>
+<p class="zw_name">该目的地有<span>{ZL.Label id="输出指定节点景点总数" NodeID="27" /}</span>个景区，<span>{ZL.Label id="输出指定地区游记总数" NodeID="2" Area="黔东南" /}</span>篇游记</p>
+</div>
+</div>
+<div style="display: none;" class="big_pic"><img src="{$CssDir/}images/place8_bg.jpg" alt="黔东南" /></div>
+<div style="display: none;" class="close_bt"></div>
+<div style="display: none;" class="mos_tc">
+<div class="mos_tcc">
+<div class="mos_title">
+<div class="mos_title_left"><span class="mos_lg">黔东南</span></div>
+</div>
+
+<div class="mos_xx">
+<p>黔东南苗族侗族自治州位于贵州省东南部，地处云贵高原东南边缘，东邻湖南，南接广西，境内居住着苗、侗、汉、布依、水等20多个民族，民族风情非常浓郁。这里有世界上最大的苗寨和最大的侗寨，有独特的吊脚楼、风雨桥、鼓楼，这里有如天籁般的侗族大歌，有让人眼花缭乱的刺绣、银饰、蜡染……这里有着自成一派的文化体系，人们平静地生活，与世无争。黔东南因少数民族众多，从而拥有上百个民族节日，有“大节三六九，小节天天有”的说法，著名的民族节日有苗族的芦笙会、苗年、姊妹节，侗族的三月三歌会等，丰富多彩，各具特色。</p>
+<p>景区个数：<span>{ZL.Label id="输出指定节点景点总数" NodeID="27" /}</span>个</p>
+<p>最佳季节：秋季最佳</p>
+<p>建议游玩：4天</p>
+<a href="{ZL:GetNodeLinkUrl(27)/}" title="就去这里">就去这里</a>
+</div>
+</div>
+</div>
+</li>
+<!--黔南-->
+<li>
+<div class="sm_pic sm_pic_current">
+<img src="{$CssDir/}images/place9.jpg" alt="黔南" />
+<div class="pd_text">
+<p class="yw_name">黔南</p>
+<p class="zw_name">该目的地有<span>{ZL.Label id="输出指定节点景点总数" NodeID="28" /}</span>个景区，<span>{ZL.Label id="输出指定地区游记总数" NodeID="2" Area="黔南" /}</span>篇游记</p>
+</div>
+</div>
+<div style="display: none;" class="big_pic"><img src="{$CssDir/}images/place9_bg.jpg" alt="黔南" /></div>
+<div style="display: none;" class="close_bt"></div>
+<div style="display: none;" class="mos_tc">
+<div class="mos_tcc">
+<div class="mos_title">
+<div class="mos_title_left"><span class="mos_lg">黔南</span></div>
+</div>
+
+<div class="mos_xx">
+<p>黔东南苗族侗族自治州，位于云贵高原东南边缘，东邻湖南，南接广西，与本省黔南、铜仁毗邻，境内山川秀丽，气候宜人，资源丰富，民族风情浓郁。 全州辖16个县市和1个省级经济开发区，有90个镇，116个乡(17个民族乡)，5 个街道办事处，89个居民委员会，68个社区居委会，3226个村民委员会。</p>
+<p>景区个数：<span>{ZL.Label id="输出指定节点景点总数" NodeID="28" /}</span>个</p>
+<p>最佳季节：夏秋最佳</p>
+<p>建议游玩：2天</p>
+<a href="{ZL:GetNodeLinkUrl(28)/}" title="就去这里">就去这里</a>
+</div>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div style="left: 65px;" class="prev"><img src="{$CssDir/}images/arrow_bt0.png" alt="prev" /></div>
+<div style="right: 65px;" class="next"><img src="{$CssDir/}images/arrow_bt1.png" alt="next" /></div>
+</div>
+</div><!--newTrendIndex end-->
+
+<div class="container home_theme">
+<div class="home_place_t text-center"><h3><i class="fa fa-circle"></i><span>主题精选</span>THEME TOURISM<i class="fa fa-circle" style="left:auto; right:0;"></i></h3></div>
+<div class="tab-content">
+<div class="home_theme_p">
+<div class="row">
+<ul>
+{ZL.Label id="首页输出指定主题类别景点列表" NodeID="1" ShowNum="5" TitleNum="30" SysNum="100" ClassName="col-lg-4 col-md-4 col-sm-4 col-xs-12" Type="自然风光" /}
+</ul>
+</div>
+</div>
+</div>
+<div class="ztlist">
+<ul style="height:39px; overflow:hidden;">
+<li><a href="{ZL:GetHotinfo(2)/}?zt=zt01&n={$GetUrlencode(自然风光)$}">自然风光</a></li>
+<li><a href="{ZL:GetHotinfo(2)/}?zt=zt02&n={$GetUrlencode(古典建筑)$}">古典建筑</a></li>
+<li><a href="{ZL:GetHotinfo(2)/}?zt=zt03&n={$GetUrlencode(人文景观)$}">人文景观</a></li>
+<li><a href="{ZL:GetHotinfo(2)/}?zt=zt04&n={$GetUrlencode(宗教文化)$}">宗教文化</a></li>
+<li><a href="{ZL:GetHotinfo(2)/}?zt=zt05&n={$GetUrlencode(公园广场)$}">公园广场</a></li>
+<li><a href="{ZL:GetHotinfo(2)/}?zt=zt06&n={$GetUrlencode(红色旅游)$}">红色旅游</a></li>
+<li><a href="{ZL:GetHotinfo(2)/}?zt=zt07&n={$GetUrlencode(亲子游)$}">亲子游</a></li>
+<li><a href="{ZL:GetHotinfo(2)/}?zt=zt08&n={$GetUrlencode(漂流)$}">漂流</a></li>
+<li><a href="{ZL:GetHotinfo(2)/}?zt=zt09&n={$GetUrlencode(溶洞)$}">溶洞</a></li>
+<li><a href="{ZL:GetHotinfo(2)/}?zt=zt10&n={$GetUrlencode(自驾)$}">自驾</a></li>
+<li><a href="{ZL:GetHotinfo(2)/}?zt=zt11&n={$GetUrlencode(露营)$}">露营</a></li>
+<li><a href="{ZL:GetHotinfo(2)/}?zt=zt12&n={$GetUrlencode(摄影)$}">摄影</a></li>
+<li><a href="{ZL:GetHotinfo(2)/}?zt=zt13&n={$GetUrlencode(宗教)$}">宗教</a></li>
+<li><a href="{ZL:GetHotinfo(2)/}?zt=zt14&n={$GetUrlencode(名人)$}">名人</a></li>
+<li><a href="{ZL:GetHotinfo(2)/}?zt=zt15&n={$GetUrlencode(乡村)$}">乡村</a></li>
+<li><a href="{ZL:GetHotinfo(2)/}?zt=zt16&n={$GetUrlencode(情侣)$}">情侣</a></li>
+<li><a href="{ZL:GetHotinfo(2)/}?zt=zt17&n={$GetUrlencode(农家乐)$}">农家乐</a></li>
+<li><a href="{ZL:GetHotinfo(2)/}?zt=zt18&n={$GetUrlencode(草原)$}">草原</a></li>
+<li><a href="{ZL:GetHotinfo(2)/}?zt=zt19&n={$GetUrlencode(烧烤)$}">烧烤</a></li>
+<li><a href="{ZL:GetHotinfo(2)/}?zt=zt20&n={$GetUrlencode(垂钓)$}">垂钓</a></li>
+<li><a href="{ZL:GetHotinfo(2)/}?zt=zt21&n={$GetUrlencode(瀑布)$}">瀑布</a></li>
+<li><a href="{ZL:GetHotinfo(2)/}?zt=zt22&n={$GetUrlencode(峡谷)$}">峡谷</a></li>
+<li><a href="{ZL:GetHotinfo(2)/}?zt=zt23&n={$GetUrlencode(苗寨)$}">苗寨</a></li>
+<li><a href="{ZL:GetHotinfo(2)/}?zt=zt24&n={$GetUrlencode(山川)$}">山川</a></li>
+<li><a href="{ZL:GetHotinfo(2)/}?zt=zt25&n={$GetUrlencode(徒步)$}">徒步</a></li>
+<li><a href="{ZL:GetHotinfo(2)/}?zt=zt26&n={$GetUrlencode(古镇)$}">古镇</a></li>
+<li><a href="{ZL:GetHotinfo(2)/}?zt=zt27&n={$GetUrlencode(湖泊)$}">湖泊</a></li>
+<li><a href="{ZL:GetHotinfo(2)/}?zt=zt28&n={$GetUrlencode(河流)$}">河流</a></li>
+<li><a href="{ZL:GetHotinfo(2)/}?zt=zt29&n={$GetUrlencode(赏雪)$}">赏雪</a></li>
+<li><a href="{ZL:GetHotinfo(2)/}?zt=zt30&n={$GetUrlencode(苗年)$}">苗年</a></li>
+<li><a href="{ZL:GetHotinfo(2)/}?zt=zt31&n={$GetUrlencode(腊梅)$}">腊梅</a></li>
+<li><a href="{ZL:GetHotinfo(2)/}?zt=zt32&n={$GetUrlencode(滑雪)$}">滑雪</a></li>
+<li><a href="{ZL:GetHotinfo(2)/}?zt=zt33&n={$GetUrlencode(温泉)$}">温泉</a></li>
+<li><a href="{ZL:GetHotinfo(2)/}?zt=zt34&n={$GetUrlencode(玉兰)$}">玉兰</a></li>
+<li><a href="{ZL:GetHotinfo(2)/}?zt=zt35&n={$GetUrlencode(郁金香)$}">郁金香</a></li>
+<li><a href="{ZL:GetHotinfo(2)/}?zt=zt36&n={$GetUrlencode(桃花)$}">桃花</a></li>
+<li><a href="{ZL:GetHotinfo(2)/}?zt=zt37&n={$GetUrlencode(油菜花)$}">油菜花</a></li>
+<li><a href="{ZL:GetHotinfo(2)/}?zt=zt38&n={$GetUrlencode(踏青)$}">踏青</a></li>
+<li><a href="{ZL:GetHotinfo(2)/}?zt=zt39&n={$GetUrlencode(梨花)$}">梨花</a></li>
+<li><a href="{ZL:GetHotinfo(2)/}?zt=zt40&n={$GetUrlencode(李花)$}">李花</a></li>
+<div class="clearfix"></div>
+</ul>
+<div class="ztlist_more">
+<button type="button" class="btn btn-danger" onClick="GetMoreZT();">More...</button>
+</div>
+</div>
+</div><!--home_theme end-->
+</div><!--home_place end-->
+
+<div class="home_shopbanner">
+<div id="carousel-example-generic2" class="carousel slide" data-ride="carousel">
+<!-- Indicators -->
+<ol class="carousel-indicators">
+<li data-target="#carousel-example-generic2" data-slide-to="0" class="active"></li>
+<li data-target="#carousel-example-generic2" data-slide-to="1"></li>
+<li data-target="#carousel-example-generic2" data-slide-to="2"></li>
+</ol>
+
+<!-- Wrapper for slides -->
+<div class="carousel-inner" role="listbox">
+<div class="item active home_sbannre1">
+<div class="carousel-caption">
+...
+</div>
+</div>
+<div class="item home_sbannre1">
+<div class="carousel-caption">
+...
+</div>
+</div>
+<div class="item home_sbannre1">
+<div class="carousel-caption">
+...
+</div>
+</div>
+</div>
+
+<!-- Controls -->
+<a class="left carousel-control" href="#carousel-example-generic2" role="button" data-slide="prev"><span class="sr-only">Previous</span></a>
+<a class="right carousel-control" href="#carousel-example-generic2" role="button" data-slide="next"><span class="sr-only">Next</span></a>
+</div>
+</div>
+
+<div class="container home_shop">
+<div class="home_shop_bg"></div>
+<div class="home_shop_c">
+<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 padding0 home_shop_l">
+<ul class="list-unstyled">
+<li>
+<h3><i class="fa fa-child"></i> 玩具模型</h3>
+<p><a href="#">模型公仔</a><a href="#">仿真收藏</a><a href="#">更多></a></p>
+</li>
+<li>
+<h3><i class="fa fa-mobile"></i> 数码配件</h3>
+<p><a href="#">手机配件</a><a href="#">充电装备</a><a href="#">更多></a></p>
+</li>
+<li>
+<h3><i class="fa fa-user-secret"></i> 服装服饰</h3>
+<p><a href="#">男装</a><a href="#">女装</a><a href="#">更多></a></p>
+</li>
+<li>
+<h3><i class="fa fa-archive"></i> 居家日用</h3>
+<p><a href="#">创意文具</a><a href="#">抱枕靠垫</a><a href="#">更多></a></p>
+</li>
+</ul>
+</div>
+<div class="col-lg-10 col-md-10 col-sm-10 col-xs-12 padding0 home_shop_r">
+<div class="home_shop_rt">
+<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 padding0 home_shop_rtc" style="border-right:1px solid #ddd;"></div>
+<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 padding0 home_shop_rtc"></div>
+</div>
+<div class="home_shop_rb">
+<ul class="list-unstyled"></ul>
+</div>
+</div>
+<div class="clearfix"></div>
+<div class="home_xilie">
+<div id="carousel-example-generic3" class="carousel slide" data-ride="carousel" data-interval="false">
+<!-- Indicators -->
+<ol class="carousel-indicators">
+<li data-target="#carousel-example-generic3" data-slide-to="0" class="active"></li>
+<li data-target="#carousel-example-generic3" data-slide-to="1"></li>
+<li data-target="#carousel-example-generic3" data-slide-to="2"></li>
+</ol>
+
+<!-- Wrapper for slides -->
+<div class="carousel-inner" role="listbox">
+<div class="item active home_xilie1">
+<div class="row">
+<div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
+<div class="home_xilie_l" id="xilie1">
+<ul class="media-list"></ul>
+</div>
+</div>
+<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12"></div>
+<div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
+<div class="home_xilie_l" id="xilie2">
+<ul class="media-list"></ul>
+</div>
+</div>
+</div>
+</div>
+<div class="item home_xilie1">
+<div class="row">
+<div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
+<div class="home_xilie_l" id="xilie3">
+<ul class="media-list"></ul>
+</div>
+</div>
+<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12"></div>
+<div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
+<div class="home_xilie_l" id="xilie4">
+<ul class="media-list"></ul>
+</div>
+</div>
+</div>
+</div>
+<div class="item home_xilie1">
+<div class="row">
+<div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
+<div class="home_xilie_l" id="xilie5">
+<ul class="media-list"></ul>
+</div>
+</div>
+<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12"></div>
+<div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
+<div class="home_xilie_l" id="xilie6">
+<ul class="media-list"></ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Controls -->
+<a class="left carousel-control" href="#carousel-example-generic3" role="button" data-slide="prev">
+<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+<span class="sr-only">Previous</span>
+</a>
+<a class="right carousel-control" href="#carousel-example-generic3" role="button" data-slide="next">
+<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+<span class="sr-only">Next</span>
+</a>
+</div>
+
+<div class="home_xilie_b">
+推荐：<a href="#">数码配件</a><span>|</span><a href="#">服装服饰</a><span>|</span><a href="#">玩具模型</a><span>|</span><a href="#">限时预售</a><span class="pull-right"><i class="fa fa-chevron-circle-right"></i> 进入商城频道</span>
+</div>
+</div>
+</div>
+</div><!--home_shop end-->
+
+<div class="home_youji">
+<div id="carousel-example-generic4" class="carousel slide" data-ride="carousel">
+<!-- Wrapper for slides -->
+<div class="carousel-inner" role="listbox">
+<div class="item active home_ybannre1">
+<a href="#">
+<div class="carousel-caption">
+<p>2015-12-13</p>
+<h3>沉醉黄姚幸福里，迷失桂林，我自往南向北说再见。</h3>
+</div>
+</a>
+</div>
+<div class="item home_ybannre1">
+<a href="#">
+<div class="carousel-caption">
+<p>2015-12-13</p>
+<h3>沉醉黄姚幸福里，迷失桂林，我自往南向北说再见。</h3>
+</div>
+</a>
+</div>
+<div class="item home_ybannre1">
+<a href="#">
+<div class="carousel-caption">
+<p>2015-12-13</p>
+<h3>沉醉黄姚幸福里，迷失桂林，我自往南向北说再见。</h3>
+</div>
+</a>
+</div>
+</div>
+<!-- Controls -->
+<a class="left carousel-control" href="#carousel-example-generic4" role="button" data-slide="prev"><span class="sr-only">Previous</span></a>
+<a class="right carousel-control" href="#carousel-example-generic4" role="button" data-slide="next"><span class="sr-only">Next</span></a>
+</div>
+<div class="container home_youji_bg">
+<div class="home_youji_bgt"></div>
+<div class="home_youji_c">
+<div class="home_youji_ct">
+<div class="home_youji_ctl">热门游记</div>
+<div class="home_youji_ctm">
+<ul class="nav nav-tabs" role="tablist">
+<li role="presentation" class="active"><a href="#home_youji_c1" aria-controls="home_youji_c1" role="tab" data-toggle="tab">最新发表</a></li>
+<li role="presentation"><a href="#home_youji_c2" aria-controls="home_youji_c2" role="tab" data-toggle="tab">精品游记</a></li>
+<li role="presentation"><a href="#home_youji_c3" aria-controls="home_youji_c3" role="tab" data-toggle="tab">一周热榜</a></li>
+</ul>
+</div>
+<span class="pull-right"><a href="/User/Content/AddContent.aspx?ModelID=46&NodeID=2" class="btn btn-warning"><i class="fa fa-edit"></i> 写游记</a></span>
+<div class="clearfix"></div>
+</div>
+<div class="tab-content">
+<div role="tabpanel" class="tab-pane active" id="home_youji_c1">
+<div class="row">
+<ul class="list-unstyled">
+{ZL.Label id="首页输出游记列表" NodeID="2" TitleNum="20" ShowNum="8" SysNum="90" ClassName="col-lg-3 col-md-3 col-sm-3 col-x-12" /}
+</ul>
+</div>
+</div>
+<div role="tabpanel" class="tab-pane" id="home_youji_c2">
+<div class="row">
+<ul class="list-unstyled">
+{ZL.Label id="首页输出精品游记列表" NodeID="2" TitleNum="20" ShowNum="8" SysNum="100" ClassName="col-lg-3 col-md-3 col-sm-3 col-x-12" /}
+</ul>
+</div>
+</div>
+<div role="tabpanel" class="tab-pane" id="home_youji_c3">
+<div class="row">
+<ul class="list-unstyled">
+{ZL.Label id="首页输出热门游记列表" NodeID="2" TitleNum="20" ShowNum="8" SysNum="100" ClassName="col-lg-3 col-md-3 col-sm-3 col-x-12" /}
+</ul>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+<!--home_youji end-->
+
+<div class="home_footer">
+<div class="container">
+<div class="row">
+<div class="col-lg-3 col-md-3 col-sm-3 col-x-12">
+<strong>中国领先的自由行服务平台</strong>
+<p>覆盖全球<span>200</span>多个国家和地区<br/><span>100,000,000</span>位旅行者<br/><span>920,000</span>家国际酒店<br/><span>21,000,000</span>条真实点评<br/><span>382,000,000</span>次攻略下载</p>
+</div>
+<div class="col-lg-3 col-md-3 col-sm-3 col-x-12 home_footer_about">
+<strong><i class="fa fa-user"></i> about</strong>
+<ul>
+<li><a href="{ZL:GetNodeLinkUrl(8)/}" target="_balnk">关于我们</a></li>
+<li><a href="{ZL:GetInfoUrl(67)/}">招商与合作</a></li>
+<li><a href="#">网络信息侵权通知指引</a></li>
+<li><a href="{ZL:GetInfoUrl(64)/}">隐私政策</a></li>
+<li><a href="{ZL:GetInfoUrl(65)/}">服务协议</a></li>
+</ul>
+</div>
+<div class="col-lg-3 col-md-3 col-sm-3 col-x-12 home_footer_Services">
+<strong><i class="fa fa-coffee"></i> Services</strong>
+<ul>
+<li><a href="#">旅行服务</a></li>
+<li><a href="#">旅游特价</a></li>
+<li><a href="#">旅游问答</a></li>
+<li><a href="#">签证办理</a></li>
+<li><a href="#">旅游资讯</a></li>
+<li><a href="#">酒店预订</a></li>
+<li><a href="#">国际租车</a></li>
+<li><a href="#">旅游保险</a></li>
+<li><a href="#">签证办理</a></li>
+<li><a href="#">订火车票</a></li>
+</ul>
+</div>
+<div class="col-lg-3 col-md-3 col-sm-3 col-x-12 home_footer_code">
+<div class="row">
+<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+<a href="#"><img src="{$CssDir/}images/weixin.jpg" alt="" /></a>
+<p><a href="#">官方微博</a></p>
+</div>
+<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+<a href="#"><img src="{$CssDir/}images/weixin.jpg" alt="" /></a>
+<p><a href="#">官方微信</a></p>
+</div>
+</div>
+</div>
+</div>
+<div class="col-lg-12 col-md-12 col-sm-12 col-x-12 home_footer_listen">
+<p>关注我们</p>
+<a href="#"><span class="fa-stack fa-1x"><i class="fa fa-weibo"></i></span></a>
+<a href="#"><span class="fa-stack fa-1x"><i class="fa fa-qq"></i></span></a>
+<a href="#"><span class="fa-stack fa-1x"><i class="fa fa-weixin"></i></span></a>
+</div>
+<div class="col-lg-12 col-md-12 col-sm-12 col-x-12 home_footer_link">
+<ul>
+{ZL.Label id="友情链接列表" ShowNum="50" NodeID="15" /}
+<li><a href="{ZL:GetNodeLinkUrl(15)/}" target="_blank">更多友情链接>></a></li>
+</ul>
+</div>
+<div class="home_copy">
+{$Copyright/}
+<p>客服电话： <a href="tel:4006666866">400 666 6866</a>   工作时间 10:00-18:30  <a href="#">网站地图</a><a href="#"><img src="{$CssDir/}images/foot_img1.png" alt="" /></a><a href="#"><img src="{$CssDir/}images/foot_img2.png" alt="" /></a></p>
+</div>
+</div>
+</div>
+<div id="r-result"></div>
+
+{ZL.Label id="通用登录弹出层"/}
+</body>
+</html>
+<script>
+//检测固顶事件
+var IO=document.getElementById('home_nav'),Y=IO,H=0,IE6;
+IE6=window.ActiveXObject&&!window.XMLHttpRequest;
+while(Y){H+=Y.offsetTop;Y=Y.offsetParent};
+if(IE6)
+    IO.style.cssText="position:absolute;top:expression(this.fix?(document"+
+        ".documentElement.scrollTop-(this.javascript||"+H+")):0)";
+window.onscroll=function (){
+    var d=document,s=Math.max(d.documentElement.scrollTop,document.body.scrollTop);
+     if(s>H&&IO.fix||s<=H&&!IO.fix)return;
+    if(!IE6)IO.style.position=IO.fix?"":"fixed";        
+    IO.fix=!IO.fix;
+};
+try{document.execCommand("BackgroundImageCache",false,true)}catch(e){};
+ //]]>
+
+//兼容wp8
+if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
+  var msViewportStyle = document.createElement("style");
+  msViewportStyle.appendChild(
+    document.createTextNode(
+      "@-ms-viewport{width:auto!important}"
+    )
+  );
+  document.getElementsByTagName("head")[0].
+    appendChild(msViewportStyle);
+}
+$(".home_news_l li .media-left img").each(function(index, element) {
+    if($(this).attr("src")=="/UploadFiles/nopic.gif")
+		$(this).parent().parent().remove();
+});
+$(".home_theme_c li a").mouseover(function(){
+	$(this).parent().addClass("active");
+	$(this).parent().siblings("li").removeClass("active");
+	$(this).parent().parent().parent().parent().find(".tab-pane").removeClass("active");
+	$(this).parent().parent().parent().parent().find("#"+$(this).attr("aria-controls")).addClass("active");
+})
+$(".home_youji_li").mouseover(function(){
+	$(this).find(".home_youji_b").show();
+}).mouseout(function(){
+	$(this).find(".home_youji_b").hide();
+});
+$().ready(function(e) {
+    $(".home_theme_p li:nth-child(1)").removeClass("col-lg-4 col-md-4 col-sm-4 col-xs-12").addClass("col-lg-7 col-md-7 col-sm-7 col-xs-12");
+    $(".home_theme_p li:nth-child(2)").removeClass("col-lg-4 col-md-4 col-sm-4 col-xs-12").addClass("col-lg-5 col-md-5 col-sm-5 col-xs-12");
+	$(".carousel-inner .item:first-child").addClass("active");
+});
+$("#keyword").keyup(function(){
+	$(".iframe_search iframe").attr("src","/Class_1/NodePage.aspx?KeyWord="+escape($(this).val()));
+	//alert($(this).val())
+});
+$(".home_search form").mouseover(function(){
+	$(this).find(".iframe_search").show();
+}).mouseout(function(){
+	$(this).find(".iframe_search").hide();
+})
+function SetHeight(h)
+{
+	$(".iframe_search iframe").height(h);
+}
+$(".home_youji_ping").each(function(index, element) {
+    if($(this).data("num")==0)
+	{
+		$(this).show();
+	}
+});
+// 百度地图API功能
+var map = new BMap.Map("allmap");
+var point1 = new BMap.Point(106.695325,26.339045);
+var point2 = new BMap.Point(121.448594, 31.229173);
+var localSearch = new BMap.LocalSearch(map);
+function myFun(result){
+	var cityName = result.name;
+	map.setCenter(cityName);
+	//alert("当前定位城市:"+cityName);
+	localSearch.setSearchCompleteCallback(function (searchResult) 
+	{
+		var poi = searchResult.getPoi(0);
+		var dist=(map.getDistance(point1, poi.point)/1000).toFixed(2);
+	});
+	localSearch.search(cityName);
+}
+var myCity = new BMap.LocalCity();
+$(".home_map_dc").mouseover(function(){
+	var pointArr = $(this).find(".home_map_dcu").data("point");
+	var point1 = new BMap.Point(pointArr[0].mark.lng,pointArr[0].mark.lat);
+	var city=$(this).find(".mycity");
+	var dist=$(this).find(".mydist");
+	var mytime=$(this).find(".mytime");
+	var mypoint = $(this).find(".mypoint");
+	var name = $(this).find(".home_map_dcu").data("name");
+	myCity.get(function(result){
+		city.html(result.name);
+		localSearch.setSearchCompleteCallback(function (searchResult) 
+		{
+			var d = (map.getDistance(point1, searchResult.getPoi(0).point)/1000).toFixed(2);
+			var t1=parseFloat(d/60).toFixed(2);
+			var t2=((t1-parseInt(t1))*60).toFixed();
+			mytime.html(parseInt(t1)+"小时"+t2+"分钟")
+			dist.html(d);
+			$.ajax({
+					"url": "http://api.map.baidu.com/place/v2/search",
+					type: "POST",
+					dataType: 'jsonp',
+					jsonp: 'callback',
+					"data": {
+						q:"加油站",
+						location:pointArr[0].mark.lat+","+pointArr[0].mark.lng,
+						output:"json",
+						ak:"ynCD23qRFoyWBYk0M3bF1VEk",
+						page_size:"10",
+						page_num:"1",
+						scope:1,
+						radius:map.getDistance(point1, searchResult.getPoi(0).point)
+					},
+					success: function(data)
+					{				
+						if(data.status==0)
+						{
+							mypoint.html(data.total)
+						}
+					},
+					error:function(){}
+			});
+		});
+		localSearch.search(result.name);
+	})
+	$(this).find(".home_map_dcj").show();
+	$(this).find("i").css("color","#008ad9");
+}).mouseout(function(){
+	$(this).find(".home_map_dcj").hide();
+	$(this).find("i").css("color","");
+})
+function ShowMap()
+{
+	$(".home_map").fadeIn("slow");
+	$(".closemap").fadeIn("slow");
+}
+function CloseMap()
+{
+	$(".home_map").fadeOut("slow");
+	$(".closemap").fadeOut("slow");
+}
+$(".home_youji_li").mouseover(function(){
+	$(this).find(".home_youji_b").show().addClass("active");
+}).mouseout(function(){
+	$(this).find(".home_youji_b").hide().removeClass("active");
+})
+$(".home_youji_bl").mouseover(function(){
+	$(this).find(".bdsharebuttonbox").show();
+}).mouseout(function(){
+	$(this).find(".bdsharebuttonbox").hide();
+})
+window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"就在那浮光掠影里——青岩古镇","bdUrl":"http://localhost:68/Item/154.aspx","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24","onBeforeClick":function(cmd,config){ return {"bdText":$(".home_youji_b.active").data("text"),"bdUrl":$(".home_youji_b.active").data("url"),"bdPic":$(".home_youji_b.active").data("img"),"bdDesc":$(".home_youji_b.active").data("desc")} }},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+
+$().ready(function(e) {
+	var shopurl = '{ZL.Label id="商城网址"/}';
+	var shopupf = '{ZL.Label id="商城上传路径"/}';
+	$.ajax({
+		url:"http://win05:64/API/Center.ashx",
+		type:"POST",
+		data:{action:"GetCustom",alias:"ShopApi",psize:"20",cpage:"1"},
+		dataType: 'jsonp',
+        jsonp: 'callback',
+		success: function(data)
+		{
+			var proArr = JSON.parse(data.result);
+			$(".home_shop_rt div:first-child").html("<a href=\""+shopurl+"Shop/"+proArr[0].id+".aspx\" target=\"_blank\" title=\""+proArr[0].proname+"\"><img src=\""+shopurl+shopupf+proArr[0].thumbnails+"\" alt=\""+proArr[0].proname+"\" onerror=\"javascript:this.src='/UploadFiles/nopic.gif';\" /></a><span>限量发售</span>")
+			$(".home_shop_rt div:last-child").html("<a href=\""+shopurl+"Shop/"+proArr[1].id+".aspx\" target=\"_blank\" title=\""+proArr[1].proname+"\"><img src=\""+shopurl+shopupf+proArr[1].thumbnails+"\" alt=\""+proArr[1].proname+"\" onerror=\"javascript:this.src='/UploadFiles/nopic.gif';\" /></a><span>闪购特惠</span>")
+			var str1 = "";
+			for(i=2;i<6;i++)
+			{
+				str1+="<li class=\"col-lg-3 col-md-3 col-sm-3 col-xs-12 padding0\"><a href=\""+shopurl+"Shop/"+proArr[i].id+".aspx\" target=\"_blank\" title=\""+proArr[i].proname+"\"><img src=\""+shopurl+shopupf+proArr[i].thumbnails+"\" alt=\""+proArr[i].proname+"\" onerror=\"javascript:this.src='/UploadFiles/nopic.gif';\" /></a><h3><a href=\""+shopurl+"Shop/"+proArr[i].id+".aspx\" target=\"_blank\" title=\""+proArr[i].proname+"\">"+(proArr[i].proname.length>18?proArr[i].proname.substr(0,18):proArr[i].proname)+"</a></h3></li>";
+			}
+			$(".home_shop_rb ul").html(str1);
+			var str2="";
+			for(i=6;i<8;i++)
+			{
+				str2+="<li class=\"media\"><div class=\"media-body\"><h4 class=\"media-heading\"><a href=\""+shopurl+"Shop/"+proArr[i].id+".aspx\" target=\"_blank\" title=\""+proArr[i].proname+"\">"+(proArr[i].proname.length>18?proArr[i].proname.substr(0,18):proArr[i].proname)+"</a></h4><span>￥"+proArr[i].linprice.toFixed(2)+"</span></div><div class=\"media-left\"><a href=\""+shopurl+"Shop/"+proArr[i].id+".aspx\" target=\"_blank\" title=\""+proArr[i].proname+"\"><img class=\"media-object\" src=\""+shopurl+shopupf+proArr[i].thumbnails+"\" alt=\""+proArr[i].proname+"\" onerror=\"javascript:this.src='/UploadFiles/nopic.gif';\" /></a></div></li>";
+			}
+			$("#xilie1 ul").html(str2);
+			var str3="";
+			for(i=8;i<10;i++)
+			{
+				str3+="<li class=\"media\"><div class=\"media-body\"><h4 class=\"media-heading\"><a href=\""+shopurl+"Shop/"+proArr[i].id+".aspx\" target=\"_blank\" title=\""+proArr[i].proname+"\">"+(proArr[i].proname.length>18?proArr[i].proname.substr(0,18):proArr[i].proname)+"</a></h4><span>￥"+proArr[i].linprice.toFixed(2)+"</span></div><div class=\"media-left\"><a href=\""+shopurl+"Shop/"+proArr[i].id+".aspx\" target=\"_blank\" title=\""+proArr[i].proname+"\"><img class=\"media-object\" src=\""+shopurl+shopupf+proArr[i].thumbnails+"\" alt=\""+proArr[i].proname+"\" onerror=\"javascript:this.src='/UploadFiles/nopic.gif';\" /></a></div></li>";
+			}
+			$("#xilie2 ul").html(str3);
+			var str4="";
+			for(i=10;i<12;i++)
+			{
+				str4+="<li class=\"media\"><div class=\"media-body\"><h4 class=\"media-heading\"><a href=\""+shopurl+"Shop/"+proArr[i].id+".aspx\" target=\"_blank\" title=\""+proArr[i].proname+"\">"+(proArr[i].proname.length>18?proArr[i].proname.substr(0,18):proArr[i].proname)+"</a></h4><span>￥"+proArr[i].linprice.toFixed(2)+"</span></div><div class=\"media-left\"><a href=\""+shopurl+"Shop/"+proArr[i].id+".aspx\" target=\"_blank\" title=\""+proArr[i].proname+"\"><img class=\"media-object\" src=\""+shopurl+shopupf+proArr[i].thumbnails+"\" alt=\""+proArr[i].proname+"\" onerror=\"javascript:this.src='/UploadFiles/nopic.gif';\" /></a></div></li>";
+			}
+			$("#xilie3 ul").html(str4);
+			var str5="";
+			for(i=12;i<14;i++)
+			{
+				str5+="<li class=\"media\"><div class=\"media-body\"><h4 class=\"media-heading\"><a href=\""+shopurl+"Shop/"+proArr[i].id+".aspx\" target=\"_blank\" title=\""+proArr[i].proname+"\">"+(proArr[i].proname.length>18?proArr[i].proname.substr(0,18):proArr[i].proname)+"</a></h4><span>￥"+proArr[i].linprice.toFixed(2)+"</span></div><div class=\"media-left\"><a href=\""+shopurl+"Shop/"+proArr[i].id+".aspx\" target=\"_blank\" title=\""+proArr[i].proname+"\"><img class=\"media-object\" src=\""+shopurl+shopupf+proArr[i].thumbnails+"\" alt=\""+proArr[i].proname+"\" onerror=\"javascript:this.src='/UploadFiles/nopic.gif';\" /></a></div></li>";
+			}
+			$("#xilie4 ul").html(str5);
+			var str6="";
+			for(i=14;i<16;i++)
+			{
+				str6+="<li class=\"media\"><div class=\"media-body\"><h4 class=\"media-heading\"><a href=\""+shopurl+"Shop/"+proArr[i].id+".aspx\" target=\"_blank\" title=\""+proArr[i].proname+"\">"+(proArr[i].proname.length>18?proArr[i].proname.substr(0,18):proArr[i].proname)+"</a></h4><span>￥"+proArr[i].linprice.toFixed(2)+"</span></div><div class=\"media-left\"><a href=\""+shopurl+"Shop/"+proArr[i].id+".aspx\" target=\"_blank\" title=\""+proArr[i].proname+"\"><img class=\"media-object\" src=\""+shopurl+shopupf+proArr[i].thumbnails+"\" alt=\""+proArr[i].proname+"\" onerror=\"javascript:this.src='/UploadFiles/nopic.gif';\" /></a></div></li>";
+			}
+			$("#xilie5 ul").html(str6);
+			var str7="";
+			for(i=16;i<18;i++)
+			{
+				str7+="<li class=\"media\"><div class=\"media-body\"><h4 class=\"media-heading\"><a href=\""+shopurl+"Shop/"+proArr[i].id+".aspx\" target=\"_blank\" title=\""+proArr[i].proname+"\">"+(proArr[i].proname.length>18?proArr[i].proname.substr(0,18):proArr[i].proname)+"</a></h4><span>￥"+proArr[i].linprice.toFixed(2)+"</span></div><div class=\"media-left\"><a href=\""+shopurl+"Shop/"+proArr[i].id+".aspx\" target=\"_blank\" title=\""+proArr[i].proname+"\"><img class=\"media-object\" src=\""+shopurl+shopupf+proArr[i].thumbnails+"\" alt=\""+proArr[i].proname+"\" onerror=\"javascript:this.src='/UploadFiles/nopic.gif';\" /></a></div></li>";
+			}
+			$("#xilie6 ul").html(str7);
+		}
+	});
+});
+function AddToFave(itemid,url,type)
+{
+	$.post("/API/AddToFav.ashx?action=add", { itemid: itemid, url: url, type: type }, function (data) {
+		console.log(data);
+		if(data=="-3")
+		{
+			$(".home_ulogin").show();
+		}
+		if(data=="-2")
+		{ alert("参数不正确！");}
+		if(data=="-1")
+		{ alert("内容不存在！"); }
+		if(data=="0")
+		{ alert("该内容已添加至收藏夹了！");}
+		if(data=="1")
+		{ alert("添加成功"); }
+	});
+}
+function LoginFun()
+{
+	var buser = new B_User();
+	var model = { name: $("#UName").val(), pwd: $("#UPSD").val(), key: $("#VCode_hid").val(), code: $("#VCode").val() };
+	if (model.name == "" || model.pwd == "") { alert("用户名或密码不能为空!"); return; }
+	buser.Login(model,function(data){
+		if (data == -1) { alert("用户名或密码错误"); }
+		else if (data == -10) {
+			alert("用户名或密码错误");
+			EnableCode();
+		}
+		else if (data == -2)
+		{
+			alert("验证码错误");
+			EnableCode();
+		}
+		else {
+			location.href=location.href;
+		}
+	})
+}
+function EnableCode() {
+	if ($(".code").is(":hidden")) {
+		$(".code").show();
+		$("#VCode_img").click();
+		$("#VCode").ValidateCode();
+	}
+}
+function ShowLogin()
+{
+	$(".home_ulogin").show();
+}
+function CloseLogin()
+{
+	$(".home_ulogin").hide();
+}
+function GetEnterCode(a, id) {
+    if (event.keyCode == 13) {
+        switch (a) { case "click": $("#" + id).trigger("click"); break; case "focus": $("#" + id).focus(); break; }
+        return false;
+    }
+    else { return true; }
+}
+function GetMoreZT() //获取更多主题
+{
+	$(".ztlist ul").height("auto");
+}
+</script>

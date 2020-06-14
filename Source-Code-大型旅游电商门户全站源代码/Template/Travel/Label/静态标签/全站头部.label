@@ -1,0 +1,67 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <Table>
+    <LabelID>837</LabelID>
+    <LabelName>全站头部</LabelName>
+    <LabelType>1</LabelType>
+    <LabelCate>静态标签</LabelCate>
+    <LabelDesc />
+    <LabelParam />
+    <LabelTable />
+    <LabelField />
+    <LabelWhere />
+    <LabelOrder />
+    <LabelContent>&lt;div class="home_top"&gt;
+&lt;div class="container"&gt;
+&lt;ul class="list-unstyled pull-right"&gt;
+{ZL.Label id="用户登录状态"/}
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;!--home_top end--&gt;
+&lt;div class="relative"&gt;
+&lt;nav class="navbar navbar-default" id="home_nav"&gt;
+&lt;div class="container"&gt;
+&lt;!-- Brand and toggle get grouped for better mobile display --&gt;
+&lt;div class="navbar-header"&gt;
+&lt;button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"&gt;
+&lt;span class="sr-only"&gt;Toggle navigation&lt;/span&gt;
+&lt;span class="icon-bar"&gt;&lt;/span&gt;
+&lt;span class="icon-bar"&gt;&lt;/span&gt;
+&lt;span class="icon-bar"&gt;&lt;/span&gt;
+&lt;/button&gt;
+&lt;a class="navbar-brand" href="/"&gt;&lt;img src="{$LogoUrl/}" alt="{$SiteName/}" /&gt;&lt;/a&gt;
+&lt;/div&gt;
+&lt;!-- Collect the nav links, forms, and other content for toggling --&gt;
+&lt;div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"&gt;
+&lt;ul class="nav navbar-nav"&gt;
+&lt;li&gt;&lt;a href="/"&gt;首页&lt;/a&gt;&lt;/li&gt;
+&lt;li id="menu1"&gt;&lt;a href="{ZL:GetNodeLinkUrl(1)/}"&gt;目的地&lt;/a&gt;&lt;/li&gt;
+&lt;li id="menu2"&gt;&lt;a href="{ZL:GetNodeLinkUrl(2)/}"&gt;攻略&lt;/a&gt;&lt;/li&gt;
+&lt;li id="menu3"&gt;&lt;a href="{ZL:GetNodeLinkUrl(3)/}"&gt;事件&lt;/a&gt;&lt;/li&gt;
+&lt;li id="menu4"&gt;&lt;a href="{ZL:GetNodeLinkUrl(4)/}"&gt;画册&lt;/a&gt;&lt;/li&gt;
+&lt;li id="menuAsk"&gt;&lt;a href="/Ask"&gt;问答&lt;/a&gt;&lt;/li&gt;
+&lt;li id="menu5"&gt;&lt;a href="{ZL:GetNodeLinkUrl(5)/}"&gt;美食&lt;/a&gt;&lt;/li&gt;
+&lt;li id="menu6"&gt;&lt;a href="{ZL:GetNodeLinkUrl(6)/}"&gt;特产&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;&lt;!-- /.navbar-collapse --&gt;
+&lt;/div&gt;&lt;!-- /.container-fluid --&gt;
+&lt;/nav&gt;
+&lt;/div&gt;
+&lt;!--导航结束--&gt;</LabelContent>
+    <LabelCount />
+    <LabelAddUser>0</LabelAddUser>
+    <LabelNodeID>0</LabelNodeID>
+    <Modeltypeinfo>计数判断</Modeltypeinfo>
+    <addroot>循环计算</addroot>
+    <setroot>等于</setroot>
+    <Modelvalue>0</Modelvalue>
+    <Valueroot />
+    <IsOpen>0</IsOpen>
+    <FalseContent />
+    <DataSourceType />
+    <ConnectString />
+    <ProceName />
+    <ProceParam />
+  </Table>
+</NewDataSet>

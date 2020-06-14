@@ -1,0 +1,38 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <Table>
+    <LabelID>855</LabelID>
+    <LabelName>输出指定问题答案</LabelName>
+    <LabelType>2</LabelType>
+    <LabelCate>贵旅专用</LabelCate>
+    <LabelDesc />
+    <LabelParam>QID,,1,问题ID</LabelParam>
+    <LabelTable>{table1}.dbo.ZL_GuestAnswer</LabelTable>
+    <LabelField>AddTime,Content,ID,QueId,UserId,UserName</LabelField>
+    <LabelWhere>QueId=@QID And Status=1</LabelWhere>
+    <LabelOrder>AddTime DESC</LabelOrder>
+    <LabelContent>{Repeate}
+&lt;div class="viewcon_ask_ls"&gt;
+&lt;p&gt;&lt;a href="#"&gt;{ZL.Label id="根据用户ID输出用户头像" UserID="{Field="UserId"/}" /} {Field="UserName"/}&lt;/a&gt;&lt;span&gt;最佳答案&lt;/span&gt;{Field="Content"/}&lt;/p&gt;
+&lt;div class="viewcon_ask_lsb"&gt;
+&lt;div class="pull-left"&gt;标签：&lt;span&gt;黄果树&lt;/span&gt;&lt;span&gt;安顺&lt;/span&gt;&lt;span&gt;火车站&lt;/span&gt;&lt;/div&gt;
+&lt;div class="pull-right"&gt;&lt;span&gt;{ZL:FormatDate({Field="AddTime"/},yyyy-MM-dd HH:mm:ss)/}&lt;/span&gt;&lt;span&gt;&lt;a href="javascript:;" onclick="AskCommon('{Field="ID"/}','1');"&gt;有用({ZL.Label id="输出指定答案评论数" AswID="{Field="ID"/}" AskID="{Field="QueId"/}" Content="有用" /})&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&lt;a href="javascript:;" onclick="AskCommon('{Field="ID"/}','2');"&gt;同问({ZL.Label id="输出指定答案评论数" AswID="{Field="ID"/}" AskID="{Field="QueId"/}" Content="同问" /})&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&lt;a href="javascript:;" onclick="AskCommon('{Field="ID"/}','3');"&gt;浏览({ZL.Label id="输出指定答案评论数" AswID="{Field="ID"/}" AskID="{Field="QueId"/}" Content="浏览" /})&lt;/a&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;div class="clearfix"&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;{/Repeate}</LabelContent>
+    <LabelCount>1</LabelCount>
+    <LabelAddUser>0</LabelAddUser>
+    <LabelNodeID>0</LabelNodeID>
+    <Modeltypeinfo>计数判断</Modeltypeinfo>
+    <addroot>循环计算</addroot>
+    <setroot>等于</setroot>
+    <Modelvalue>0</Modelvalue>
+    <Valueroot />
+    <IsOpen>0</IsOpen>
+    <FalseContent />
+    <DataSourceType>GZTravel</DataSourceType>
+    <ConnectString>DBO</ConnectString>
+    <ProceName />
+    <ProceParam>{"PureT1":"ZL_GuestAnswer","PureT2":"","T1":"GZTravel.dbo.ZL_GuestAnswer","T2":"","JoinType":"left join","OnField1":"AddTime","OnField2":""}</ProceParam>
+  </Table>
+</NewDataSet>

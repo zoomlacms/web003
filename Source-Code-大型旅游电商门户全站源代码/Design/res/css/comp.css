@@ -1,0 +1,4 @@
+﻿/*设计与浏览页都引用其*/
+.btn_icon_circular {
+    color: #fff;text-align:center;height:60px;width:60px;padding-top:10px; display:inline-block; border-radius: 50%; font-size: 3em;
+}

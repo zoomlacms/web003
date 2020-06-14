@@ -1,0 +1,58 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <Table>
+    <LabelID>876</LabelID>
+    <LabelName>根据关键字输出相关景点信息</LabelName>
+    <LabelType>2</LabelType>
+    <LabelCate>贵旅专用</LabelCate>
+    <LabelDesc />
+    <LabelParam>NodeID,2,1,节点ID|KeyWord,,1,关键字|TitleNum,30,1,标题长</LabelParam>
+    <LabelTable>{table1}.dbo.ZL_CommonModel left join {table1}.dbo.ZL_C_jdmx on {table1}.dbo.ZL_CommonModel.ItemID={table1}.dbo.ZL_C_jdmx.ID</LabelTable>
+    <LabelField>{table1}.dbo.ZL_CommonModel.GeneralID,{table1}.dbo.ZL_CommonModel.Title,{table1}.dbo.ZL_C_jdmx.pic</LabelField>
+    <LabelWhere>(NodeID=@NodeID or FirstNodeID=@NodeID) And ModelID=45 And Status=99 And Title like '%@KeyWord%'</LabelWhere>
+    <LabelOrder>{table1}.dbo.ZL_CommonModel.CreateTime DESC</LabelOrder>
+    <LabelContent>{Repeate}
+&lt;div class="search_view"&gt;
+&lt;div class="search_view_t"&gt;&lt;a href="{ZL:GetInfoUrl({Field="GeneralID"/})/}" title="{Field="Title"/}" target="_blank"&gt;{ZL:CutText({Field="Title"/},@TitleNum,)/}&lt;/a&gt;&lt;/div&gt;
+&lt;div class="search_view_m"&gt;
+&lt;a href="{ZL:GetInfoUrl({Field="GeneralID"/})/}" title="{Field="Title"/}" target="_blank"&gt;&lt;img src="{ZL:GetPicUrl({Field="pic"/})/}" alt="{Field="Title"/}" onerror="javascript:this.src='/UploadFiles/nopic.gif';" /&gt;&lt;/a&gt;
+&lt;span&gt;{ZL:CutText({Field="Title"/},@TitleNum,)/}&lt;/span&gt;
+&lt;/div&gt;
+&lt;div class="search_view_b"&gt;
+&lt;table class="table table-bordered"&gt;
+&lt;tr&gt;
+&lt;td width="50%" style="text-align:center;"&gt;
+&lt;a href="/Class_2/NodePage.aspx?k={$GetUrlencode({Field="Title"/})$}"&gt;游记&lt;/a&gt;&lt;br/&gt;
+&lt;span&gt;&lt;b&gt;{ZL.Label id="根据关键字输出游记总数" NodeID="2" KeyWord="{Field="Title"/}" /}&lt;/b&gt;篇游记&lt;/span&gt;
+&lt;/td&gt;
+&lt;td style="text-align:center;"&gt;
+&lt;a href="/Class_4/NodePage.aspx?k={$GetUrlencode({Field="Title"/})$}"&gt;图库&lt;/a&gt;&lt;br/&gt;
+&lt;span&gt;&lt;b&gt;{ZL.Label id="根据关键字输出图库总数" NodeID="4" KeyWord="{Field="Title"/}" /}&lt;/b&gt;个图册&lt;/span&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td colspan="2" style="text-align:center;"&gt;
+&lt;a href="/Class_1/NodeNews.aspx?k={$GetUrlencode({Field="Title"/})$}"&gt;问答&lt;/a&gt;&lt;br/&gt;
+&lt;span&gt;&lt;b&gt;{ZL.Label id="根据关键字输出问答总数" KeyWord="{Field="Title"/}" /}&lt;/b&gt;个问答&lt;/span&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+{/Repeate}</LabelContent>
+    <LabelCount>1</LabelCount>
+    <LabelAddUser>0</LabelAddUser>
+    <LabelNodeID>0</LabelNodeID>
+    <Modeltypeinfo>计数判断</Modeltypeinfo>
+    <addroot>循环计算</addroot>
+    <setroot>等于</setroot>
+    <Modelvalue>0</Modelvalue>
+    <Valueroot />
+    <IsOpen>0</IsOpen>
+    <FalseContent />
+    <DataSourceType>GZTravel</DataSourceType>
+    <ConnectString>DBO</ConnectString>
+    <ProceName />
+    <ProceParam>{"PureT1":"ZL_CommonModel","PureT2":"ZL_C_jdmx","T1":"GZTravel.dbo.ZL_CommonModel","T2":"GZTravel.dbo.ZL_C_jdmx","JoinType":"left join","OnField1":"ItemID","OnField2":"ID"}</ProceParam>
+  </Table>
+</NewDataSet>

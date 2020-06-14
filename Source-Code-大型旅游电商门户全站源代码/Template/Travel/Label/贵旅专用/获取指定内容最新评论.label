@@ -1,0 +1,42 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <Table>
+    <LabelID>864</LabelID>
+    <LabelName>获取指定内容最新评论</LabelName>
+    <LabelType>2</LabelType>
+    <LabelCate>贵旅专用</LabelCate>
+    <LabelDesc />
+    <LabelParam>GID,,1,内容ID|SysNum,100,1,简介数</LabelParam>
+    <LabelTable>{table1}.dbo.ZL_Comment</LabelTable>
+    <LabelField>Contents,UserID</LabelField>
+    <LabelWhere>Audited=1 And GeneralID=@GID And pid=0</LabelWhere>
+    <LabelOrder>CommentTime DESC</LabelOrder>
+    <LabelContent>{Repeate}
+&lt;div class="media"&gt;
+&lt;div class="media-left"&gt;&lt;a href="#"&gt;{ZL.Label id="根据用户ID输出用户头像" UserID="{Field="UserID"/}" /}&lt;/a&gt;&lt;/div&gt;
+
+
+&lt;div class="media-body"&gt;
+&lt;h4 class="media-heading"&gt;&lt;a href="#"&gt;{ZL.Label id="根据用户ID输出用户名" UserID="{Field="UserID"/}" /}&lt;/a&gt;&lt;/h4&gt;
+  
+&lt;p&gt;{ZL:CutText({Field="Contents"/},@SysNum,...)/}&lt;/p&gt;
+  
+&lt;/div&gt;
+
+&lt;/div&gt;{/Repeate}</LabelContent>
+    <LabelCount>1</LabelCount>
+    <LabelAddUser>0</LabelAddUser>
+    <LabelNodeID>0</LabelNodeID>
+    <Modeltypeinfo>计数判断</Modeltypeinfo>
+    <addroot>循环计算</addroot>
+    <setroot>等于</setroot>
+    <Modelvalue>0</Modelvalue>
+    <Valueroot />
+    <IsOpen>0</IsOpen>
+    <FalseContent />
+    <DataSourceType>GZTravel</DataSourceType>
+    <ConnectString>DBO</ConnectString>
+    <ProceName />
+    <ProceParam>{"PureT1":"ZL_Comment","PureT2":"","T1":"GZTravel.dbo.ZL_Comment","T2":"","JoinType":"left join","OnField1":"Audited","OnField2":""}</ProceParam>
+  </Table>
+</NewDataSet>

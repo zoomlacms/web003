@@ -1,0 +1,30 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <Table>
+    <LabelID>875</LabelID>
+    <LabelName>根据关键字输出游记总数</LabelName>
+    <LabelType>2</LabelType>
+    <LabelCate>贵旅专用</LabelCate>
+    <LabelDesc />
+    <LabelParam>NodeID,2,1,节点ID|KeyWord,,1,关键字</LabelParam>
+    <LabelTable>{table1}.dbo.ZL_CommonModel left join {table1}.dbo.ZL_C_yjmx on {table1}.dbo.ZL_CommonModel.ItemID={table1}.dbo.ZL_C_yjmx.ID</LabelTable>
+    <LabelField>Count(*) As Num</LabelField>
+    <LabelWhere>(NodeID=@NodeID or FirstNodeID=@NodeID) And ModelID=46 And Status=99 And (Title like '%@KeyWord%' or ViewPoint like '%@KeyWord%' or content like '%@KeyWord%')</LabelWhere>
+    <LabelOrder />
+    <LabelContent>{Field="Num"/}</LabelContent>
+    <LabelCount>0</LabelCount>
+    <LabelAddUser>0</LabelAddUser>
+    <LabelNodeID>0</LabelNodeID>
+    <Modeltypeinfo>计数判断</Modeltypeinfo>
+    <addroot>循环计算</addroot>
+    <setroot>等于</setroot>
+    <Modelvalue>0</Modelvalue>
+    <Valueroot />
+    <IsOpen>0</IsOpen>
+    <FalseContent />
+    <DataSourceType>GZTravel</DataSourceType>
+    <ConnectString>DBO</ConnectString>
+    <ProceName />
+    <ProceParam>{"PureT1":"ZL_CommonModel","PureT2":"ZL_C_yjmx","T1":"GZTravel.dbo.ZL_CommonModel","T2":"GZTravel.dbo.ZL_C_yjmx","JoinType":"left join","OnField1":"ItemID","OnField2":"ID"}</ProceParam>
+  </Table>
+</NewDataSet>

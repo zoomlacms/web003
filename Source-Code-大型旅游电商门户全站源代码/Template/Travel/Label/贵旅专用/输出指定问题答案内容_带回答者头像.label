@@ -1,0 +1,30 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <Table>
+    <LabelID>898</LabelID>
+    <LabelName>输出指定问题答案内容_带回答者头像</LabelName>
+    <LabelType>2</LabelType>
+    <LabelCate>贵旅专用</LabelCate>
+    <LabelDesc />
+    <LabelParam>QID,,1,问题ID</LabelParam>
+    <LabelTable>{table1}.dbo.ZL_GuestAnswer</LabelTable>
+    <LabelField>AddTime,Content,UserId,UserName</LabelField>
+    <LabelWhere>QueId=@QID And Status=1</LabelWhere>
+    <LabelOrder>AddTime DESC</LabelOrder>
+    <LabelContent>&lt;p&gt;{ZL.Label id="根据用户ID输出用户头像" UserID="{Field="UserId"/}" /} {Field="UserName"/} &lt;b&gt;最佳答案&lt;/b&gt; {Field="Content"/}&lt;/p&gt;</LabelContent>
+    <LabelCount>1</LabelCount>
+    <LabelAddUser>0</LabelAddUser>
+    <LabelNodeID>0</LabelNodeID>
+    <Modeltypeinfo>计数判断</Modeltypeinfo>
+    <addroot>循环计算</addroot>
+    <setroot>等于</setroot>
+    <Modelvalue>0</Modelvalue>
+    <Valueroot />
+    <IsOpen>0</IsOpen>
+    <FalseContent />
+    <DataSourceType>GZTravel</DataSourceType>
+    <ConnectString>DBO</ConnectString>
+    <ProceName />
+    <ProceParam>{"PureT1":"ZL_GuestAnswer","PureT2":"","T1":"GZTravel.dbo.ZL_GuestAnswer","T2":"","JoinType":"left join","OnField1":"AddTime","OnField2":""}</ProceParam>
+  </Table>
+</NewDataSet>

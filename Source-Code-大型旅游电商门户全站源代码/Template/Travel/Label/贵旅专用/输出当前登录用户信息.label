@@ -1,0 +1,44 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <Table>
+    <LabelID>870</LabelID>
+    <LabelName>输出当前登录用户信息</LabelName>
+    <LabelType>2</LabelType>
+    <LabelCate>贵旅专用</LabelCate>
+    <LabelDesc />
+    <LabelParam />
+    <LabelTable>{table1}.dbo.ZL_User left join {table1}.dbo.ZL_UserBase on {table1}.dbo.ZL_User.UserID={table1}.dbo.ZL_UserBase.UserID</LabelTable>
+    <LabelField>{table1}.dbo.ZL_User.UserExp,{table1}.dbo.ZL_User.salt,{table1}.dbo.ZL_User.UserID,{table1}.dbo.ZL_User.UserName,{table1}.dbo.ZL_User.UserPoint</LabelField>
+    <LabelWhere>{table1}.dbo.ZL_User.UserID='{ZL:GetuserID()/}'</LabelWhere>
+    <LabelOrder />
+    <LabelContent>&lt;div class="myuser_left_t"&gt;
+&lt;div class="myuser_left_tm"&gt;
+&lt;a href="/User/Info/UserInfo.aspx"&gt;&lt;img src="{Field="salt"/}" alt="{Field="UserName"/}" onerror="javascript:this.src='/Images/userface/noface.gif';" /&gt;&lt;/a&gt;
+&lt;strong&gt;{Field="UserName"/}&lt;/strong&gt;
+&lt;/div&gt;
+&lt;div class="myuser_left_td"&gt;等级:&lt;strong&gt;LV14&lt;/strong&gt;&lt;span&gt;|&lt;/span&gt;现居：贵阳&lt;/div&gt;
+&lt;div class="myuser_left_tg"&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;{ZL.Label id="输出当前用户关注数" /}&lt;/strong&gt;&lt;br/&gt;关注&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;12&lt;/strong&gt;&lt;br/&gt;粉丝&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;{ZL:GetMoney({Field="UserExp"/},0,1)/}&lt;/strong&gt;&lt;br/&gt;积分&lt;/li&gt;
+&lt;div class="clearfix"&gt;&lt;/div&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;</LabelContent>
+    <LabelCount>0</LabelCount>
+    <LabelAddUser>0</LabelAddUser>
+    <LabelNodeID>0</LabelNodeID>
+    <Modeltypeinfo>计数判断</Modeltypeinfo>
+    <addroot>循环计算</addroot>
+    <setroot>等于</setroot>
+    <Modelvalue>0</Modelvalue>
+    <Valueroot />
+    <IsOpen>0</IsOpen>
+    <FalseContent />
+    <DataSourceType>GZTravel</DataSourceType>
+    <ConnectString>DBO</ConnectString>
+    <ProceName />
+    <ProceParam>{"PureT1":"ZL_User","PureT2":"ZL_UserBase","T1":"GZTravel.dbo.ZL_User","T2":"GZTravel.dbo.ZL_UserBase","JoinType":"left join","OnField1":"UserID","OnField2":"UserID"}</ProceParam>
+  </Table>
+</NewDataSet>

@@ -1,0 +1,97 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <Table>
+    <LabelID>942</LabelID>
+    <LabelName>通用登录弹出层</LabelName>
+    <LabelType>1</LabelType>
+    <LabelCate>静态标签</LabelCate>
+    <LabelDesc />
+    <LabelParam />
+    <LabelTable />
+    <LabelField />
+    <LabelWhere />
+    <LabelOrder />
+    <LabelContent>&lt;style&gt;
+.home_ulogin { position:fixed; width:100%; height:100%; padding-top:25%; top:0; left:0; background:url(/Template/Travel/tou_b.png);  z-index:2000; overflow:hidden; display:none}
+.home_ulogin_c { position:absolute; left:50%; margin-left:-300px; padding:20px; margin-top:-123px; padding-left:35px;  background:#fff; opacity:0.9; box-shadow:0 0 5px rgba(0,0,0,0.6); border-radius:8px; width:600px; height:auto; overflow:hidden}
+.home_ulogin_clt { font-size:18px; font-weight:bold; color:#333; text-align:center; position:relative;}
+.to_denglu{margin-top:15px; float:left; position:relative;}
+.to_denglu,.to_line,.to_other_type{ margin-bottom:20px;}
+.to_ty1{ margin-bottom:13px;}
+.to_ty1 input{ height:45px; line-height:45px;}
+.to_ty1 a{ font-size:12px; color:#ffa800; position:absolute; left:0; cursor:pointer;}
+.btn-sm:hover{ background:#999;}
+.to_ty1 img{ margin-left:12px; margin-top:-3px; height:32px; background-color:#f4bf63;}
+.to_denglu2{ float:left; margin-top:10px; width:180px; line-height:45px; height:45px; background:#e65e42; text-align:center; border-radius:3px;  color:#fff; font-size:16px; text-decoration:none; cursor:pointer;}
+.to_denglu2:hover{ background: #b70000;}
+.to_denglu button{ border:none}
+.to_line{ width:1px; height:238px; background:#CCC; top:50px; margin-left:330px;}
+.to_other_type{ float:right; margin-top:-240px; margin-right:40px;}
+.to_other_type p{ font-size:14px; color:#979796; margin-bottom:10px;}
+/*.to_other_type a{ text-decoration:none; cursor:pointer;}*/
+.to_other_type img{ display:block; margin-bottom:10px;}
+.home_ulogin_close{ position:absolute; right:8px; top:8px;}
+.to_ty1 input{ background:#f8f8f8;}
+.btn-group-sm&gt;.btn, .btn-sm { font-size:18px; font-weight:200; background:none; color:#999}
+input:-webkit-autofill{ background:#f8f8f8; }
+.to_zhuce{ float:left; font-size:14px; height:45px; width:100px; text-align:center; line-height:45px; padding-top:10px }
+&lt;/style&gt;
+
+&lt;div class="home_ulogin" style="display:none;"&gt;
+  &lt;div class="container"&gt;
+    &lt;div class="row"&gt;
+      &lt;div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 col-md-offset-4"&gt;
+        &lt;div class="home_ulogin_c"&gt;
+          &lt;div class="home_ulogin_close"&gt;
+            &lt;button class="btn btn-sm" onclick="CloseLogin();"&gt;&lt;i class="fa fa-close"&gt;&lt;/i&gt;&lt;/button&gt;
+          &lt;/div&gt;
+          &lt;div class="home_ulogin_cl"&gt;
+            &lt;div class="home_ulogin_clt"&gt;&lt;/div&gt;
+            	&lt;div class="to_denglu"&gt;
+                	&lt;div class="to_ty1" style="position:relative;"&gt;
+                        &lt;input type="text" id="UName" onkeydown="return GetEnterCode('focus','UPSD');" placeholder="您的用户名/邮箱/手机号码" style="color:#979796; width:300px; line-height:40px; border:1px solid #ddd; padding-left:10px; background:#f8f8f8; font-size:14px; margin-bottom:10px;"&gt;
+                         &lt;input type="password" id="UPSD"  onkeydown="return GetEnterCode('click','home_ulogin_btn');" placeholder="您的密码" style="color:#979796; width:300px; line-height:40px; border:1px solid #ddd; background:#f8f8f8; padding-left:10px; font-size:14px; margin-bottom:15px;"&gt;
+                        &lt;/br&gt;
+                        &lt;a href="/User/GetPassword.aspx" style="color:#444"&gt;忘记密码？&lt;/a&gt;
+                        &lt;!--&lt;input type="text" id="VCode" placeholder="验证码" maxlength="6" style="color:#dddddd; opacity:0.5; width:100px; line-height:30px; border:1px solid #d2d2d2; text-align:center; font-size:14px; margin-left:130px;" data-enter="2" &gt;
+                    	&lt;img id="VCode_img" title="点击刷新验证码" class="code" alt="验证码" /&gt;
+&lt;input type="hidden" id="VCode_hid" name="VCode_hid" /&gt;--&gt;
+                    &lt;/div&gt;
+ &lt;div style="padding-top:15px; height:50px;"&gt;
+ &lt;button class="to_denglu2" id="home_ulogin_btn" type="button" onClick="LoginFun()" data-enter="3"&gt;登录&lt;/button&gt;
+                    &lt;div class="to_zhuce"&gt;
+                    	&lt;a href="/User/Register.aspx"&gt;立即注册&lt;/a&gt;
+                    &lt;/div&gt;
+                    
+ &lt;/div&gt;
+            	&lt;/div&gt;
+          &lt;div class="to_line"&gt;&lt;/div&gt;
+                &lt;div class="to_other_type"&gt;
+                	&lt;p&gt;或使用其他方式登录&lt;/p&gt;
+&lt;a href="https://api.weibo.com/oauth2/authorize?client_id=1849901260&amp;redirect_uri=http%3A%2F%2Fwww.toxingbaike.com%2Fuser%2FAPPBack.aspx%3FType%3Dsina&amp;response_type=code&amp;display=default" style="display:block; position:absolute; z-index:1000; right:40px; top:70px;"&gt;&lt;img src="/images/xinlang.png"&gt;&lt;/a&gt;
+                    &lt;a href="https://graph.qq.com/oauth/show?which=Login&amp;display=pc&amp;client_id=101300268&amp;response_type=token&amp;scope=all&amp;redirect_uri=http://toxingbaike.com" style="display:block; position:absolute; z-index:1000; right:40px; top:120px;"&gt;&lt;img src="/images/tx.png"&gt;&lt;/a&gt;
+                    &lt;!--img src="/images/weixin.png"--&gt;
+                    &lt;!--img src="/images/renren.png"--&gt;
+                &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</LabelContent>
+    <LabelCount />
+    <LabelAddUser>0</LabelAddUser>
+    <LabelNodeID>0</LabelNodeID>
+    <Modeltypeinfo>计数判断</Modeltypeinfo>
+    <addroot>循环计算</addroot>
+    <setroot>等于</setroot>
+    <Modelvalue />
+    <Valueroot />
+    <IsOpen>0</IsOpen>
+    <FalseContent />
+    <DataSourceType />
+    <ConnectString />
+    <ProceName />
+    <ProceParam />
+  </Table>
+</NewDataSet>

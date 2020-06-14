@@ -1,0 +1,1 @@
+﻿<%@ page language="C#" autoeventwireup="true" inherits="test_DownImg, App_Web_1dfkq1al" enableEventValidation="false" viewStateEncryptionMode="Never" %>

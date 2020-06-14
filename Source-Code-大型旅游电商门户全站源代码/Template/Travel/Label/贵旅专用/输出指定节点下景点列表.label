@@ -1,0 +1,37 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <Table>
+    <LabelID>978</LabelID>
+    <LabelName>输出指定节点下景点列表</LabelName>
+    <LabelType>2</LabelType>
+    <LabelCate>贵旅专用</LabelCate>
+    <LabelDesc />
+    <LabelParam>NodeID,1,1,节点ID|TopNum,0,1,Top数|ShowNum,10,1,显示数|ClassName,col-lg-6 col-md-6 col-sm-6 col-xs-12,1,Class|TitleNum,30,1,标题长</LabelParam>
+    <LabelTable>ZL_CommonModel LEFT JOIN ZL_C_jdmx ON ZL_CommonModel.ItemID=ZL_C_jdmx.ID</LabelTable>
+    <LabelField>ZL_CommonModel.GeneralID,ZL_CommonModel.NodeID,ZL_CommonModel.Title,ZL_C_jdmx.pic</LabelField>
+    <LabelWhere>(NodeID=@NodeID or FirstNodeID=@NodeID or NodeID in (select NodeID from ZL_Node where ParentID=@NodeID)) And Status=99 And ModelID=45 And GeneralID not in (select Top @TopNum GeneralID from ZL_CommonModel where (NodeID=@NodeID or FirstNodeID=@NodeID or NodeID in (select NodeID from ZL_Node where ParentID=@NodeID)) And Status=99 And ModelID=45 order By CreateTime DESC
+)</LabelWhere>
+    <LabelOrder>ZL_CommonModel.CreateTime DESC</LabelOrder>
+    <LabelContent>{Repeate}
+&lt;li class="@ClassName"&gt;
+&lt;div class="view_rec_lc"&gt;
+&lt;a href="{ZL:GetInfoUrl({Field="GeneralID"/})/}" title="{Field="Title"/}"&gt;&lt;img src="{ZL:GetPicUrl({Field="pic"/})/}" alt="{Field="Title"/}" onerror="javascript:this.src='/UploadFiles/nopic.gif';" /&gt;&lt;/a&gt;
+&lt;h4&gt;&lt;a href="{ZL:GetInfoUrl({Field="GeneralID"/})/}" title="{Field="Title"/}"&gt;{ZL:CutText({Field="Title"/},@TitleNum,...)/}&lt;/a&gt;&lt;/h4&gt;
+&lt;/div&gt;
+&lt;/li&gt;{/Repeate}</LabelContent>
+    <LabelCount>@ShowNum</LabelCount>
+    <LabelAddUser>0</LabelAddUser>
+    <LabelNodeID>0</LabelNodeID>
+    <Modeltypeinfo>计数判断</Modeltypeinfo>
+    <addroot>循环计算</addroot>
+    <setroot>等于</setroot>
+    <Modelvalue />
+    <Valueroot />
+    <IsOpen>0</IsOpen>
+    <FalseContent />
+    <DataSourceType />
+    <ConnectString />
+    <ProceName />
+    <ProceParam />
+  </Table>
+</NewDataSet>

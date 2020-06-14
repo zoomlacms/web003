@@ -1,0 +1,220 @@
+{ZL.Source id="节点栏目信息数据源"/}
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>{SField sid="节点栏目信息数据源" FD="NodeName" page="0"/}_{$SiteName/}</title>
+<meta name="Keywords" content="{SField sid="节点栏目信息数据源" FD="Meta_Keywords" page="0"/}" />
+<meta name="description" content="{SField sid="节点栏目信息数据源" FD="Meta_Description" page="0"/}" />
+{ZL:Boot()/}
+<link href="{$CssDir/}global.css?Version={ZL.Label id="前端样式版本号"/}" rel="stylesheet"/>
+<script src="{$CssDir/}js/jquery.SuperSlide.2.1.1.js"></script>
+<script type="text/javascript" src="/js/scrolltopcontrol.js"></script>
+<script src="/JS/ZL_ValidateCode.js"></script>
+<script src="/JS/Modal/APIResult.js"></script>
+<script src="/JS/Controls/B_User.js"></script>
+  <script src="/JS/Controls/Control.js"></script>
+</head>
+<body>
+{ZL.Label id="全站共用头部"/}
+<div id="carousel-example-generic" class="carousel slide home_banner" data-ride="carousel" data-interval="false">
+<div class="focusBox" style="margin:0 auto">
+ <ul class="pic">
+{ZL.Label id="输出指定节点下广告列表" NodeID="134" ShowNum="5" /}
+ </ul>
+ <a class="prev" href="javascript:void(0)" style="left:65px;"></a>
+ <a class="next" href="javascript:void(0)" style="right:65px;"></a>
+ <ul class="hd">
+{ZL.Label id="输出指定节点下广告列表辅助空LI容器" NodeID="134" ShowNum="5" /}
+</ul>
+</div>
+<script type="text/javascript">jQuery(".focusBox").slide({ mainCell:".pic",effect:"leftLoop", autoPlay:true, delayTime:300});</script>
+<div class="home_banner_s">
+<div class="home_search">
+<form role="search" action="/Class_28/NodeElite.aspx" method="get" target="_blank">
+<input type="text" class="form-control input-lg" placeholder="关键词……" id="k" name="k" />
+<button type="submit">搜索</button>
+<div class="iframe_search" style="display:none;">
+<iframe src="/Class_1/NodePage.aspx" scrolling="no" frameborder="0" width="100%"></iframe>
+</div>
+</form>
+<p>热门搜索：<a href="/Search/SearchList.aspx?KeyWord=%e9%bb%84%e6%9e%9c%e6%a0%91%e7%80%91%e5%b8%83" target="_blank">黄果树瀑布</a><a href="/Search/SearchList.aspx?KeyWord=%e8%a5%bf%e6%b1%9f%e5%8d%83%e6%88%b7%e8%8b%97%e5%af%a8" target="_blank">西江千户苗寨</a><a href="/Search/SearchList.aspx?KeyWord=%e5%a4%a7%e8%8d%89%e5%8e%9f" target="_blank">大草原</a><a href="/Search/SearchList.aspx?KeyWord=%e5%a4%a9%e6%98%9f%e6%a1%a5" target="_blank">天星桥</a></p>
+</div>
+  </div>
+  
+ </div> 
+  
+<!--首页顶部banner结束-->
+<div class="dest_hot">
+<div class="container">
+<div class="dest_hot_t text-center"><h3><i class="fa fa-circle"></i><span>热门风景</span>POPULAR SCENERY<i class="fa fa-circle" style="left:auto; right:0;"></i></h3></div>
+<div class="row">
+<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 dest_hot_l">
+{ZL.Label id="输出指定节点推荐景点列表" NodeID="1" TitleNum="30" ShowNum="1" SysNum="200" /}
+<div class="row">
+{ZL.Label id="输出指定数量最新景点列表" NodeID="1" ShowNum="2" TitleNum="30" SysNum="200" TopNum="0" ClassName="col-lg-6 col-md-6 col-sm-6 col-xs-12" /}
+</div>
+</div>
+<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 dest_hot_r">
+{ZL.Label id="输出指定数量最新景点列表" NodeID="1" ShowNum="2" TitleNum="30" SysNum="200" TopNum="2" /}
+</div>
+</div>
+</div>
+</div><!--dest_hot end-->
+
+
+<div class="container dest_line">
+<div class="dest_line_t text-center"><h3><i class="fa fa-circle"></i><span>主题路线</span>THEME LINE<i class="fa fa-circle" style="left:auto; right:0;"></i></h3></div>
+<div class="dest_line_x">
+<div class="dest_line_xc">
+<div class="dest_line_xct"><i class="fa fa-map-marker"></i></div>
+<ul>
+<li><span class="bglnone"></span><a href="/Class_31/NodeElite.aspx"><span></span>全部</a></li>
+<li><a href="/Class_31/NodeElite.aspx?l={$GetUrlencode(route1)$}"><span></span>东线游</a></li>
+<li><a href="/Class_31/NodeElite.aspx?l={$GetUrlencode(route2)$}"><span></span>南线游</a></li>
+<li><a href="/Class_31/NodeElite.aspx?l={$GetUrlencode(route3)$}"><span></span>西线游</a></li>
+<li><a href="/Class_31/NodeElite.aspx?l={$GetUrlencode(route4)$}"><span></span>北线游</a></li>
+<li><span class="bgrnone"></span><a href="/Class_31/NodeElite.aspx?l={$GetUrlencode(route5)$}"><span></span>贵阳周边</a></li>
+</ul>
+</div>
+
+</div>
+<div class="dest_line_list">
+<div class="row">
+<ul>
+{ZL.Label id="输出指定主题线路景点列表" NodeID="1" ShowNum="6" TitleNum="30" SysNum="86" ClassName="col-lg-4 col-md-4 col-sm-4 col-xs-12" /}
+<div class="clearfix"></div>
+</ul>
+<ul style="opacity:0; display:none;">
+{ZL.Label id="输出指定主题线路景点列表" NodeID="1" ShowNum="6" TitleNum="30" SysNum="86" ClassName="col-lg-4 col-md-4 col-sm-4 col-xs-12" Line="route1" /}
+<div class="clearfix"></div>
+</ul>
+<ul style="opacity:0; display:none;">
+{ZL.Label id="输出指定主题线路景点列表" NodeID="1" ShowNum="6" TitleNum="30" SysNum="86" ClassName="col-lg-4 col-md-4 col-sm-4 col-xs-12" Line="route2" /}
+<div class="clearfix"></div>
+</ul>
+<ul style="opacity:0; display:none;">
+{ZL.Label id="输出指定主题线路景点列表" NodeID="1" ShowNum="6" TitleNum="30" SysNum="86" ClassName="col-lg-4 col-md-4 col-sm-4 col-xs-12" Line="route3" /}
+<div class="clearfix"></div>
+</ul>
+<ul style="opacity:0; display:none;">
+{ZL.Label id="输出指定主题线路景点列表" NodeID="1" ShowNum="6" TitleNum="30" SysNum="86" ClassName="col-lg-4 col-md-4 col-sm-4 col-xs-12" Line="route4" /}
+<div class="clearfix"></div>
+</ul>
+<ul style="opacity:0; display:none;">
+{ZL.Label id="输出指定主题线路景点列表" NodeID="1" ShowNum="6" TitleNum="30" SysNum="86" ClassName="col-lg-4 col-md-4 col-sm-4 col-xs-12" Line="route5" /}
+<div class="clearfix"></div>
+</ul>
+
+</div>
+</div>
+</div><!--dest_line end-->
+{ZL.Label id="目的地列表"/}
+
+
+{ZL.Label id="全站底部"/}
+
+{ZL.Label id="通用登录弹出层"/}
+</body>
+</html>
+<script>
+$().ready(function(e) {
+    $('#menu{SField sid="节点栏目信息数据源" FD="NodeID" page="0"/}').addClass("active");
+	$(".carousel-inner .item:first-child").addClass("active");
+});
+$("#keyword").keyup(function(){
+	$(".iframe_search iframe").attr("src","/Class_1/NodePage.aspx?KeyWord="+escape($(this).val()));
+	//alert($(this).val())
+});
+$(".home_search form").mouseover(function(){
+	$(this).find(".iframe_search").show();
+}).mouseout(function(){
+	$(this).find(".iframe_search").hide();
+})
+function SetHeight(h)
+{
+	$(".iframe_search iframe").height(h);
+}
+var l="{$GetUrldecode({$GetRequest(l)$})$}";
+$(".dest_line_x li").each(function(index, element) {
+    if($(this).data("line")==l)
+	{
+		
+	}
+});
+
+var timer = null;
+var n=0;
+var l=27;
+$().ready(function(e) {
+    timer = setInterval(function(){
+	 		nextMove();
+	},3000);
+});
+function nextMove()
+{
+	if(n<5)
+	{
+		l=l+70;
+		$(".dest_line_list .row ul").eq(n).animate({"opacity":"0"},1000,function(){
+			$(".dest_line_list .row ul").eq(n).hide();
+			n=n+1;
+			$(".dest_line_list .row ul").eq(n).show().animate({"opacity":"1"},1000);
+		});
+		$(".dest_line_xct i").animate({"margin-left":l+"px"},2000);
+	}
+	else
+	{
+		n=0;
+		l=27;
+		$(".dest_line_list .row ul").eq(5).animate({"opacity":"0"},1000,function(){
+			$(".dest_line_list .row ul").eq(5).hide();
+			$(".dest_line_list .row ul").eq(0).show().animate({"opacity":"1"},1000);
+		});
+		$(".dest_line_xct i").animate({"margin-left":l+"px"},2000);
+	}
+}
+function LoginFun()
+{
+	var buser = new B_User();
+	var model = { name: $("#UName").val(), pwd: $("#UPSD").val(), key: $("#VCode_hid").val(), code: $("#VCode").val() };
+	if (model.name == "" || model.pwd == "") { alert("用户名或密码不能为空!"); return; }
+	buser.Login(model,function(data){
+		if (data == -1) { alert("用户名或密码错误"); }
+		else if (data == -10) {
+			alert("用户名或密码错误");
+			EnableCode();
+		}
+		else if (data == -2)
+		{
+			alert("验证码错误");
+			EnableCode();
+		}
+		else {
+			location.href=location.href;
+		}
+	})
+}
+function EnableCode() {
+	if ($(".code").is(":hidden")) {
+		$(".code").show();
+		$("#VCode_img").click();
+		$("#VCode").ValidateCode();
+	}
+}
+function ShowLogin()
+{
+	$(".home_ulogin").show();
+}
+function CloseLogin()
+{
+	$(".home_ulogin").hide();
+}
+function GetEnterCode(a, id) {
+    if (event.keyCode == 13) {
+        switch (a) { case "click": $("#" + id).trigger("click"); break; case "focus": $("#" + id).focus(); break; }
+        return false;
+    }
+    else { return true; }
+}
+</script>

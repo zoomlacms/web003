@@ -1,0 +1,86 @@
+{ZL.Source id="节点栏目信息数据源"/}
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>{SField sid="节点栏目信息数据源" FD="NodeName" page="0"/}_{$SiteName/}</title>
+<meta name="Keywords" content="{SField sid="节点栏目信息数据源" FD="Meta_Keywords" page="0"/}" />
+<meta name="description" content="{SField sid="节点栏目信息数据源" FD="Meta_Description" page="0"/}" />
+{ZL:Boot()/}
+<link href="{$CssDir/}global.css?Version={ZL.Label id="前端样式版本号"/}" rel="stylesheet"/>
+</head>
+
+
+<body class="wap_body">
+<nav class="navbar navbar-default navbar-fixed-top wap_nav">
+<div class="container">
+<!-- Brand and toggle get grouped for better mobile display -->
+<div class="navbar-header">
+<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+<span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+<a class="navbar-brand" href="#"><img src="{$CssDir/}images/userlogo.png" alt="{$SiteName/}" /></a>
+<form class="navbar-form navbar-left visible-xs" role="search" method="get" target="_blank" action="/Search/SearchList.aspx">
+<div class="form-group">
+<input type="text" class="form-control" placeholder="全站搜索" name="KeyWord" />
+</div>
+<button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+</form>
+</div>
+
+<!-- Collect the nav links, forms, and other content for toggling -->
+<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+<ul class="nav navbar-nav">
+<li><a href="{ZL:GetNodeLinkUrl(104)/}">首页</a></li>
+<li><a href="{ZL:GetProposeinfo(1)/}">目的地</a></li>
+<li><a href="{ZL:GetLastinfo(2)/}">攻略</a></li>
+<li><a href="{ZL:GetNodeLinkUrl(3)/}">事件</a></li>
+<li><a href="{ZL:GetNodeLinkUrl(4)/}">画册</a></li>
+<li><a href="{ZL:GetLastinfo(20)/}">问答</a></li>
+<li><a href="{ZL:GetLastinfo(5)/}">美食</a></li>
+<li class="active"><a href="{ZL:GetLastinfo(6)/}">特产</a></li>
+</ul>
+</div><!-- /.navbar-collapse -->
+</div><!-- /.container-fluid -->
+</nav><!--wap_top end-->
+<div class="h80"></div>
+
+
+<div class="wap_shi_top">
+<ul>
+<li class="active"><a href="#">最新</a></li>
+<li><a href="#">精华</a></li>
+<li><a href="#">热门</a></li>
+<div class="clearfix"></div>
+</ul>
+</div>
+
+<div class="container">
+<div class="wap_shi_search">
+<form method="get" action="/Search/SearchList.aspx" target="_blank">
+<input type="text" class="form-control" placeholder="搜索攻略" name="KeyWord" />
+<button type="button" class="btn btn-default"><i class="fa fa-search"></i></button>
+</form>
+</div>
+</div>
+
+<div class="container">
+{ZL.Label id="输出美食列表_分页_wap" NodeID="{SField sid="节点栏目信息数据源" FD="NodeID" page="0"/}" ShowNum="10" TitleNum="30" SysNum="100" /}
+</div>
+
+<div class="h80"></div>
+<div class="wap_foot">
+<ul>
+<li><a href="{ZL:GetNodeLinkUrl(104)/}"><i class="fa fa-home"></i><br/>首页</a></li>
+<li><a href="{ZL:GetNodeLinkUrl(1)/}"><i class="fa fa-map"></i><br/>目的地</a></li>
+<li><a href="{ZL:GetNodeLinkUrl(3)/}"><i class="fa fa-photo"></i><br/>发图片</a></li>
+<li><a href="/Ask"><i class="fa fa-question-circle"></i><br/>提问题</a></li>
+<li><a href="/User/Default1.aspx"><i class="fa fa-user"></i><br/>我的</a></li>
+<div class="clearfix"></div>
+</ul>
+</div>
+</body>
+</html>

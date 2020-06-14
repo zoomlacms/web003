@@ -1,0 +1,30 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <Table>
+    <LabelID>1002</LabelID>
+    <LabelName>地区介绍页面与图组链接最新推荐匹配输出图组GeneralID</LabelName>
+    <LabelType>2</LabelType>
+    <LabelCate>贵旅专用</LabelCate>
+    <LabelDesc />
+    <LabelParam>dsgz,参数,1,地市归属</LabelParam>
+    <LabelTable>ZL_CommonModel LEFT JOIN ZL_C_Photo ON ZL_CommonModel.ItemID=ZL_C_Photo.ID</LabelTable>
+    <LabelField>ZL_CommonModel.GeneralID</LabelField>
+    <LabelWhere>ZL_CommonModel.ItemID IN (select ZL_C_Photo.ID from  ZL_C_Photo where ZL_C_Photo.dsgz LIKE '%@dsgz%') And ZL_CommonModel.TableName='ZL_C_Photo' </LabelWhere>
+    <LabelOrder>ZL_CommonModel.CreateTime DESC</LabelOrder>
+    <LabelContent>{Field="GeneralID"/}</LabelContent>
+    <LabelCount>1</LabelCount>
+    <LabelAddUser>0</LabelAddUser>
+    <LabelNodeID>0</LabelNodeID>
+    <Modeltypeinfo>计数判断</Modeltypeinfo>
+    <addroot>循环计算</addroot>
+    <setroot>等于</setroot>
+    <Modelvalue />
+    <Valueroot />
+    <IsOpen>0</IsOpen>
+    <FalseContent />
+    <DataSourceType />
+    <ConnectString />
+    <ProceName />
+    <ProceParam />
+  </Table>
+</NewDataSet>

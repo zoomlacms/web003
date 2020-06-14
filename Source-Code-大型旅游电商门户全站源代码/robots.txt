@@ -1,0 +1,6 @@
+#
+# robots.txt for Zoomla!CMS2
+#
+
+User-agentUser-agent: *
+Disallow: /

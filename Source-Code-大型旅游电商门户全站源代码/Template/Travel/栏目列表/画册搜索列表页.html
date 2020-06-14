@@ -1,0 +1,99 @@
+{ZL.Source id="节点栏目信息数据源"/}
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>{SField sid="节点栏目信息数据源" FD="NodeName" page="0"/}_{$SiteName/}</title>
+<meta name="Keywords" content="{SField sid="节点栏目信息数据源" FD="Meta_Keywords" page="0"/}" />
+<meta name="description" content="{SField sid="节点栏目信息数据源" FD="Meta_Description" page="0"/}" />
+{ZL:Boot()/}
+<link href="{$CssDir/}global.css?Version={ZL.Label id="前端样式版本号"/}" rel="stylesheet"/>
+<link href="{$CssDir/}fix.css" rel="stylesheet"/>
+<script src="/js/scrolltopcontrol.js" type="text/javascript"></script>
+</head>
+<body>
+{ZL.Label id="全站共用头部"/}
+
+<div class="search_top container">
+<div class="row">
+<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+<div class="search_top_l">
+<form action="/Class_4/NodePage.aspx" method="get">
+<input type="text" class="form-control" placeholder="" name="k" value="{$GetUrldecode({$GetRequest(k)$})$}" />
+<button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+</form>
+</div>
+</div>
+</div>
+</div>
+
+<div class="search_type">
+<div class="container">
+<ul>
+<li><a href="/Class_2/NodePage.aspx?k={$GetRequest(k)$}">游记</a></li>
+<li class="active"><a href="/Class_4/NodePage.aspx?k={$GetRequest(k)$}">图库</a></li>
+<li><a href="/Class_1/NodeNews.aspx?k={$GetRequest(k)$}">问答</a></li>
+<li><a href="/Class_5/NodePage.aspx?k={$GetRequest(k)$}">美食</a></li>
+<li><a href="/Class_6/NodePage.aspx?k={$GetRequest(k)$}">特产</a></li>
+</ul>
+</div>
+</div>
+
+<div class="container">
+<div class="search_tips">为您找到<span>{$GetUrldecode({$GetRequest(k)$})$}</span>图库相关结果约<span>{ZL.Label id="根据关键字输出图库总数" NodeID="4" KeyWord="{$GetUrldecode({$GetRequest(k)$})$}" /}</span>个</div>
+
+<div class="search_main">
+<div class="row">
+<div class="col-lg-9 col-md-8 col-sm-8 col-xs-12 search_main_l">
+{ZL.Label id="根据关键字输出图库列表_分页" NodeID="4" TitleNum="60" ShowNum="10" SysNum="290" KeyWord="{$GetUrldecode({$GetRequest(k)$})$}" /}
+</div>
+<div class="col-lg-3 col-md-4 col-sm-4 col-xs-12 search_main_r">
+{ZL.Label id="根据关键字输出相关景点信息" NodeID="1" KeyWord="{$GetUrldecode({$GetRequest(k)$})$}" TitleNum="30" /}
+</div>
+</div>
+</div>
+</div>
+
+{ZL.Label id="全站底部"/}
+</body>
+</html>
+<script>
+//检测固顶事件
+var IO=document.getElementById('home_nav'),Y=IO,H=0,IE6;
+IE6=window.ActiveXObject&&!window.XMLHttpRequest;
+while(Y){H+=Y.offsetTop;Y=Y.offsetParent};
+if(IE6)
+    IO.style.cssText="position:absolute;top:expression(this.fix?(document"+
+        ".documentElement.scrollTop-(this.javascript||"+H+")):0)";
+window.onscroll=function (){
+    var d=document,s=Math.max(d.documentElement.scrollTop,document.body.scrollTop);
+     if(s>H&&IO.fix||s<=H&&!IO.fix)return;
+    if(!IE6)IO.style.position=IO.fix?"":"fixed";        
+    IO.fix=!IO.fix;
+};
+try{document.execCommand("BackgroundImageCache",false,true)}catch(e){};
+ //]]>
+
+//兼容wp8
+if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
+  var msViewportStyle = document.createElement("style");
+  msViewportStyle.appendChild(
+    document.createTextNode(
+      "@-ms-viewport{width:auto!important}"
+    )
+  );
+  document.getElementsByTagName("head")[0].
+    appendChild(msViewportStyle);
+}
+$(".home_news_l li .media-left img").each(function(index, element) {
+    if($(this).attr("src")=="/UploadFiles/nopic.gif")
+		$(this).parent().parent().remove();
+});
+
+$(".vsearch_list li a").each(function(index, element) {
+    $(this).html($(this).html().replace('{$GetUrldecode({$GetRequest(k)$})$}','<span>{$GetUrldecode({$GetRequest(k)$})$}</span>'));
+});
+$(".vsearch_list p").each(function(index, element) {
+    $(this).html($(this).html().replace('{$GetUrldecode({$GetRequest(k)$})$}','<span>{$GetUrldecode({$GetRequest(k)$})$}</span>'));
+});
+</script>

@@ -1,0 +1,43 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <Table>
+    <LabelID>953</LabelID>
+    <LabelName>按主题抽出专题下景点_推荐值</LabelName>
+    <LabelType>2</LabelType>
+    <LabelCate>专题</LabelCate>
+    <LabelDesc />
+    <LabelParam>ShowNum,100,1,调用信息数</LabelParam>
+    <LabelTable>{table1}.dbo.ZL_CommonModel left join {table1}.dbo.ZL_C_jdmx on {table1}.dbo.ZL_CommonModel.ItemID={table1}.dbo.ZL_C_jdmx.ID</LabelTable>
+    <LabelField>{table1}.dbo.ZL_CommonModel.GeneralID,{table1}.dbo.ZL_CommonModel.Title,{table1}.dbo.ZL_C_jdmx.pic,{table1}.dbo.ZL_C_jdmx.synopsis</LabelField>
+    <LabelWhere>ThemeType like'%{$GetRequest(zt)$}%' and ModelId=45 and EliteLevel=1  and status=99</LabelWhere>
+    <LabelOrder />
+    <LabelContent>{Repeate}
+&lt;div class="dest_hot_f"&gt;
+&lt;a href="{ZL:GetInfoUrl({Field="GeneralID"/})/}" title="{Field="Title"/}" target="_self"&gt;
+&lt;img src="{ZL:GetPicUrl({Field="pic"/})/}" alt="{Field="Title"/}" onerror="javascript:this.src='/UploadFiles/nopic.gif';" /&gt;
+&lt;div class="dest_hot_ft"&gt;{Field="Title"/}&lt;/div&gt;
+&lt;div class="dest_hot_info"&gt;
+&lt;div class="middle"&gt;
+&lt;h3&gt;{Field="Title"/}&lt;/h3&gt;
+&lt;p&gt;{Field="synopsis"/}&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+{/Repeate}</LabelContent>
+    <LabelCount>@ShowNum</LabelCount>
+    <LabelAddUser>0</LabelAddUser>
+    <LabelNodeID>0</LabelNodeID>
+    <Modeltypeinfo>计数判断</Modeltypeinfo>
+    <addroot>循环计算</addroot>
+    <setroot>等于</setroot>
+    <Modelvalue>0</Modelvalue>
+    <Valueroot />
+    <IsOpen>0</IsOpen>
+    <FalseContent />
+    <DataSourceType>GZTravel</DataSourceType>
+    <ConnectString>DBO</ConnectString>
+    <ProceName />
+    <ProceParam>{"PureT1":"ZL_CommonModel","PureT2":"ZL_C_jdmx","T1":"GZTravel.dbo.ZL_CommonModel","T2":"GZTravel.dbo.ZL_C_jdmx","JoinType":"left join","OnField1":"ItemID","OnField2":"ID"}</ProceParam>
+  </Table>
+</NewDataSet>

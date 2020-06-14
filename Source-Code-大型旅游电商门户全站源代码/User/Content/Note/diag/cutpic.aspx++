@@ -1,0 +1,42 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="cutpic.aspx.cs" Inherits="test_diag_cutpic" MasterPageFile="~/Common/Master/Empty.master" %>
+<asp:Content runat="server" ContentPlaceHolderID="head"><title>图片裁剪</title></asp:Content>
+<asp:Content runat="server" ContentPlaceHolderID="Content">
+    <div id="wrap_div" runat="server" style="overflow-x:auto;">
+        <img src="<%=ImgPath %>" id="photo" class="img-responsive" style="cursor: move;" />
+    </div>
+</asp:Content>
+<asp:Content runat="server" ContentPlaceHolderID="Script">
+<link href="/Plugins/PicEdit/css/imgareaselect-default.css" rel="stylesheet" />
+<script src="/Plugins/PicEdit/JS/jquery.imgareaselect.js"></script>
+<%--<script src="/Plugins/PicEdit/JS/jquery.imgareaselect.pack.js"></script>--%>
+<script>
+    var cursele = { x1: 0, y1: 0, width: 1920, height: 650 };
+    $(function () {
+        var selectObj = $('#photo').imgAreaSelect({
+            aspectRatio: "3:1",//裁剪框的宽高比
+            fadeSpeed: 500,
+            autoHide: false,
+            handles: true,
+            instance: true,
+            autoHide: false,
+            resizable:true,
+            persistent: true,
+            x1: 0, y1: 0, x2: 1920, y2: 650,
+            onInit: function () {
+                var w = $("#photo").width();
+                var h = $("#photo").height();//1920*650
+                if (w < 1920 || h < 650) { alert("图像过小,请上传宽大于1920px,高大于650px的高清图"); parent.closeDiag(); return; }
+            },
+            onSelectEnd: function (img, selection) {
+                cursele = selection;
+            }
+        });//photo end;
+    });
+    function cutpic() {
+        $.post("CutPic.aspx", { action: "crop", "x1": cursele.x1, "y1": cursele.y1, width: cursele.width, height: cursele.height, vpath: $("#photo").attr("src") }, function (url) {
+            //selectObj.cancelSelection();
+            parent.cutok(url);
+        })
+    }
+</script>
+</asp:Content>

@@ -1,0 +1,1 @@
+﻿<%@ page language="C#" autoeventwireup="true" inherits="User_UserFunc_DepositMoney, App_Web_rjsl1evz" enableEventValidation="false" viewStateEncryptionMode="Never" %>

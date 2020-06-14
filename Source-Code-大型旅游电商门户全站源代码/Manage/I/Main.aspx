@@ -1,0 +1,1 @@
+﻿<%@ page language="C#" autoeventwireup="true" inherits="Temp_Main, App_Web_rtgewfyv" enableEventValidation="false" viewStateEncryptionMode="Never" %>

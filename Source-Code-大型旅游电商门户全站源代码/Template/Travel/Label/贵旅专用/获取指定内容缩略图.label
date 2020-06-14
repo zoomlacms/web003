@@ -1,0 +1,32 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <Table>
+    <LabelID>938</LabelID>
+    <LabelName>获取指定内容缩略图</LabelName>
+    <LabelType>2</LabelType>
+    <LabelCate>贵旅专用</LabelCate>
+    <LabelDesc />
+    <LabelParam>GeneralID,,1,内容ID</LabelParam>
+    <LabelTable>{table1}.dbo.ZL_CommonModel</LabelTable>
+    <LabelField>CASE WHEN ModelID = '2' THEN (select pic from ZL_C_Article where ZL_C_Article.ID=ZL_CommonModel.ItemID)
+when ModelID='45' then (select pic from ZL_C_jdmx where ZL_C_jdmx.ID=ZL_CommonModel.ItemID)
+when ModelID='46' then (select pic from ZL_C_yjmx where ZL_C_yjmx.ID=ZL_CommonModel.ItemID)
+ELSE '' END As pic,Title</LabelField>
+    <LabelWhere>GeneralID='@GeneralID'</LabelWhere>
+    <LabelOrder />
+    <LabelContent>&lt;img src="{ZL:GetPicUrl({Field="pic"/})/}" alt="{Field="Title"/}" onerror="javascript:this.src='/UploadFiles/nopic.gif';" /&gt;</LabelContent>
+    <LabelCount>0</LabelCount>
+    <LabelAddUser>0</LabelAddUser>
+    <LabelNodeID>0</LabelNodeID>
+    <Modeltypeinfo>计数判断</Modeltypeinfo>
+    <addroot>循环计算</addroot>
+    <setroot>等于</setroot>
+    <Modelvalue>0</Modelvalue>
+    <Valueroot />
+    <IsOpen>0</IsOpen>
+    <FalseContent />
+    <DataSourceType>GZTravel</DataSourceType>
+    <ConnectString>DBO</ConnectString>
+    <ProceParam>{"PureT1":"ZL_CommonModel","PureT2":"","T1":"GZTravel.dbo.ZL_CommonModel","T2":"","JoinType":"left join","OnField1":"","OnField2":""}</ProceParam>
+  </Table>
+</NewDataSet>

@@ -1,0 +1,30 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <Table>
+    <LabelID>948</LabelID>
+    <LabelName>获取指定游记点赞数</LabelName>
+    <LabelType>2</LabelType>
+    <LabelCate>贵旅专用</LabelCate>
+    <LabelDesc />
+    <LabelParam>GeneralID,,1,内容ID</LabelParam>
+    <LabelTable>ZL_Comment_Count</LabelTable>
+    <LabelField>Count(*) As Num</LabelField>
+    <LabelWhere> ZL_Comment_Count.status=1 And ZL_Comment_Count.GeneralID='@GeneralID'</LabelWhere>
+    <LabelOrder />
+    <LabelContent>{Field="Num"/}</LabelContent>
+    <LabelCount>0</LabelCount>
+    <LabelAddUser>0</LabelAddUser>
+    <LabelNodeID>0</LabelNodeID>
+    <Modeltypeinfo>计数判断</Modeltypeinfo>
+    <addroot>循环计算</addroot>
+    <setroot>等于</setroot>
+    <Modelvalue>0</Modelvalue>
+    <Valueroot />
+    <IsOpen>0</IsOpen>
+    <FalseContent />
+    <DataSourceType>GZTravel</DataSourceType>
+    <ConnectString>DBO</ConnectString>
+    <ProceName />
+    <ProceParam>{"PureT1":"ZL_Pub_jddz","PureT2":"","T1":"GZTravel.dbo.ZL_Pub_jddz","T2":"","JoinType":"left join","OnField1":"","OnField2":""}</ProceParam>
+  </Table>
+</NewDataSet>

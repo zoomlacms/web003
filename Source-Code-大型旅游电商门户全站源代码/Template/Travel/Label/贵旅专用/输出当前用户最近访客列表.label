@@ -1,0 +1,31 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <Table>
+    <LabelID>991</LabelID>
+    <LabelName>输出当前用户最近访客列表</LabelName>
+    <LabelType>2</LabelType>
+    <LabelCate>贵旅专用</LabelCate>
+    <LabelDesc />
+    <LabelParam>ShowNum,10,1,显示数</LabelParam>
+    <LabelTable>ZL_User</LabelTable>
+    <LabelField>salt,UserID,UserName</LabelField>
+    <LabelWhere>UserID in (select UserID from ZL_EX_AccessLOG where TUserID='{ZL:GetuserID()/}')</LabelWhere>
+    <LabelOrder>ZL_User.UserName DESC</LabelOrder>
+    <LabelContent>{Repeate}
+&lt;li class="col-lg-3 col-md-3 col-sm-3 col-xs-12 padding5" style=" width:33%"&gt;&lt;a href="/Class_28/NodeHot.aspx?uid={Field="UserID"/}" title="{Field="UserName"/}"&gt;&lt;img src="{Field="salt"/}" alt="{Field="UserName"/}" onerror="javascript:this.src='/Images/userface/noface.gif';" /&gt;&lt;/a&gt;&lt;h3&gt;&lt;a href="/Class_28/NodeHot.aspx?uid={Field="UserID"/}" title="{Field="UserName"/}"&gt;{Field="UserName"/}&lt;/a&gt;&lt;/h3&gt;&lt;/li&gt;{/Repeate}</LabelContent>
+    <LabelCount>@ShowNum</LabelCount>
+    <LabelAddUser>0</LabelAddUser>
+    <LabelNodeID>0</LabelNodeID>
+    <Modeltypeinfo>计数判断</Modeltypeinfo>
+    <addroot>循环计算</addroot>
+    <setroot>等于</setroot>
+    <Modelvalue />
+    <Valueroot />
+    <IsOpen>0</IsOpen>
+    <FalseContent />
+    <DataSourceType />
+    <ConnectString />
+    <ProceName />
+    <ProceParam />
+  </Table>
+</NewDataSet>

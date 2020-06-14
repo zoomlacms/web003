@@ -1,0 +1,87 @@
+{ZL.Source id="节点栏目信息数据源"/}
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>{$GetUrldecode({$GetRequest(n)$})$}旅游专题_{$SiteName/}</title>
+<meta name="Keywords" content="{SField sid="节点栏目信息数据源" FD="Meta_Keywords" page="0"/}" />
+<meta name="description" content="{SField sid="节点栏目信息数据源" FD="Meta_Description" page="0"/}" />
+{ZL:Boot()/}
+<link href="{$CssDir/}global.css?Version={ZL.Label id="前端样式版本号"/}" rel="stylesheet"/>
+<link href="{$CssDir/}fix.css" rel="stylesheet"/>
+<script src="/js/scrolltopcontrol.js" type="text/javascript"></script>
+<style>
+.zt_top{ width:100%}
+.zt_top img{ width:100%; height:auto}
+.zt_top h1{ position:absolute; top:20px; left:40%}
+</style>
+</head>
+<body>
+{ZL.Label id="全站共用头部"/}
+<div class="zt_top">
+<p><img src="{$CssDir/}images/{$GetRequest(zt)$}.jpg"/></p>
+<h1>{$GetUrldecode({$GetRequest(n)$})$}</h1>
+</div>
+<div class="dest_hot zt_list">
+<div class="container">
+<div class="dest_hot_t text-center"><h3><i class="fa fa-circle"></i><span>热门{$GetUrldecode({$GetRequest(n)$})$}</span>POPULAR DESTINATION<i class="fa fa-circle" style="left:auto; right:0;"></i></h3></div>
+<div class="row">
+<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 dest_hot_l">
+{ZL.Label id="按主题抽出专题下景点_推荐值" ShowNum="1" /}
+</div>
+<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 dest_hot_r btn zt_More">
+  <div class="zt_list2">
+  <ul>
+<!--<li><a href="{ZL:GetHotinfo(2)/}?zt=zt50&n={$GetUrlencode(自然风光)$}">自然风光</a></li>-->
+<li><a href="{ZL:GetHotinfo(2)/}?zt=zt52&n={$GetUrlencode(古典建筑)$}">古典建筑</a></li>
+<li><a href="{ZL:GetHotinfo(2)/}?zt=zt51&n={$GetUrlencode(人文景观)$}">人文景观</a></li>
+<li><a href="{ZL:GetHotinfo(2)/}?zt=zt53&n={$GetUrlencode(宗教文化)$}">宗教文化</a></li>
+<li><a href="{ZL:GetHotinfo(2)/}?zt=zt43&n={$GetUrlencode(公园广场)$}">公园广场</a></li>
+<li><a href="{ZL:GetHotinfo(2)/}?zt=zt01&n={$GetUrlencode(红色旅游)$}">红色旅游</a></li>
+<li><a href="{ZL:GetHotinfo(2)/}?zt=zt02&n={$GetUrlencode(亲子游)$}">亲子游</a></li>
+<li><a href="{ZL:GetHotinfo(2)/}?zt=zt03&n={$GetUrlencode(漂流)$}">漂流</a></li>
+<li><a href="{ZL:GetHotinfo(2)/}?zt=zt04&n={$GetUrlencode(溶洞)$}">溶洞</a></li>
+<li><a href="{ZL:GetHotinfo(2)/}?zt=zt05&n={$GetUrlencode(自驾)$}">自驾</a></li>
+<li><a href="{ZL:GetHotinfo(2)/}?zt=zt06&n={$GetUrlencode(露营)$}">露营</a></li>
+<li><a href="{ZL:GetHotinfo(2)/}?zt=zt07&n={$GetUrlencode(摄影)$}">摄影</a></li>
+<li><a href="{ZL:GetHotinfo(2)/}?zt=zt08&n={$GetUrlencode(宗教)$}">宗教</a></li>
+<li><a href="{ZL:GetHotinfo(2)/}?zt=zt09&n={$GetUrlencode(名人)$}">名人</a></li>
+<li><a href="{ZL:GetHotinfo(2)/}?zt=zt10&n={$GetUrlencode(乡村)$}">乡村</a></li>
+<li><a href="{ZL:GetHotinfo(2)/}?zt=zt11&n={$GetUrlencode(情侣)$}">情侣</a></li>
+<li><a href="{ZL:GetHotinfo(2)/}?zt=zt12&n={$GetUrlencode(农家乐)$}">农家乐</a></li>
+<li><a href="{ZL:GetHotinfo(2)/}?zt=zt13&n={$GetUrlencode(草原)$}">草原</a></li>
+<li><a href="{ZL:GetHotinfo(2)/}?zt=zt14&n={$GetUrlencode(烧烤)$}">烧烤</a></li>
+<li><a href="{ZL:GetHotinfo(2)/}?zt=zt15&n={$GetUrlencode(垂钓)$}">垂钓</a></li>
+<li><a href="{ZL:GetHotinfo(2)/}?zt=zt16&n={$GetUrlencode(瀑布)$}">瀑布</a></li>
+<li><a href="{ZL:GetHotinfo(2)/}?zt=zt17&n={$GetUrlencode(峡谷)$}">峡谷</a></li>
+<li><a href="{ZL:GetHotinfo(2)/}?zt=zt18&n={$GetUrlencode(苗寨)$}">苗寨</a></li>
+<li><a href="{ZL:GetHotinfo(2)/}?zt=zt20&n={$GetUrlencode(山川)$}">山川</a></li>
+<li><a href="{ZL:GetHotinfo(2)/}?zt=zt21&n={$GetUrlencode(徒步)$}">徒步</a></li>
+<li><a href="{ZL:GetHotinfo(2)/}?zt=zt22&n={$GetUrlencode(古镇)$}">古镇</a></li>
+<li><a href="{ZL:GetHotinfo(2)/}?zt=zt23&n={$GetUrlencode(湖泊)$}">湖泊</a></li>
+<li><a href="{ZL:GetHotinfo(2)/}?zt=zt24&n={$GetUrlencode(河流)$}">河流</a></li>
+<li><a href="{ZL:GetHotinfo(2)/}?zt=zt25&n={$GetUrlencode(赏雪)$}">赏雪</a></li>
+<li><a href="{ZL:GetHotinfo(2)/}?zt=zt26&n={$GetUrlencode(苗年)$}">苗年</a></li>
+<li><a href="{ZL:GetHotinfo(2)/}?zt=zt27&n={$GetUrlencode(腊梅)$}">腊梅</a></li>
+<!--li><a href="{ZL:GetHotinfo(2)/}?zt=zt28&n={$GetUrlencode(滑雪)$}">滑雪</a></li-->
+<li><a href="{ZL:GetHotinfo(2)/}?zt=zt29&n={$GetUrlencode(温泉)$}">温泉</a></li>
+<li><a href="{ZL:GetHotinfo(2)/}?zt=zt30&n={$GetUrlencode(玉兰)$}">玉兰</a></li>
+<!--li><a href="{ZL:GetHotinfo(2)/}?zt=zt31&n={$GetUrlencode(郁金香)$}">郁金香</a></li-->
+<li><a href="{ZL:GetHotinfo(2)/}?zt=zt32&n={$GetUrlencode(桃花)$}">桃花</a></li>
+<li><a href="{ZL:GetHotinfo(2)/}?zt=zt33&n={$GetUrlencode(油菜花)$}">油菜花</a></li>
+<li><a href="{ZL:GetHotinfo(2)/}?zt=zt35&n={$GetUrlencode(踏青)$}">踏青</a></li>
+<li><a href="{ZL:GetHotinfo(2)/}?zt=zt36&n={$GetUrlencode(梨花)$}">梨花</a></li>
+<!--<li><a href="{ZL:GetHotinfo(2)/}?zt=zt37&n={$GetUrlencode(李花)$}">李花</a></li> -->
+<!--<li><a href="{ZL:GetHotinfo(2)/}?zt=zt56&n={$GetUrlencode(采茶)$}">采茶</a></li> -->
+    </ul>
+    </div>
+</div>
+</div>
+{ZL.Label id="按主题抽出专题下景点" ShowNum="100" /}
+</div>
+</div>
+<div class="clearfix"></div>
+</div><!--dest_hot end-->
+{ZL.Label id="全站底部"/}
+</body>
+</html>

@@ -1,0 +1,63 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <Table>
+    <LabelID>998</LabelID>
+    <LabelName>输出画册图片列表-响应式分页</LabelName>
+    <LabelType>4</LabelType>
+    <LabelCate>贵旅专用</LabelCate>
+    <LabelDesc />
+    <LabelParam>NodeID,1,1,节点ID|ShowNum,30,1,显示数|TitleNum,30,1,标题长|SysNum,100,1,简介数|Area,,1,地区</LabelParam>
+    <LabelTable>{table1}.dbo.ZL_CommonModel left join {table1}.dbo.ZL_C_Photo on {table1}.dbo.ZL_CommonModel.ItemID={table1}.dbo.ZL_C_Photo.ID</LabelTable>
+    <LabelField>{table1}.dbo.ZL_CommonModel.GeneralID,{table1}.dbo.ZL_CommonModel.Hits,{table1}.dbo.ZL_CommonModel.Inputer,{table1}.dbo.ZL_CommonModel.NodeID,{table1}.dbo.ZL_CommonModel.Title,{table1}.dbo.ZL_C_Photo.PhotoUrlThum,{table1}.dbo.ZL_C_Photo.synopsis,{table1}.dbo.ZL_C_Photo.PhotoUrl</LabelField>
+    <LabelWhere>(NodeID=@NodeID or FirstNodeID=@NodeID) And Status=99 And ModelID=3 And dsgz like '%@Area%'</LabelWhere>
+    <LabelOrder>{table1}.dbo.ZL_CommonModel.CreateTime DESC</LabelOrder>
+    <LabelContent>&lt;div class="water_box"&gt;
+{Repeate}
+&lt;div class="s"&gt;
+&lt;div class="Raiders_img"&gt;
+&lt;div class="Raiders_img_t" data-pics='{Field="PhotoUrl"/}'&gt;
+&lt;a href="{ZL:GetInfoUrl({Field="GeneralID"/})/}" title="{Field="Title"/}" target="{ZL:GetInfoOpen({Field="NodeID"/})/}"&gt;&lt;img src="{ZL:GetPicUrl({Field="PhotoUrlThum"/})/}" alt="{Field="Title"/}" onerror="javascript:this.src='/UploadFiles/nopic.gif';" /&gt;&lt;/a&gt;
+&lt;span&gt;&lt;b&gt;36&lt;/b&gt;张图片&lt;/span&gt;
+&lt;/div&gt;
+&lt;h3&gt;&lt;a href="{ZL:GetInfoUrl({Field="GeneralID"/})/}" title="{Field="Title"/}" target="{ZL:GetInfoOpen({Field="NodeID"/})/}"&gt;{ZL:CutText({Field="Title"/},@TitleNum,)/}&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;{ZL:CutText({Field="synopsis"/},@SysNum,...)/}&lt;/p&gt;
+&lt;div class="media"&gt;
+&lt;div class="media-left media-middle"&gt;&lt;a href="/Class_28/NodeHot.aspx?uid={ZL.Label id="根据用户名输出用户ID" UserName="{Field="Inputer"/}" /}"&gt;{ZL.Label id="频道页根据用户名输出用户头像" UserName="{Field="Inputer"/}" /}&lt;/a&gt;&lt;/div&gt;
+&lt;div class="media-body"&gt;
+&lt;h4 class="media-heading"&gt;&lt;a href="/Class_28/NodeHot.aspx?uid={ZL.Label id="根据用户名输出用户ID" UserName="{Field="Inputer"/}" /}"&gt;作者：{Field="Inputer"/}&lt;/a&gt;&lt;/h4&gt;
+&lt;p&gt;&lt;span&gt;&lt;i class="fa fa-eye"&gt;&lt;/i&gt;{Field="Hits"/}&lt;/span&gt;&lt;span&gt;&lt;i class="fa fa-heart"&gt;&lt;/i&gt; {Field="Hits"/}&lt;/span&gt;&lt;span&gt;&lt;i class="fa fa-comments"&gt;&lt;/i&gt; 10&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="Raiders_img_b" style="display:none;" data-text="{Field="Title"/}_{$SiteName/}" data-url="{$SiteURL/}{ZL:GetInfoUrl({Field="GeneralID"/})/}" data-img="{$SiteURL/}{ZL:GetPicUrl({Field="PhotoUrlThum"/})/}"&gt;
+&lt;div class="Raiders_img_bl"&gt;
+&lt;span&gt;&lt;i class="fa fa-share-square-o"&gt;&lt;/i&gt;&lt;/span&gt;
+&lt;!-- Baidu Button BEGIN --&gt;
+&lt;div class="bdsharebuttonbox" style="display:none;" data-tag="share_{Field="GeneralID"/}"&gt;
+&lt;a href="#" class="bds_more" data-cmd="more"&gt;&lt;/a&gt;&lt;a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"&gt;&lt;/a&gt;&lt;a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"&gt;&lt;/a&gt;&lt;a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"&gt;&lt;/a&gt;&lt;a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"&gt;&lt;/a&gt;&lt;a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"&gt;&lt;/a&gt;
+&lt;/div&gt;
+&lt;!-- Baidu Button END --&gt;
+&lt;/div&gt;
+&lt;a href="/User/Content/AddToFav.aspx?itemid={Field="GeneralID"/}&amp;Url=/Item/{Field="GeneralID"/}.aspx&amp;type=1" title="添加到收藏夹"&gt;&lt;i class="fa fa-star"&gt;&lt;/i&gt;&lt;/a&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+{/Repeate}
+&lt;div class="clearfix"&gt;&lt;/div&gt;
+&lt;/div&gt;
+{ZL.Page id="响应式列表分页"/}</LabelContent>
+    <LabelCount>@ShowNum</LabelCount>
+    <LabelAddUser>0</LabelAddUser>
+    <LabelNodeID>0</LabelNodeID>
+    <Modeltypeinfo>计数判断</Modeltypeinfo>
+    <addroot>循环计算</addroot>
+    <setroot>等于</setroot>
+    <Modelvalue>0</Modelvalue>
+    <Valueroot />
+    <IsOpen>0</IsOpen>
+    <FalseContent />
+    <DataSourceType>GZTravel</DataSourceType>
+    <ConnectString>DBO</ConnectString>
+    <ProceName />
+    <ProceParam>{"PureT1":"ZL_CommonModel","PureT2":"ZL_C_Photo","T1":"GZTravel.dbo.ZL_CommonModel","T2":"GZTravel.dbo.ZL_C_Photo","JoinType":"left join","OnField1":"ItemID","OnField2":"ID"}</ProceParam>
+  </Table>
+</NewDataSet>

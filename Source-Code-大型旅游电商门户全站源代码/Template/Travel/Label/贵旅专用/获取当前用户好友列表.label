@@ -1,0 +1,30 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <Table>
+    <LabelID>962</LabelID>
+    <LabelName>获取当前用户好友列表</LabelName>
+    <LabelType>2</LabelType>
+    <LabelCate>贵旅专用</LabelCate>
+    <LabelDesc />
+    <LabelParam>ClassName,col-lg-4 col-md-3 col-sm-3 col-xs-12 padding5,1,Class|ShowNum,10,1,显示数</LabelParam>
+    <LabelTable>ZL_User</LabelTable>
+    <LabelField>salt,UserID,UserName</LabelField>
+    <LabelWhere>(UserID in (select UserID from ZL_User_Friend where (UserID='{ZL:GetuserID()/}' or TUserID='{ZL:GetuserID()/}') And ZStatus=99) or UserID in (select TUserID from ZL_User_Friend where (UserID='{ZL:GetuserID()/}' or TUserID='{ZL:GetuserID()/}') And ZStatus=99)) And UserID!='{ZL:GetuserID()/}'</LabelWhere>
+    <LabelOrder>ZL_User.UserName DESC</LabelOrder>
+    <LabelContent>{Repeate}&lt;li class="@ClassName"&gt;&lt;a href="/Class_28/NodeHot.aspx?uid={Field="UserID"/}" target="_blank" title="{Field="UserName"/}"&gt;&lt;img src="{Field="salt"/}" alt="{Field="UserName"/}" onerror="javascript:this.src='/Images/userface/noface.gif';" /&gt;&lt;span&gt;{Field="UserName"/}&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;{/Repeate}</LabelContent>
+    <LabelCount>@ShowNum</LabelCount>
+    <LabelAddUser>0</LabelAddUser>
+    <LabelNodeID>0</LabelNodeID>
+    <Modeltypeinfo>计数判断</Modeltypeinfo>
+    <addroot>循环计算</addroot>
+    <setroot>等于</setroot>
+    <Modelvalue />
+    <Valueroot />
+    <IsOpen>0</IsOpen>
+    <FalseContent />
+    <DataSourceType />
+    <ConnectString />
+    <ProceName />
+    <ProceParam />
+  </Table>
+</NewDataSet>

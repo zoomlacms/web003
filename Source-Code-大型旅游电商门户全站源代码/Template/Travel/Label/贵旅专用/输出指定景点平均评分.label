@@ -1,0 +1,29 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <Table>
+    <LabelID>946</LabelID>
+    <LabelName>输出指定景点平均评分</LabelName>
+    <LabelType>2</LabelType>
+    <LabelCate>贵旅专用</LabelCate>
+    <LabelDesc />
+    <LabelParam>GeneralID,0,1,内容ID</LabelParam>
+    <LabelTable>{table1}.dbo.ZL_Comment</LabelTable>
+    <LabelField>Cast(Round(AVG(CONVERT(decimal(9,2),Score)),0) as int) As Score</LabelField>
+    <LabelWhere>GeneralID='@GeneralID' And Audited=1</LabelWhere>
+    <LabelOrder />
+    <LabelContent>{Field="Score"/}</LabelContent>
+    <LabelCount>0</LabelCount>
+    <LabelAddUser>0</LabelAddUser>
+    <LabelNodeID>0</LabelNodeID>
+    <Modeltypeinfo>计数判断</Modeltypeinfo>
+    <addroot>循环计算</addroot>
+    <setroot>等于</setroot>
+    <Modelvalue>0</Modelvalue>
+    <Valueroot />
+    <IsOpen>0</IsOpen>
+    <FalseContent />
+    <DataSourceType>GZTravel</DataSourceType>
+    <ConnectString>DBO</ConnectString>
+    <ProceParam>{"PureT1":"ZL_Comment","PureT2":"","T1":"GZTravel.dbo.ZL_Comment","T2":"","JoinType":"left join","OnField1":"","OnField2":""}</ProceParam>
+  </Table>
+</NewDataSet>

@@ -1,0 +1,817 @@
+{ZL.Source id="景点模型数据源标签"/}
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>{SField sid="景点模型数据源标签" FD="Title" page="0"/}_{$SiteName/}</title>
+<meta name="Keywords" content="{SField sid="景点模型数据源标签" FD="Tagkey" page="0"/}" />
+<meta name="Description" content="{SField sid="景点模型数据源标签" FD="Title" page="0"/}">
+{ZL:Boot()/}
+<link href="{$CssDir/}global.css?Version={ZL.Label id="前端样式版本号"/}" rel="stylesheet"/>
+<script src="/js/scrolltopcontrol.js" type="text/javascript"></script>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ynCD23qRFoyWBYk0M3bF1VEk"></script>
+<style>
+.Assis_Div{position:fixed;top:60%; left:50%; margin-left:-650px; }
+.Assis_Div .info {border:1px solid #ccc; color:#999; padding:10px; font-size:20px; display:block; text-decoration:none; text-align:center; width:80px;}
+.gray_c{color:#ccc;}
+.modal-dialog{margin:100px auto;}
+
+.rollBox { width:100%; padding-left:34px; padding-right:34px; height:92px; position:relative; overflow:hidden;} 
+.rollBox .LeftBotton { position:absolute; left:0; top:0; width:24px; height:92px; line-height:92px; background:#ff7000; cursor:pointer; text-align:center; border-radius:4px; z-index:1;}
+.rollBox .LeftBotton i { font-size:24px; color:#fff;}
+.rollBox .RightBotton { position:absolute; right:0; top:0; width:24px; height:92px; line-height:92px; background:#ff7000; cursor:pointer; text-align:center; border-radius:4px; z-index:1;}
+.rollBox .RightBotton i { font-size:24px; color:#fff;}
+.rollBox .Cont { width:100%;overflow:hidden;float:left;} 
+.rollBox .ScrCont{width:10000000px;} 
+.rollBox .Cont .pic { margin-top:1px; width:130px;float:left;text-align:center;} 
+.rollBox .Cont .pic img { width:120px; height:90px; background:#fff; border:1px solid #232122;} 
+.rollBox .Cont .pic a { display:block; width:120px; position:relative;}
+.rollBox .Cont .pic a span { display:block; position:absolute; bottom:0; width:100%; height:24px; line-height:24px; overflow:hidden; text-align:center; background:rgba(0,0,0,0.5); color:#fff; font-size:12px;}
+.rollBox .Cont a:link,.rollBox .Cont a:visited{color:#626466;text-decoration:none;} 
+.rollBox .Cont a:hover{color:#f00;text-decoration:underline;} 
+.rollBox #List1,.rollBox #List2{float:left;} 
+</style>
+</head>
+<body>
+<nav class="navbar navbar-default navbar-fixed-top view_top">
+<div class="container">
+<!-- Brand and toggle get grouped for better mobile display -->
+<div class="navbar-header">
+<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+<span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+<a class="navbar-brand" href="/"><img src="{$LogoUrl/}" alt="{$SiteName/}" /></a>
+<!-- Single button -->
+<div class="btn-group">
+<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+<i class="glyphicon glyphicon-align-justify"></i> 导航 <span class="caret"></span>
+</button>
+<ul class="dropdown-menu" role="menu">
+<li><a href="{ZL:GetNodeLinkUrl(1)/}">目的地</a></li>
+<li><a href="{ZL:GetNodeLinkUrl(2)/}">攻略</a></li>
+<li><a href="{ZL:GetNodeLinkUrl(3)/}">事件</a></li>
+<li><a href="{ZL:GetNodeLinkUrl(4)/}">画册</a></li>
+<li><a href="/Ask">问答</a></li>
+<li><a href="{ZL:GetNodeLinkUrl(5)/}">美食</a></li>
+<li><a href="{ZL:GetNodeLinkUrl(6)/}">特产</a></li>
+</ul>
+</div>
+</div>
+<!-- Collect the nav links, forms, and other content for toggling -->
+<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+<form class="navbar-form navbar-left" role="search" action="/Class_28/NodeElite.aspx" method="get" target="_blank">
+<div class="form-group">
+<input type="text" class="form-control" placeholder="全站检索" name="k" />
+</div>
+<button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+</form>
+<ul class="nav navbar-nav navbar-right">
+{ZL.Label id="用户登录状态带头像"/}
+</ul>
+</div><!-- /.navbar-collapse -->
+</div><!-- /.container-fluid -->
+</nav>
+<div class="h74"></div>
+
+
+<div id="carousel-example-generic" class="carousel slide home_banner" data-ride="carousel" data-interval="false">
+
+
+<!--<div class="focusBox" style="margin:0 auto">
+ <ul class="pic">
+<script>
+var siteurl="{$UploadDir/}";
+var photos='{SField sid="景点模型数据源标签" FD="jqtt"/}';
+var pho = eval(photos);
+var str="";
+var moreurl="/Class_1/NodeHot.aspx?GID={SField sid="景点模型数据源标签" FD="GeneralID" page="0"/}";
+for(var i=0;i<pho.length;i++)
+{
+	document.write("<li><a href=\""+moreurl+"\" target=\"_blank\"><img src=\""+siteurl+pho[i].url+"\"  /></a></li>");
+}
+                              </script>
+ </ul>
+ <a class="prev" href="javascript:void(0)" style="left:65px;"></a>
+ <a class="next" href="javascript:void(0)" style="right:65px;"></a>
+ <ul class="hd">
+
+
+   <li></li><li></li>
+      
+</ul>
+</div>
+<script type="text/javascript">jQuery(".focusBox").slide({ mainCell:".pic",effect:"leftLoop", autoPlay:true, delayTime:300});</script>-->
+
+<div class="jd_banner">
+     <script>
+var siteurl="{$UploadDir/}";
+var photos='{SField sid="景点模型数据源标签" FD="jqtt"/}';
+var pho = eval(photos);
+var str="";
+var moreurl="/Class_1/NodeHot.aspx?GID={SField sid="景点模型数据源标签" FD="GeneralID" page="0"/}";
+for(var i=0;i<pho.length;i++)
+{
+	document.write("<li><img src=\""+siteurl+pho[i].url+"\"  /></li>");
+}
+                              </script>
+</div>
+
+
+
+<!--view_banner end-->
+
+<div class="container viewcon_bg">
+<div class="viewcon_main" style=" background:#fff">
+<ol class="breadcrumb">
+<li><a href="/">首页</a></li>
+{ZL.Label id="输出多级节点导航_V3" NodeID="{SField sid="景点模型数据源标签" FD="NodeID" page="0"/}" ShowNum="30" /}
+</ol>
+<div class="viewcon_main_t">
+<div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 padding0 viewcon_main_tl">
+<div class="viewcon_main_timg">
+<div id="carousel-example-generic1" class="carousel slide" data-ride="carousel">
+<!-- Indicators -->
+<!-- Wrapper for slides -->
+<div class="carousel-inner" role="listbox">
+<script>
+var siteurl="{$UploadDir/}";
+var photos='{SField sid="景点模型数据源标签" FD="pics"/}';
+var pho = eval(photos);
+var str="";
+var moreurl="/Class_1/NodeHot.aspx?GID={SField sid="景点模型数据源标签" FD="GeneralID" page="0"/}";
+for(var i=0;i<pho.length;i++)
+{
+	document.write("<div class=\"item\"><a href=\""+moreurl+"\"><img src=\""+siteurl+pho[i].url+"\" alt=\""+pho[i].desc+"\" /></a></div>");
+}
+</script>
+</div>
+
+<!-- Controls -->
+<a class="left carousel-control" href="#carousel-example-generic1" role="button" data-slide="prev">
+<span class="glyphicon glyphicon-chevron-left fa fa-chevron-circle-left" aria-hidden="true"></span>
+<span class="sr-only">Previous</span>
+</a>
+<a class="right carousel-control" href="#carousel-example-generic1" role="button" data-slide="next">
+<span class="glyphicon glyphicon-chevron-right fa fa-chevron-circle-right" aria-hidden="true"></span>
+<span class="sr-only">Next</span>
+</a>
+</div>
+<div class="viewcon_main_tlm"><a href="/Class_1/NodeHot.aspx?GID={SField sid="景点模型数据源标签" FD="GeneralID" page="0"/}"><span>点击查看更多图片</span></a></div>
+</div>
+<div class="viewcon_main_tb">
+<ul>
+<li><div class="bdsharebuttonbox" style="border-right:1px solid #eee;"><a class="bds_more" href="#" data-cmd="more"></a><span style="margin-top:10px;">分享</span></div></li>
+<li>
+<a href="/User/Content/AddToFav.aspx?itemid={SField sid="景点模型数据源标签" FD="GeneralID" page="0"/}&Url=/Item/{SField sid="景点模型数据源标签" FD="GeneralID" page="0"/}.aspx&type=1&title={SField sid="景点模型数据源标签" FD="Title" page="0"/}"><span class="fa-stack fa-1x"><i class="fa fa-star"></i></span><span>收藏<br/>{ZL.Label id="获取指定内容收藏总数" GeneralID="{SField sid="景点模型数据源标签" FD="GeneralID" page="0"/}" /}</span><div class="clearfix"></div></a></li>
+<li><a href="javascript:;" onClick="subFun();"><span class="fa-stack fa-1x"><i class="fa fa-flag"></i></span><span>去过<br/>{ZL.Label id="输出指定景点用户去过总次数" GeneralID="{SField sid="景点模型数据源标签" FD="GeneralID" page="0"/}" /}</span><div class="clearfix"></div></a></li>
+<li style="padding-right:0;"><a href="#" class="btn btn-warning"><i class="fa fa-edit"></i> 我来补充</a></li>
+<div class="clearfix"></div>
+</ul>
+<form name="form7" method="post" action="/PubAction.aspx">
+<input type="hidden" name="PubID" id="PubID" value="7" />
+<input type="hidden" name="PubTitle" id="PubTitle" />
+<input type="hidden" name="PubContent" id="PubContent" />
+<input type="hidden" name="PubContentid" id="PubContentid" value="{SField sid="景点模型数据源标签" FD="GeneralID" page="0"/}" />
+<input type="hidden" name="PubInputer" id="PubInputer" value="{PubInputer/}" />
+</form>
+</div><!--viewcon_main_tb end-->
+</div><!--viewcon_main_tl end-->
+<div class="col-lg-7 col-md-7 col-sm-7 col-xs-12 padding0 viewcon_main_r">
+<div class="viewcon_mainr_t">
+<div class="pull-left viewcon_mainr_tl">
+<h1>{SField sid="景点模型数据源标签" FD="Title" page="0"/}</h1>
+<div class="viewcon_mainr_tp"></div>
+<div class="viewcon_mainr_tn"><a href="#"><i class="fa fa-comments"></i> {ZL.Label id="输出指定ID内容评论总数" GID="{SField sid="景点模型数据源标签" FD="GeneralID" page="0"/}" /}条点评</a> <span id="Hits">浏览次数：<SCRIPT language=javascript src="/Common/GetHits.aspx?id={SField sid="景点模型数据源标签" FD="GeneralID" page="0"/}"></SCRIPT></span></div>
+</div><!--viewcon_mainr_tl end-->
+<div class="pull-right viewcon_mainr_tr"></div>
+<div class="clearfix"></div>
+</div>
+<div class="viewcon_mainr_nav">
+<ul>
+<li><a href="#">介绍</a></li>
+<li><a href="#a3">游记</a></li>
+<li><a href="/Class_4/NodePage.aspx?k={SField sid="景点模型数据源标签" FD="Title" page="0"/}" target="_blank">图库</a></li>
+<li><a href="#a2">问答</a></li>
+<li><a href="#a1" onClick="ChangeFood(1);">美食</a></li>
+<li><a href="#a1" onClick="ChangeFood(2);">特产</a></li>
+<div class="clearfix"></div>
+</ul>
+</div><!--viewcon_mainr_nav end-->
+<div class="viewcon_mainr_d">
+<ul>
+<li><strong>景点类型：</strong><a href="/Search/SearchList.aspx?KeyWord={SField sid="景点模型数据源标签" FD="Type" page="0"/}" target="_blank">{SField sid="景点模型数据源标签" FD="Type" page="0"/}</a> <strong style="margin-left:50px;">门票：</strong>{SField sid="景点模型数据源标签" FD="Price" page="0"/}</li>
+<li><strong>美食特产：</strong>{SField sid="景点模型数据源标签" FD="Food" page="0"/}</li>
+<li><strong>核心景点：</strong>{SField sid="景点模型数据源标签" FD="hxjd" page="0"/}</li>
+<li><strong>游玩季节：</strong>{SField sid="景点模型数据源标签" FD="ywjj" page="0"/}</li>
+<li><strong>景区概况：</strong>
+<p>{SField sid="景点模型数据源标签" FD="synopsis" page="0"/}{ZL.Label id="输出指定名称百科链接" Title="{SField sid="景点模型数据源标签" FD="Title" page="0"/}" GeneralID="{SField sid="景点模型数据源标签" FD="GeneralID" page="0"/}" /}</p>
+</li>
+</ul>
+</div><!--viewcon_mainr_d end-->
+</div>
+<div class="clearfix"></div>
+</div>
+</div>
+</div><!--viewcon_bg end-->
+<!--视频暂时屏蔽-->
+<!--<div class="container viewcon_video">
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal-dialog modal-lg">
+<div class="modal-content">
+<div class="modal-header">
+<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+<h4 class="modal-title" id="myModalLabel">{SField sid="景点模型数据源标签" FD="Title" page="0"/}相关视频</h4>
+</div>
+<div class="modal-body" style="padding:0;">
+<div id="video_a1"></div>
+</div>
+<div class="modal-footer">
+<div class="rollBox"> 
+<div class="LeftBotton" onmousedown="ISL_GoUp()" onmouseup="ISL_StopUp()" onmouseout="ISL_StopUp()"><i class="fa fa-angle-left"></i></div> 
+<div class="Cont" id="ISL_Cont"> 
+<div class="ScrCont"> 
+<div id="List1"> 
+{ZL.Label id="输出景点相关视频滚动信息" GeneralID="{SField sid="景点模型数据源标签" FD="VideoID" page="0"/}" NodeID="105" TitleNum="30" /}
+{ZL.Label id="景点内容页输出推荐视频滚动" NodeID="105" TitleNum="30" GeneralID="{SField sid="景点模型数据源标签" FD="VideoID" page="0"/}" /}
+</div> 
+<div id="List2"></div> 
+</div> 
+</div> 
+<div class="RightBotton" onmousedown="ISL_GoDown()" onmouseup="ISL_StopDown()" onmouseout="ISL_StopDown()"><i class="fa fa-angle-right"></i></div> 
+</div> 
+</div>
+</div>
+</div>
+</div>
+<div class="viewcon_video_t">{SField sid="景点模型数据源标签" FD="Title" page="0"/}相关视频</div>
+<div class="viewcon_video_c">
+<div class="row">
+<ul>
+{ZL.Label id="输出景点相关视频信息" GeneralID="{SField sid="景点模型数据源标签" FD="VideoID" page="0"/}" NodeID="105" TitleNum="30" /}
+{ZL.Label id="景点内容页输出推荐视频列表" NodeID="105" ShowNum="3" TitleNum="30" GeneralID="{SField sid="景点模型数据源标签" FD="VideoID" page="0"/}" ClassName="col-lg-3 col-md-3 col-sm-3 col-xs-12" /}
+</ul>
+</div>
+</div>
+</div>-->
+
+<div class="viewcon_wei" id="a1">
+<div class="container">
+<div class="viewcon_wei_t">{SField sid="景点模型数据源标签" FD="Title" page="0"/}位置<span>{SField sid="景点模型数据源标签" FD="dlwz" page="0"/}</span></div>
+<div class="row">
+<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 viewcon_wei_l">
+<div id="allmap" style="height:396px;"></div>
+</div>
+<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 viewcon_wei_r">
+<ul>
+<li><h3>您所在的位置是<span class="mycity"><i class="fa fa-spinner fa-spin"></i></span></h3></li>
+<li>距{SField sid="景点模型数据源标签" FD="Title" page="0"/}约<span class="mydist"><i class="fa fa-spinner fa-spin"></i></span>公里</li>
+<li>开车预计<span class="mytime"><i class="fa fa-spinner fa-spin"></i></span>后到达</li>
+<li>途中有<span class="mygas"><i class="fa fa-spinner fa-spin"></i></span>个加油站</li>
+<li>景区附件停车场<span><span class="mycars"><i class="fa fa-spinner fa-spin"></i></span></span>个</li>
+</ul>
+<ul>
+<li><h3>周边其他景点</h3></li>
+ {ZL.Label id="获取指定景点周边景点标题文字列表" GeneralID="{SField sid="景点模型数据源标签" FD="GeneralID" page="0"/}" ShowNum="5" /}
+</ul>
+</div>
+</div>
+</div>
+</div><!--viewcon_wei end-->
+
+<div class="container viewcon_buke" id="a3">
+<div class="viewcon_buke_t">
+<span>不可错过</span>
+<ul class="nav nav-tabs" role="tablist">
+<li role="presentation" class="active">
+<a href="#home" aria-controls="home" role="tab" data-toggle="tab"><span class="fa-stack fa-1x"><i class="fa  fa-cutlery"></i></span>{SField sid="景点模型数据源标签" FD="Title" page="0"/}美食</a></li>
+<li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab"><span class="fa-stack fa-1x"><i class="fa fa-star"></i></span>{SField sid="景点模型数据源标签" FD="Title" page="0"/}特产</a></li>
+</ul>
+<div class="clearfix"></div>
+</div>
+<!-- Tab panes -->
+<div class="tab-content">
+<div role="tabpanel" class="tab-pane active" id="home">
+<div class="viewcon_buke_c">
+<div class="row">
+<ul>
+{ZL.Label id="根据节点输出指定地区美食列表" NodeID="{SField sid="景点模型数据源标签" FD="NodeID" page="0"/}" ShowNum="4" TitleNum="30" SysNum="120" ClassName="col-lg-3 col-md-3 col-sm-3 com-xs-12" /}
+</ul>
+</div>
+</div>
+</div>
+<div role="tabpanel" class="tab-pane" id="profile">
+<div class="viewcon_buke_c">
+<div class="row">
+<ul>
+{ZL.Label id="根据节点输出指定地区特产列表" NodeID="{SField sid="景点模型数据源标签" FD="NodeID" page="0"/}" ShowNum="4" TitleNum="30" SysNum="120" ClassName="col-lg-3 col-md-3 col-sm-3 com-xs-12" /}
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div><!--viewcon_buke end-->
+
+<div class="viewcon_gong">
+<div class="container">
+<div class="viewcon_gong_t">{SField sid="景点模型数据源标签" FD="Title" page="0"/}攻略<span><b>{ZL.Label id="根据关键字输出游记总数" NodeID="2" KeyWord="{SField sid="景点模型数据源标签" FD="Title" page="0"/}" /}</b>篇</span></div>
+<div class="viewcon_gong_p">
+  <!--
+<div class="btn-group">
+<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+最热游记 <span class="caret"></span>
+</button>
+<ul class="dropdown-menu">
+<li><a href="#">Action</a></li>
+<li><a href="#">Another action</a></li>
+<li><a href="#">Something else here</a></li>
+<li role="separator" class="divider"></li>
+<li><a href="#">Separated link</a></li>
+</ul>
+</div>
+<div class="btn-group">
+<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+按时间 <span class="caret"></span>
+</button>
+<ul class="dropdown-menu">
+<li><a href="#">Action</a></li>
+<li><a href="#">Another action</a></li>
+<li><a href="#">Something else here</a></li>
+<li role="separator" class="divider"></li>
+<li><a href="#">Separated link</a></li>
+</ul>
+</div>
+<div class="btn-group">
+<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+按人均 <span class="caret"></span>
+</button>
+<ul class="dropdown-menu">
+<li><a href="#">Action</a></li>
+<li><a href="#">Another action</a></li>
+<li><a href="#">Something else here</a></li>
+<li role="separator" class="divider"></li>
+<li><a href="#">Separated link</a></li>
+</ul>
+</div>
+<div class="btn-group">
+<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+按人物 <span class="caret"></span>
+</button>
+<ul class="dropdown-menu">
+<li><a href="#">Action</a></li>
+<li><a href="#">Another action</a></li>
+<li><a href="#">Something else here</a></li>
+<li role="separator" class="divider"></li>
+<li><a href="#">Separated link</a></li>
+</ul>
+</div>
+<div class="btn-group">
+<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+按形式 <span class="caret"></span>
+</button>
+<ul class="dropdown-menu">
+<li><a href="#">Action</a></li>
+<li><a href="#">Another action</a></li>
+<li><a href="#">Something else here</a></li>
+<li role="separator" class="divider"></li>
+<li><a href="#">Separated link</a></li>
+</ul>
+</div>-->
+<div class="pull-right">
+<a href="/User/Content/Note/note.aspx?id=0&nodeid=2" class="btn btn-warning" target="_blank"><i class="fa fa-edit"></i> 写游记</a>
+</div>
+</div>
+<div class="viewcon_gong_c">
+<form name="form8" method="post" action="/PubAction.aspx">
+<input type="hidden" name="PubTitle" id="PubTitle1" />
+<input type="hidden" name="PubID" id="PubID1" value="8" />
+<input type="hidden" name="PubContentid" id="PubContentid1" value="0" />
+<input type="hidden" name="PubInputer" id="PubInputer1" value="{PubInputer/}">
+</form>
+<ul class="media-list">
+{ZL.Label id="输出指定景点游记列表" NodeID="2" ShowNum="4" TitleNum="80" SysNum="300" View="{SField sid="景点模型数据源标签" FD="Title" page="0"/}" /}
+</ul>
+<div class="text-center"><a href="/Class_2/NodePage.aspx?k={ZL.Label id="输出Url编码" KeyWord="{SField sid="景点模型数据源标签" FD="Title" page="0"/}" /}" class="btn btn-warning">查看更多 <i class="fa fa-plus"></i></a></div>
+</div>
+
+</div>
+</div><!--viewcon_gong end-->
+<!--
+<div class="container viewcon_ask" id="a2">
+<div class="row">
+<div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 viewcon_ask_l">
+<div class="viewcon_ask_lt">{SField sid="景点模型数据源标签" FD="Title" page="0"/}问答<span><b>218</b>条</span><span class="pull-right"><a href="/Guest/Ask/SearchList.aspx?strWhere={SField sid="景点模型数据源标签" FD="Title" page="0"/}" target="_blank"><i class="fa fa-plus-square"></i>查看更多</a></span><div class="clearfix"></div></div>
+<div class="viewcon_ask_lc">
+<ul>
+{ZL.Label id="输出指定景点问答列表" View="{SField sid="景点模型数据源标签" FD="Title" page="0"/}" ShowNum="4" /}
+</ul>
+</div>
+</div>
+<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 viewcon_ask_r">
+<div class="viewcon_ask_ad"><a href="#"><img src="{$CssDir/}images/ad.jpg" alt="" /></a></div>
+<div class="viewcon_ask_hot">
+<div class="viewcon_ask_ht"><i class="fa fa-bookmark"></i> 热门问题标签</div>
+<div class="viewcon_ask_hc">
+<a href="/Search/SearchList.aspx?KeyWord=安顺" class="btn btn-default" target="_blank">安顺</a>
+<a href="/Search/SearchList.aspx?KeyWord=黄果树瀑布" class="btn btn-danger">黄果树瀑布</a>
+<a href="/Search/SearchList.aspx?KeyWord=黔东南" class="btn btn-default">黔东南</a>
+<a href="/Search/SearchList.aspx?KeyWord=黔东南" class="btn btn-default">黔东南</a>
+<a href="/Search/SearchList.aspx?KeyWord=黔东南" class="btn btn-default">黔东南</a>
+<a href="/Search/SearchList.aspx?KeyWord=黔东南" class="btn btn-default">黔东南</a>
+<a href="/Search/SearchList.aspx?KeyWord=黔东南" class="btn btn-default">黔东南</a>
+<a href="/Search/SearchList.aspx?KeyWord=黔东南" class="btn btn-default">黔东南</a>
+<a href="/Search/SearchList.aspx?KeyWord=黔东南" class="btn btn-default">黔东南</a>
+<a href="/Search/SearchList.aspx?KeyWord=黔东南" class="btn btn-default">黔东南</a>
+<a href="/Search/SearchList.aspx?KeyWord=黔东南" class="btn btn-default">黔东南</a>
+<a href="/Search/SearchList.aspx?KeyWord=黔东南" class="btn btn-default">黔东南</a>
+</div>
+</div>
+</div>
+</div>
+</div>--><!--viewcon_ask end-->
+
+<div class="viewcon_ping">
+<div class="container">
+<div class="viewcon_ping_t">{SField sid="景点模型数据源标签" FD="Title" page="0"/}点评</div>
+<div class="Assis_Div"></div>
+</div>
+</div><!--viewcon_ping end-->
+<div class="iframe_comm">
+<iframe id="comm_ifr" scrolling="no" onload="this.height = $(this).contents().height() + 'px';" src="/Comments/CommentFor1.aspx?ID={SField sid="景点模型数据源标签" FD="GeneralID"/}" width="100%" align="middle" height="100%" frameborder="0"></iframe>
+</div>
+<div class="viewcon_lun">
+<div class="container">
+
+</div>
+
+</div>
+
+<div class="viewcom_zhou">
+<div class="container">
+<div class="viewcom_zhou_t">{SField sid="景点模型数据源标签" FD="Title" page="0"/}周边景点</div>
+<div class="row">
+<div class="col-lg-7 col-md-7 col-sm-7 col-xs-12 viewcom_zhou_l">
+<div class="row">
+<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 viewcom_zhou_lu">
+<div class="viewcom_zhou_lf">
+<ul style="margin-bottom:0;">
+{ZL.Label id="输出周边景点列表" NodeID="{SField sid="景点模型数据源标签" FD="NodeID" page="0"/}" TitleNum="24" ShowNum="1" GID="{SField sid="景点模型数据源标签" FD="GeneralID" page="0"/}" TopNum="0" /}
+</ul>
+</div>
+<div class="row">
+<ul>
+{ZL.Label id="输出周边景点列表" NodeID="{SField sid="景点模型数据源标签" FD="NodeID" page="0"/}" TitleNum="24" ShowNum="2" GID="{SField sid="景点模型数据源标签" FD="GeneralID" page="0"/}" TopNum="1" ClassName="col-lg-6 col-md-6 col-sm-6 col-xs-12" /}
+<div class="clearfix"></div>
+</ul>
+</div>
+</div>
+<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 viewcom_zhou_lr">
+<ul>
+{ZL.Label id="输出周边景点列表" NodeID="{SField sid="景点模型数据源标签" FD="NodeID" page="0"/}" TitleNum="24" ShowNum="3" GID="{SField sid="景点模型数据源标签" FD="GeneralID" page="0"/}" TopNum="3" /}
+<div class="clearfix"></div>
+</ul>
+</div>
+
+</div>
+</div>
+<div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 viewcom_zhou_l">
+<div class="row">
+<ul style="margin-bottom:0;">
+{ZL.Label id="输出周边景点列表" NodeID="{SField sid="景点模型数据源标签" FD="NodeID" page="0"/}" TitleNum="24" ShowNum="2" GID="{SField sid="景点模型数据源标签" FD="GeneralID" page="0"/}" TopNum="6" ClassName="col-lg-6 col-md-6 col-sm-6 col-xs-12" /}
+<div class="clearfix"></div>
+</ul>
+</div>
+<div class="viewcom_zhou_lf">
+<ul>
+{ZL.Label id="输出周边景点列表" NodeID="{SField sid="景点模型数据源标签" FD="NodeID" page="0"/}" TitleNum="24" ShowNum="1" GID="{SField sid="景点模型数据源标签" FD="GeneralID" page="0"/}" TopNum="8" /}
+</ul>
+</div>
+</div>
+</div>
+<!--<div class="viewcom_zhou_ad"><a href="#"><img src="{$CssDir/}/images/acerBanner2.jpg" alt="" /></a></div>-->
+</div>
+</div><!--viewcom_zhou end-->
+
+{ZL.Label id="全站底部"/}
+</body>
+</html>
+<script type="text/javascript" src="/JS/Controls/ZL_Dialog.js"></script>
+<script type="text/javascript" src="/ckplayer/ckplayer.js" charset="utf-8"></script>
+<script>
+window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"32"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+<script>
+function initCommInfo(div)
+{
+	$(".Assis_Div").html("");
+	$(".Assis_Div").html(div);
+}
+function ContentAssist(flag)
+{
+	$("#comm_ifr")[0].contentWindow.ContentAssist(flag);
+}
+//弹出登录框
+var loginDiag = new ZL_Dialog();
+function checkLogin()
+{
+	loginDiag.title = "用户登录";
+	loginDiag.url = "/login_Ajax.aspx";
+	loginDiag.ShowModal();
+}
+function LoginSuccess()
+{
+	window.location=location;
+}
+function ChangeFood(n)
+{
+	if(n==1)
+	{
+		$(".viewcon_buke_t .nav li").removeClass("active");
+		$(".viewcon_buke_t .nav li:nth-child(1)").addClass("active");
+		$(".viewcon_buke .tab-pane").removeClass("active");
+		$("#home").addClass("active");
+	}
+	else if(n==2)
+	{
+		$(".viewcon_buke_t .nav li").removeClass("active");
+		$(".viewcon_buke_t .nav li:nth-child(2)").addClass("active");
+		$(".viewcon_buke .tab-pane").removeClass("active");
+		$("#profile").addClass("active");
+	}
+}
+// 百度地图API功能
+var map = new BMap.Map("allmap");
+var pointjson = {SField sid="景点模型数据源标签" FD="dtzb" page="0"/};
+console.log(pointjson)
+var point = new BMap.Point(pointjson[0].mark.lng,pointjson[0].mark.lat);
+map.centerAndZoom(point,12);
+map.enableScrollWheelZoom();   //启用滚轮放大缩小，默认禁用
+map.enableContinuousZoom();    //启用地图惯性拖拽，默认禁用
+var geolocation = new BMap.Geolocation();
+geolocation.getCurrentPosition(function(r){
+	if(this.getStatus() == BMAP_STATUS_SUCCESS)
+	{
+		var mypoint = new BMap.Point(r.point.lng,r.point.lat);
+		var driving = new BMap.DrivingRoute(map, {renderOptions:{map: map, autoViewport: true}});
+		var d = (map.getDistance(mypoint,point)/1000).toFixed(2);
+		var t1=parseFloat(d/60).toFixed(2);
+		var t2=((t1-parseInt(t1))*60).toFixed();
+		$(".mytime").html(parseInt(t1)+"小时"+t2+"分钟")
+		$(".mydist").html(d);
+		$.ajax({
+				"url": "http://api.map.baidu.com/place/v2/search",
+				type: "POST",
+				dataType: 'jsonp',
+				jsonp: 'callback',
+				"data": {
+					q:"加油站",
+					location:point.lat+","+point.lng,
+					output:"json",
+					ak:"ynCD23qRFoyWBYk0M3bF1VEk",
+					page_size:"10",
+					page_num:"1",
+					scope:1,
+					radius:map.getDistance(mypoint,point)
+				},
+				success: function(data)
+				{				
+					if(data.status==0)
+					{
+						$(".mygas").html(data.total)
+					}
+				},
+				error:function(){}
+		});
+		$.ajax({
+				"url": "http://api.map.baidu.com/place/v2/search",
+				type: "POST",
+				dataType: 'jsonp',
+				jsonp: 'callback',
+				"data": {
+					q:"停车场",
+					location:point.lat+","+point.lng,
+					output:"json",
+					ak:"ynCD23qRFoyWBYk0M3bF1VEk",
+					page_size:"10",
+					page_num:"1",
+					scope:1,
+					radius:5000
+				},
+				success: function(data)
+				{				
+					if(data.status==0)
+					{
+						$(".mycars").html(data.total)
+					}
+				},
+				error:function(){}
+		});
+
+		driving.search(mypoint, point);
+	}
+	var mk = new BMap.Marker(r.point);
+	var mk1 = new BMap.Marker(point);
+	map.addOverlay(mk);
+	map.panTo(r.point);       
+	map.addOverlay(mk1);
+	map.panTo(point);       
+},{enableHighAccuracy: true});
+
+function myFun(result)
+{
+	var cityName = result.name;
+	$(".mycity").html(cityName);
+}
+var myCity = new BMap.LocalCity();
+myCity.get(myFun);
+
+$().ready(function(e) {
+	$.ajax({
+			"url": "http://api.map.baidu.com/telematics/v3/weather",
+			type: "POST",
+			dataType: 'jsonp',
+			jsonp: 'callback',
+			"data": {
+				location:"{ZL.Label id="输出指定父节点名" NodeID="{SField sid="景点模型数据源标签" FD="NodeID" page="0"/}" /}",
+				output:"json",
+				ak:"ynCD23qRFoyWBYk0M3bF1VEk"
+			},
+			success: function(data)
+			{
+				if(data.status=="success")
+				{
+					$(".viewcon_mainr_tr").html("<div class=\"pull-left\"><img src=\""+data.results[0].weather_data[0].dayPictureUrl+"\" alt=\"天气\" /></div><div class=\"pull-right\"><div class=\"viewcon_mainr_trt\">"+data.results[0].weather_data[0].temperature+"</div><span>"+data.results[0].weather_data[0].weather+"</span></div>")
+				}
+			},
+			error:function(){}
+	});
+});
+
+var flashvars={
+	f:'{ZL.Label id="输出指定视频地址" GeneralID="{SField sid="景点模型数据源标签" FD="VideoID" page="0"/}" NodeID="105" /}',
+	c:0,
+	b:1,
+	p:1
+	};
+var params={bgcolor:'#FFF',allowFullScreen:true,allowScriptAccess:'always',wmode:'transparent'};
+CKobject.embedSWF('/ckplayer/ckplayer.swf','video_a1','ckplayer_a1','100%','500',flashvars,params);
+/*
+CKobject.embedSWF(播放器路径,容器id,播放器id/name,播放器宽,播放器高,flashvars的值,其它定义也可省略);
+下面三行是调用html5播放器用到的
+*/
+var video=['http://movie.ks.js.cn/flv/other/1_0.mp4->video/mp4','http://www.ckplayer.com/webm/0.webm->video/webm','http://www.ckplayer.com/webm/0.ogv->video/ogg'];
+var support=['iPad','iPhone','ios','android+false','msie10+false'];
+CKobject.embedHTML5('a1','ckplayer_a1','100%',400,video,flashvars,support);
+
+//图片滚动列表 mengjia 070816 
+var Speed = 5; //速度(毫秒) 
+var Space = 10; //每次移动(px) 
+var PageWidth = 130; //翻页宽度 
+var fill = 0; //整体移位 
+var MoveLock = false; 
+var MoveTimeObj; 
+var Comp = 0; 
+var AutoPlayObj = null; 
+GetObj("List2").innerHTML = GetObj("List1").innerHTML; 
+GetObj('ISL_Cont').scrollLeft = fill; 
+GetObj("ISL_Cont").onmouseover = function(){clearInterval(AutoPlayObj);} 
+GetObj("ISL_Cont").onmouseout = function(){AutoPlay();} 
+//AutoPlay(); 
+function GetObj(objName){if(document.getElementById){return eval('document.getElementById("'+objName+'")')}else{return eval('document.all.'+objName)}} 
+function AutoPlay(){ //自动滚动 
+clearInterval(AutoPlayObj); 
+//AutoPlayObj = setInterval('ISL_GoDown();ISL_StopDown();',5000); //间隔时间 
+} 
+function ISL_GoUp(){ //上翻开始 
+if(MoveLock) return; 
+clearInterval(AutoPlayObj); 
+MoveLock = true; 
+MoveTimeObj = setInterval('ISL_ScrUp();',Speed); 
+} 
+function ISL_StopUp(){ //上翻停止 
+clearInterval(MoveTimeObj); 
+if(GetObj('ISL_Cont').scrollLeft % PageWidth - fill != 0){ 
+Comp = fill - (GetObj('ISL_Cont').scrollLeft % PageWidth); 
+CompScr(); 
+}else{ 
+MoveLock = false; 
+} 
+AutoPlay(); 
+} 
+function ISL_ScrUp(){ //上翻动作 
+if(GetObj('ISL_Cont').scrollLeft <= 0){GetObj('ISL_Cont').scrollLeft = GetObj('ISL_Cont').scrollLeft + GetObj('List1').offsetWidth} 
+GetObj('ISL_Cont').scrollLeft -= Space ; 
+} 
+function ISL_GoDown(){ //下翻 
+clearInterval(MoveTimeObj); 
+if(MoveLock) return; 
+clearInterval(AutoPlayObj); 
+MoveLock = true; 
+ISL_ScrDown(); 
+MoveTimeObj = setInterval('ISL_ScrDown()',Speed); 
+} 
+function ISL_StopDown(){ //下翻停止 
+clearInterval(MoveTimeObj); 
+if(GetObj('ISL_Cont').scrollLeft % PageWidth - fill != 0 ){ 
+Comp = PageWidth - GetObj('ISL_Cont').scrollLeft % PageWidth + fill; 
+CompScr(); 
+}else{ 
+MoveLock = false; 
+} 
+AutoPlay(); 
+} 
+function ISL_ScrDown(){ //下翻动作 
+if(GetObj('ISL_Cont').scrollLeft >= GetObj('List1').scrollWidth){GetObj('ISL_Cont').scrollLeft = GetObj('ISL_Cont').scrollLeft - GetObj('List1').scrollWidth;} 
+GetObj('ISL_Cont').scrollLeft += Space ; 
+} 
+function CompScr(){ 
+var num; 
+if(Comp == 0){MoveLock = false;return;} 
+if(Comp < 0){ //上翻 
+if(Comp < -Space){ 
+   Comp += Space; 
+   num = Space; 
+}else{ 
+   num = -Comp; 
+   Comp = 0; 
+} 
+GetObj('ISL_Cont').scrollLeft -= num; 
+setTimeout('CompScr()',Speed); 
+}else{ //下翻 
+if(Comp > Space){ 
+   Comp -= Space; 
+   num = Space; 
+}else{ 
+   num = Comp; 
+   Comp = 0; 
+} 
+GetObj('ISL_Cont').scrollLeft += num; 
+setTimeout('CompScr()',Speed); 
+} 
+}
+
+function PlayFun(url)
+{
+	$('#myModal').modal('show');
+	var flashvars = {
+		f:url,
+		c:0,
+		b:1,
+		p:1
+	};
+	CKobject.embedSWF('/ckplayer/ckplayer.swf','video_a1','ckplayer_a1','100%','500',flashvars,params);
+}
+$().ready(function(e) {
+    $(".viewcon_main_timg .carousel-inner .item:nth-child(2)").addClass("active");
+	var score='{ZL.Label id="输出指定景点平均评分" GeneralID="{SField sid="景点模型数据源标签" FD="GeneralID" page="0"/}" /}';
+	switch(score)
+	{
+		case "0":
+			$(".viewcon_mainr_tp").html("<span class=\"fa-stack fa-1x\"><i class=\"fa fa-star\"></i></span><span class=\"fa-stack fa-1x\"><i class=\"fa fa-star\"></i></span><span class=\"fa-stack fa-1x\"><i class=\"fa fa-star\"></i></span><span class=\"fa-stack fa-1x\"><i class=\"fa fa-star\"></i></span><span class=\"fa-stack fa-1x\"><i class=\"fa fa-star\"></i></span><span> "+score+"星</span>");
+		  break;
+		case "1":
+			$(".viewcon_mainr_tp").html("<span class=\"fa-stack fa-1x active\"><i class=\"fa fa-star\"></i></span><span class=\"fa-stack fa-1x\"><i class=\"fa fa-star\"></i></span><span class=\"fa-stack fa-1x\"><i class=\"fa fa-star\"></i></span><span class=\"fa-stack fa-1x\"><i class=\"fa fa-star\"></i></span><span class=\"fa-stack fa-1x\"><i class=\"fa fa-star\"></i></span><span> "+score+"星</span>");
+		  break;
+		case "2":
+			$(".viewcon_mainr_tp").html("<span class=\"fa-stack fa-1x active\"><i class=\"fa fa-star\"></i></span><span class=\"fa-stack fa-1x active\"><i class=\"fa fa-star\"></i></span><span class=\"fa-stack fa-1x\"><i class=\"fa fa-star\"></i></span><span class=\"fa-stack fa-1x\"><i class=\"fa fa-star\"></i></span><span class=\"fa-stack fa-1x\"><i class=\"fa fa-star\"></i></span><span> "+score+"星</span>");
+		  break;
+		case "3":
+			$(".viewcon_mainr_tp").html("<span class=\"fa-stack fa-1x active\"><i class=\"fa fa-star\"></i></span><span class=\"fa-stack fa-1x active\"><i class=\"fa fa-star\"></i></span><span class=\"fa-stack fa-1x active\"><i class=\"fa fa-star\"></i></span><span class=\"fa-stack fa-1x\"><i class=\"fa fa-star\"></i></span><span class=\"fa-stack fa-1x\"><i class=\"fa fa-star\"></i></span><span> "+score+"星</span>");
+		  break;
+		case "4":
+			$(".viewcon_mainr_tp").html("<span class=\"fa-stack fa-1x active\"><i class=\"fa fa-star\"></i></span><span class=\"fa-stack fa-1x active\"><i class=\"fa fa-star\"></i></span><span class=\"fa-stack fa-1x active\"><i class=\"fa fa-star\"></i></span><span class=\"fa-stack fa-1x active\"><i class=\"fa fa-star\"></i></span><span class=\"fa-stack fa-1x\"><i class=\"fa fa-star\"></i></span><span> "+score+"星</span>");
+		  break;
+		case "5":
+			$(".viewcon_mainr_tp").html("<span class=\"fa-stack fa-1x active\"><i class=\"fa fa-star\"></i></span><span class=\"fa-stack fa-1x active\"><i class=\"fa fa-star\"></i></span><span class=\"fa-stack fa-1x active\"><i class=\"fa fa-star\"></i></span><span class=\"fa-stack fa-1x active\"><i class=\"fa fa-star\"></i></span><span class=\"fa-stack fa-1x active\"><i class=\"fa fa-star\"></i></span><span> "+score+"星</span>");
+		  break;
+		default:
+		  break;
+	}
+});
+function subFun()
+{
+	form7.submit();
+}
+function ZanFun(id)
+{
+	$("#PubContentid1").val(id);
+	form8.submit();
+}
+function AskCommon(answerid,type)
+{
+	$.post("/API/AskCommon.ashx?action=add", { amswerid: answerid, type: 1 }, function (data) {
+		console.log(data);
+		if(parseInt(data)<0)
+			alert("操作失败！");
+		else if(parseInt(data)==0)
+			alert("您已经评论过了!");
+		else if(parseInt(data)==1)
+		{
+			alert("提交成功！");
+			window.location.href=window.location.href;
+		}
+	});
+}
+</script>

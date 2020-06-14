@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>景点_首页</title>
+<meta name="Keywords" content="META关键字">
+<meta name="Description" content="META网页描述">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="renderer" content="webkit">
+<link href="../dist/css/bootstrap.min.css" rel="stylesheet"/>
+<!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+	<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+<![endif]-->
+<script src="http://code.zoomla.cn/jquery/jquery-1.10.2.min.js"></script>
+<script src="../dist/js/bootstrap.min.js"></script>
+<link href="../dist/css/font-awesome.min.css" rel="stylesheet"/>
+<link href="../style/global.css?id=20150909" rel="stylesheet"/>
+<style>
+.wap_body { background:#ededf0;}
+.wap_nav { padding-bottom:5px; border:none; border-radius:0; background:url(../style/images/wap_navbg.jpg) #fff bottom repeat-x;}
+.wap_nav .navbar-brand { height:auto;}
+.wap_nav .navbar-toggle { float:none; margin-top:20px; margin-right:0; }
+.wap_nav .navbar-form { float:right; position:relative; padding-left:0; padding-right:0; border:none; margin-right:5px; max-width:140px;}
+.wap_nav .navbar-form .btn { position:absolute; left:0; top:10px; border:none; background:none;}
+.wap_nav .navbar-form .form-control { padding-left:30px; border-radius:60px;width:60px;}
+.h80 { height:80px;}
+.wap_banner1 { height:310px; background:url(../style/images/wap_banner1.jpg) center no-repeat; background-size:cover;}
+.wap_banner .carousel-caption { padding-left:15px; padding-right:15px; bottom:0; left:0; right:0; width:100%; background:rgba(0,0,0,0.57); text-shadow:none; text-align:left;}
+.wap_banner .carousel-caption h3 { margin-top:0; margin-bottom:0; font-size:16px;}
+.wap_banner .carousel-caption h3 a { color:#fff;}
+.wap_banner .carousel-caption h3 a:hover { color:#ff7d00;}
+.wap_banner .carousel-indicators { margin:0; left:auto; right:10px; bottom:15px; width:auto;}
+.wap_banner .carousel-indicators li { background:#5d5c5b; border:1px solid #5d5c5b;}
+.wap_banner .carousel-indicators li.active { background:#f4be04; border:1px solid #f4be04;}
+.wap_top { margin-top:5px; background:#fff; border-top:1px solid #ddd;}
+.wap_topc { margin-top:20px; text-align:center;}
+.wap_topc img { max-width:100%;}
+.wap_topc_t { margin-top:10px; margin-bottom:5px; font-size:20px;}
+.wap_topc_t a { color:#333;}
+.wap_topc p { color:#909090; font-size:12px;}
+.wap_topc p span { color:#d30000;}
+.wap_search { position:relative; margin-top:10px; margin-bottom:15px;}
+.wap_search .btn { position:absolute; top:0; right:10px; padding:0; background:none; border:none; font-size:22px; color:#bababa;}
+.wap_tou { background:#fff; height:60px; line-height:55px; font-size:1.8em; border-top:1px solid #ddd; border-bottom:1px solid #ddd;}
+.wap_tou span { margin-right:15px; font-family:"ZoomlaXingtiJ3"; color:#e10101;}
+.wap_tou a { font-size:0.6em; color:#333;}
+.wap_theme { margin-top:5px;  background:#fff;}
+.wap_theme_t { padding-top:15px; padding-bottom:15px; margin-bottom:5px; font-size:0.8em; text-align:center; border-top:1px solid #ddd; border-bottom:1px solid #ddd; color:#b4b4b4;}
+.wap_theme_t span { font-size:1.8em; color:#333;}
+.wap_theme .nav-tabs { display:inline-table; border-bottom:none;}
+.wap_theme .nav-tabs li a { padding-left:2px; padding-right:2px; margin:0; border:none; color:#333;}
+.wap_theme .nav-tabs li a .fa-stack { background:#636363; text-align:center; color:#fff; border-radius:50%;}
+.wap_theme .nav-tabs li.active a,.wap_theme .nav-tabs li.active a:focus { margin:0; border:none;}
+.wap_theme .nav-tabs li.active a { color:#ff8730;}
+.wap_theme .nav-tabs li.active a span { background:#ff8730;}
+.wap_theme_c ul { padding-left:0; list-style:none;}
+.wap_theme_c li { margin-bottom:20px;}
+.wap_theme_c li a { display:block; position:relative;}
+.wap_theme_c li img { width:100%; height:100px;}
+.wap_theme_c li a span { display:block; position:absolute; bottom:0; padding-left:15px; padding-right:15px; width:100%; height:30px; line-height:30px; background:rgba(0,0,0,0.60); color:#fff; overflow:hidden;}
+.wap_theme_m a { display:block; padding-top:10px; padding-bottom:10px; text-align:center; border-top:1px solid #ddd; border-bottom:1px solid #ddd; color:#333;}
+.wap_theme_m a i { margin-left:5px;}
+
+.wap_gong { padding-left:0; padding-right:0; margin-top:5px; background:#fff; border-bottom:1px solid #ddd;}
+.wap_gong_t { padding-top:15px; padding-bottom:15px; font-size:1.8em; text-align:center; border-top:1px solid #ddd; border-bottom:1px solid #ddd;}
+.wap_gong ul { margin-bottom:0;}
+.wap_gong li { margin-top:0; padding:15px; border-bottom:1px solid #e9e9e9;}
+.wap_gong li .media-left img { width:100px; height:70px;}
+.wap_gong li h4 a { color:#333;}
+.wap_gong li p { margin-bottom:0; font-size:0.9em; color:#ababab;}
+
+.wap_gong li p span { margin-right:5px;}
+.wap_gong li p i { margin-right:2px;}
+.wap_gong_m a { display:block; padding-top:10px; padding-bottom:10px; text-align:center; color:#333;}
+
+.wap_hot { margin-top:5px; padding-left:0; padding-right:0; background:#fff; border-bottom:1px solid #ddd;}
+.wap_hot_t { padding-top:15px; padding-bottom:15px; font-size:1.8em; text-align:center; border-top:1px solid #ddd; border-bottom:1px solid #ddd;}
+.wap_hot ul { padding-left:0; list-style:none;}
+.wap_hot li { margin-top:10px;}
+.wap_hot li img { width:100%;}
+.wap_hot li a { display:block; position:relative; color:#fff;}
+.wap_hot li a span { display:block; position:absolute; top:50%; margin-top:-10px; width:100%; text-align:center;}
+
+.wap_ask { margin-top:5px; padding-left:0; padding-right:0; background:#fff; border-bottom:1px solid #ddd;}
+.wap_ask_t { padding-top:15px; padding-bottom:15px; font-size:1.8em; text-align:center; border-top:1px solid #ddd; border-bottom:1px solid #ddd;}
+.wap_ask ul { margin-bottom:0; padding-left:0; list-style:none;}
+.wap_ask li { padding:15px; border-bottom:1px dotted #a3a3a3;}
+.wap_ask li h3 { margin-top:0; font-size:1.2em;}
+.wap_ask li h3 a { color:#333;}
+.wap_ask li p { margin-bottom:0; color:#5f5f69;}
+.wap_ask li p img { width:34px; height:34px; border-radius:50%;}
+.wap_ask li p b { font-weight:normal; color:#96d041;}
+.wap_ask li p.text-right { color:#999; font-size:0.9em;}
+.wap_ask li p.text-right span { margin-left:10px;}
+.wap_hot_m a { display:block; padding-top:10px; padding-bottom:10px; text-align:center; color:#333;}
+.wap_hot_m a i { margin-left:5px;}
+.wap_ad { margin-top:5px; margin-bottom:5px;}
+.wap_ad img { width:100%;}
+.wap_foot { position:fixed; width:100%; bottom:0; background:#fff; border-top:1px solid #ddd;}
+.wap_foot ul { margin-bottom:0; padding-left:0; list-style:none;}
+.wap_foot li { width:20%; float:left;}
+.wap_foot li a { padding-top:10px; padding-bottom:10px; display:block; text-align:center; border-right:1px solid #ddd; color:#595959;}
+.wap_foot li i { font-size:2em;}
+.h70 { height:70px;}
+.wap_logo{margin-bottom:-60px;margin-left:130px;margin-top:30px;width:30%}
+.trip_nav .form-control{width:50px;margin-right:60px;}
+.wap_nav_link{font-size:24px;font-weight:bold;}
+.trip_nav{height:80px;}
+.trip_nav .navbar-toggle { float:none; margin-top:20px; margin-right:0; }
+.trip_nav.navbar-form {  position:relative;  border:none;margin-right:50px; } 
+.h30{height:30px;background:#ededef;margin-top:-30px;}
+.trip_nav .navbar-form .btn { position:absolute; left:0; top:10px; border:none; background:none;margin-left:315px;margin-top:5px;}
+.trip_nav .navbar-form .form-control { padding-left:10px; border-radius:60px;}
+.trip_wap_input{float:right;margin-top:-50px;position:absolute;margin-left:320px;width:70px;}
+.trip_banner{margin-top:-35px;}
+.trip_banner .carousel-caption { padding-left:15px; padding-right:15px; bottom:0; left:0; right:0; width:100%;  text-shadow:none; text-align:left;}
+.trip_banner .carousel-caption h3 { margin-top:0; margin-bottom:0; font-size:16px;}
+.trip_banner .carousel-caption h3 a { color:#fff;font-style:"黑体";font-size:24px;}
+.trip_banner .carousel-caption  span a{float:right;color:#fff;}
+.weather{margin-left:20px;}
+.trip_connect{border-bottom:#dcdcdc soild 1px;}
+.star{margin-top:18px;}
+.star li{width:14px;height:14px;float:left;margin-left:3px;background:#fda102;border-radius:2px;text-align:center;}
+.star li a{color:#fff;font-size:5px;line-height:-30px;}
+.trip_connect span{font-size:12px;}
+.trip_connect_handle{flaot:left}
+trip_connect_handle li{width:15px; border-right:1px soild #999999;}
+.trip_connect_handle li span{color:black}
+.trip_connect_handle{float:right;color:#4e9ae8 }
+.handle li {float:left;margin-left:15px; }
+.trip_list{list-style:none}
+.trip_list span{font-weight:bold;color:black}
+.trip_list li{border_bottom:dashed 2px #99999;height:25px;width:500px;}
+.bor{width:100%;background:black;border-bottom:#dbdbdb solid 1px;margin-top:10px;}
+.trip_xiala{float:right;margin-top:-70px;margin-right:-20px}
+.trip_xiala .btn{border:none;background:none}
+.trip_detailed{margin-top:15px;}
+.trip_detailed p{font-size:14px;} 
+.trip_detailed p span{color:#127bab}
+.trip_base_t { padding-top:15px; padding-bottom:15px; margin-bottom:5px;height:40px; font-size:0.8em; text-align:center;  border-bottom:1px solid #ddd; color:#b4b4b4;}
+.trip_base_t  span { font-size:1.5em; color:#333;float:left;font-weight:bold;}
+.trip_base p{font-style:微软雅黑;line-height:30px;font-size:12px;}
+.trip_base{border-bottom:10px solid #ededef;}
+.trip_base p span{color:#f75200}
+.trip_base_list{width:100%;margin-left:-40px;}
+.trip_base_list li{list-style:none;font-size:12px;margin-top:10px;border-bottom:dotted 1px #999999;line-height:30px;text-align:left;}
+.trip_base_list li span{color:#999999;font-weight:bold;float:left;position:absolute}
+.trip_base_list li p{position:relative;margin-left:100px;line-height:25px;}
+.wap_hot{padding-bottom:80px}
+.wap_foot { position:fixed; width:100%; bottom:0; background:#fff; border-top:1px solid #ddd;}
+.wap_foot ul { margin-bottom:0; padding-left:0; list-style:none;}
+.wap_foot li { width:20%; float:left;}
+.wap_foot li a { padding-top:10px; padding-bottom:10px; display:block; text-align:center; border-right:1px solid #ddd; color:#595959;}
+.wap_foot li i { font-size:2em;}
+.wap_gong_m a{text-decoration:none}
+.wap_hot ul li span{font-size:20px;font-weight:bold;}
+</style>
+</head>
+<body>
+<nav class="navbar navbar-default trip_nav">
+<div class="container">
+<!-- Brand and toggle get grouped for better mobile display -->
+<div class="navbar-header">
+<a class="wap_nav_link" href="#"><i class="glyphicon glyphicon-menu-left"></i></a>
+<a href="#" class="wap_logo"><img src="../style/images/userlogo.png" alt="{$SiteName/}" /></a>
+<form class="navbar-form navbar-right visible-xs" role="search" method="get" target="_blank" action="/Search/SearchList.aspx">
+<div class="form-group">
+<input type="text" class="form-control trip_wap_input" name="KeyWord" />
+<button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+</div>
+
+</form>
+</div>
+<div class="dropdown trip_xiala">
+  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+   导航
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+    <li><a href="#">Action</a></li>
+    <li><a href="#">Another action</a></li>
+    <li><a href="#">Something else here</a></li>
+    <li><a href="#">Separated link</a></li>
+  </ul>
+</div>
+</div><!-- /.container-fluid -->
+</nav><!--wap_top end-->
+<div class="h30"></div>
+<div id="carousel-example-generic" class="carousel slide trip_banner" data-ride="carousel">
+
+<!-- Wrapper for slides -->
+<div class="carousel-inner" role="listbox">
+<div class="item active wap_banner1">
+<a href="#"></a>
+<div class="carousel-caption">
+<h3><a href="#">青岩古镇</a><a class="weather"><img src="../style/images/weather.png"/>-1  ℃ </a></h3>
+<span><a>2568张图片</a></span>
+</div>
+</div>
+</div>
+</div>
+
+
+
+<div class="container trip_connect">
+<ul class="list-unstyled star">
+<li><a class="trip_connect_s"><i class="fa fa-star"></i></a></li>
+<li><a class="trip_connect_s"><i class="fa fa-star"></i></a></li>
+<li><a class="trip_connect_s"><i class="fa fa-star"></i></a></li>
+<li><a class="trip_connect_s"><i class="fa fa-star"></i></a></li>
+<li><a class="trip_connect_s"><i class="fa fa-star"></i></a></li>
+</ul>
+<span>8.2分</span> <span><a><i class="glyphicon glyphicon-pencil"></i>我来补充</a></span>
+
+
+<div class="trip_connect_handle">
+<ul class="list-unstyled handle">
+<li><i class="fa fa-file-text"></i></li>
+<li><i class="fa fa-star"></i><span>收藏</span></li>
+<li><i class="fa fa-thumbs-up"></i><span>808</span></li>
+<li><i class="glyphicon glyphicon-new-window"></i><span>168</span></li>
+</ul>
+</div>
+<div class="bor"></div>
+</div>
+<div class="container trip_detailed ">
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;青岩<span>古镇</span>，贵州四大<span>古镇</span>之一，位于贵阳市南郊，建于明洪武十年(1378年)，原为军事要塞 。古镇内设计精巧、工艺精湛的明清古建筑交错密布，寺庙、楼阁画栋雕梁、飞角重檐相间。镇人文荟萃，有历史名人<span>周渔璜</span>、清末状元赵以炯(贵州历史上第一个文状元)。镇内有近代史上震惊中外的青岩教案遗址、赵状元府第、指挥部等历史文物。</p>
+</div>
+<!--开篇介绍结束-->
+<!--基本信息-->
+<div class="container trip_base">
+<div class="trip_base_t"><span>基本信息</span></div>
+<p>您所在的位置是<span>贵阳市</span>，距青岩古镇约 <span>32</span> 公里，开车预计<span> 35</span> 分钟后到达，途中有 <span>5</span> 个加油站，景区附件停车场<span>6</span>个</p>
+<ul class="trip_base_list">
+<li><span>景区名称</span><p>青岩古镇</p></li>
+<li><span>门票价格</span><p>10元</p></li>
+<li><span>地理位置</span><p>贵州省贵阳市花溪区青岩镇</p></li>
+<li><span>景点类型</span><p>古镇</p></li>
+<li><span>景点级别</span><p>AAAAA</p></li>
+<li><span>最佳游玩季节</span><p>四季皆宜</p></li>
+<li><span>建议游玩时长</span><p>3-4小时</p></li>
+<li><span>美食特产</span><p><a>玫瑰糖</a>、<a>状元蹄</a>、鸡辣椒、苗王酒</p></li>
+<li><span>相关人物</span><p>六小灵童 周恩来 <a>邓颖超</a></p></li>
+<li><span>适宜游玩方式</span><p>自驾游/亲子游/徒步</p></li>
+<li><span>开放时间</span><p>全天开放</p></li>
+</ul>
+</div>
+
+<!--基本信息结束-->
+<!--主要景点-->
+<div class="container trip_base">
+<div class="trip_base_t"><span>主要景点</span></div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;青岩<span>古镇</span>，贵州四大<span>古镇</span>之一，位于贵阳市南郊，建于明洪武十年(1378年)，原为军事要塞 。古镇内设计精巧、工艺精湛的明清古建筑交错密布，寺庙、楼阁画栋雕梁、飞角重檐相间。镇人文荟萃，有历史名人<span>周渔璜</span>、清末状元赵以炯(贵州历史上第一个文状元)。镇内有近代史上震惊中外的青岩教案遗址、赵状元府第、指挥部等历史文物。</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;青岩<span>古镇</span>，贵州四大<span>古镇</span>之一，位于贵阳市南郊，建于明洪武十年(1378年)，原为军事要塞 。古镇内设计精巧、工艺精湛的明清古建筑交错密布，寺庙、楼阁画栋雕梁、飞角重檐相间。镇人文荟萃，有历史名人<span>周渔璜</span>、清末状元赵以炯(贵州历史上第一个文状元)。镇内有近代史上震惊中外的青岩教案遗址、赵状元府第、指挥部等历史文物。</p>
+
+ <div class="wap_gong_m"><a href="#">下拉加载......<i class="fa fa-angle-down"></i></a></div>
+</div>
+<div class="wap_hot">
+<div class="wap_hot_t">青岩古镇周边景点</div>
+<div class="container">
+<div class="row padding10">
+<ul>
+<li class="col-xs-4 padding5"><a href="#"><img src="../style/images/guiyang.png" alt="" /></a></li>
+<li class="col-xs-4 padding5"><a href="#"><img src="../style/images/libo.png" alt="" /></a></li>
+<li class="col-xs-4 padding5"><a href="#"><img src="../style/images/anshun.png" alt="" /></a></li>
+<li class="col-xs-4 padding5"><a href="#"><img src="../style/images/chishui.png" alt="" /></a></li>
+<li class="col-xs-4 padding5"><a href="#"><img src="../style/images/zhenyuan.png" alt="" /></a></li>
+<li class="col-xs-4 padding5"><a href="#"><img src="../style/images/qiannanzhou.png" alt="" /></a></li>
+<div class="clearfix"></div>
+</ul>
+</div>
+</div>
+</div><!--wap_hot end-->
+<div class="wap_foot">
+<ul>
+<li><a href="#"><i class="fa fa-home"></i><br/>首页</a></li>
+<li><a href="#"><i class="fa fa-map"></i><br/>目的地</a></li>
+<li><a href="#"><i class="fa fa-photo"></i><br/>发图片</a></li>
+<li><a href="#"><i class="fa fa-question-circle"></i><br/>提问题</a></li>
+<li><a href="#"><i class="fa fa-user"></i><br/>我的</a></li>
+<div class="clearfix"></div>
+</ul>
+</div>
+
+
+
+</body>
+</html>

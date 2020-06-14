@@ -1,0 +1,29 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <Table>
+    <LabelID>924</LabelID>
+    <LabelName>输出指定视频地址</LabelName>
+    <LabelType>2</LabelType>
+    <LabelCate>视频</LabelCate>
+    <LabelDesc />
+    <LabelParam>GeneralID,0,1,视频ID|NodeID,105,1,节点ID</LabelParam>
+    <LabelTable>{table1}.dbo.ZL_CommonModel left join {table1}.dbo.ZL_C_video on {table1}.dbo.ZL_CommonModel.ItemID={table1}.dbo.ZL_C_video.ID</LabelTable>
+    <LabelField>{table1}.dbo.ZL_C_video.url</LabelField>
+    <LabelWhere>(NodeID=@NodeID or FirstNodeID=@NodeID or NodeID in (select NodeID from ZL_Node where ParentID=@NodeID)) And Status=99 And ModelID=7 And GeneralID=@GeneralID</LabelWhere>
+    <LabelOrder />
+    <LabelContent>{Field="url"/}</LabelContent>
+    <LabelCount>0</LabelCount>
+    <LabelAddUser>0</LabelAddUser>
+    <LabelNodeID>0</LabelNodeID>
+    <Modeltypeinfo>计数判断</Modeltypeinfo>
+    <addroot>循环计算</addroot>
+    <setroot>等于</setroot>
+    <Modelvalue>0</Modelvalue>
+    <Valueroot />
+    <IsOpen>0</IsOpen>
+    <FalseContent />
+    <DataSourceType>GZTravel</DataSourceType>
+    <ConnectString>DBO</ConnectString>
+    <ProceParam>{"PureT1":"ZL_CommonModel","PureT2":"ZL_C_video","T1":"GZTravel.dbo.ZL_CommonModel","T2":"GZTravel.dbo.ZL_C_video","JoinType":"left join","OnField1":"ItemID","OnField2":"ID"}</ProceParam>
+  </Table>
+</NewDataSet>

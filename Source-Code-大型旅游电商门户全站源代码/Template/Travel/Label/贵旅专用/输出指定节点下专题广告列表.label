@@ -1,0 +1,40 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <Table>
+    <LabelID>988</LabelID>
+    <LabelName>输出指定节点下专题广告列表</LabelName>
+    <LabelType>2</LabelType>
+    <LabelCate>贵旅专用</LabelCate>
+    <LabelDesc />
+    <LabelParam>NodeID,1,1,节点ID|ShowNum,10,1,显示数</LabelParam>
+    <LabelTable>ZL_CommonModel LEFT JOIN ZL_C_ggmx ON ZL_CommonModel.ItemID=ZL_C_ggmx.ID</LabelTable>
+    <LabelField>ZL_CommonModel.GeneralID,ZL_CommonModel.NodeID,ZL_CommonModel.Title,ZL_C_ggmx.ggclj,ZL_C_ggmx.ggtt,ZL_C_ggmx.ggym</LabelField>
+    <LabelWhere>(ZL_CommonModel.NodeID=@NodeID OR ZL_CommonModel.FirstNodeID=@NodeID) And Status=99 And Elitelevel=1</LabelWhere>
+    <LabelOrder>ZL_CommonModel.CreateTime DESC</LabelOrder>
+    <LabelContent>{Repeate}
+&lt;li class="col-lg-4 col-md-4 col-sm-4 col-xs-12"&gt;
+&lt;div class="home_theme_pc"&gt;
+&lt;a href="{Field="ggclj"/}" title="{Field="Title"/}" target="_self"&gt;&lt;img src="{$UploadDir/}{Field="ggtt"/}" alt="{Field="Title"/}" onerror="javascript:this.src='/UploadFiles/nopic.gif';" /&gt;&lt;/a&gt;
+&lt;!--&lt;div class="home_theme_pb"&gt;
+&lt;h3&gt;&lt;a href="{Field="ggclj"/}" title="{Field="Title"/}" target="_self"&gt;{Field="Title"/}&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;{Field="ggym"/}...&lt;/p&gt;
+&lt;/div&gt;--&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+{/Repeate}</LabelContent>
+    <LabelCount>@ShowNum</LabelCount>
+    <LabelAddUser>0</LabelAddUser>
+    <LabelNodeID>0</LabelNodeID>
+    <Modeltypeinfo>计数判断</Modeltypeinfo>
+    <addroot>循环计算</addroot>
+    <setroot>等于</setroot>
+    <Modelvalue />
+    <Valueroot />
+    <IsOpen>0</IsOpen>
+    <FalseContent />
+    <DataSourceType />
+    <ConnectString />
+    <ProceName />
+    <ProceParam />
+  </Table>
+</NewDataSet>

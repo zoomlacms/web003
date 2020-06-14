@@ -1,0 +1,47 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <Table>
+    <LabelID>896</LabelID>
+    <LabelName>输出游记列表_分页_wap</LabelName>
+    <LabelType>4</LabelType>
+    <LabelCate>贵旅专用</LabelCate>
+    <LabelDesc />
+    <LabelParam>NodeID,1,1,节点ID|ShowNum,10,1,显示数|TitleNum,30,1,标题长|SysNum,100,1,简介数</LabelParam>
+    <LabelTable>{table1}.dbo.ZL_CommonModel left join {table1}.dbo.ZL_C_yjmx on {table1}.dbo.ZL_CommonModel.ItemID={table1}.dbo.ZL_C_yjmx.ID</LabelTable>
+    <LabelField>{table1}.dbo.ZL_CommonModel.Tagkey,{table1}.dbo.ZL_CommonModel.GeneralID,{table1}.dbo.ZL_CommonModel.Hits,{table1}.dbo.ZL_CommonModel.Inputer,{table1}.dbo.ZL_CommonModel.Title,{table1}.dbo.ZL_C_yjmx.pic,{table1}.dbo.ZL_C_yjmx.synopsis</LabelField>
+    <LabelWhere>(NodeID=@NodeID or FIrstNodeID=@NodeID) And Status=99 And ModelID=46 And (Title like '%{$GetUrldecode({$GetRequest(k)$})$}%' or content like '%{$GetUrldecode({$GetRequest(k)$})$}%')</LabelWhere>
+    <LabelOrder>{table1}.dbo.ZL_CommonModel.CreateTime DESC</LabelOrder>
+    <LabelContent>{Repeate}&lt;div class="wap_shi_column"&gt;
+&lt;div class="wap_slist_t"&gt;&lt;a href="/Class_21/NodeNews.aspx?GID={Field="GeneralID"/}" title="{Field="Title"/}"&gt;{ZL.Label id="根据用户名输出用户头像" UserName="{Field="Inputer"/}" /} {Field="Inputer"/}&lt;/a&gt;&lt;span&gt;&lt;a href="#"&gt;&lt;i class="fa fa-plus-square"&gt;&lt;/i&gt; 关注&lt;/a&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;div class="wap_slist_m"&gt;&lt;a href="/Class_21/NodeNews.aspx?GID={Field="GeneralID"/}" title="{Field="Title"/}"&gt;&lt;img src="{ZL:GetPicUrl({Field="pic"/})/}" alt="{Field="Title"/}" onerror="javascript:this.src='/UploadFiles/nopic.gif';" /&gt;&lt;span&gt;精&lt;/span&gt;&lt;/a&gt;&lt;/div&gt;
+&lt;div class="wap_slist_d"&gt;
+&lt;h4&gt;&lt;a href="/Class_21/NodeNews.aspx?GID={Field="GeneralID"/}" title="{Field="Title"/}"&gt;{ZL:CutText({Field="Title"/},@TitleNum,)/}&lt;/a&gt;&lt;/h4&gt;
+&lt;p&gt;{ZL:CutText({Field="synopsis"/},@SysNum,...)/}&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;&lt;i class="fa fa-tags"&gt;&lt;/i&gt; {Field="Tagkey"/}&lt;/span&gt;&lt;span&gt;&lt;i class="fa fa-user"&gt;&lt;/i&gt; 推荐者：{Field="Inputer"/}&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="wap_slist_b"&gt;
+&lt;a href="#"&gt;热度：{Field="Hits"/}&lt;/a&gt;
+&lt;a href="#"&gt;&lt;i class="fa fa-comment"&gt;&lt;/i&gt;&lt;/a&gt;
+&lt;a href="#"&gt;&lt;i class="fa fa-share-alt"&gt;&lt;/i&gt;&lt;/a&gt;
+&lt;a href="#"&gt;&lt;i class="fa fa-thumbs-o-up"&gt;&lt;/i&gt;&lt;/a&gt;
+&lt;a href="#"&gt;&lt;i class="fa fa-heart"&gt;&lt;/i&gt;&lt;/a&gt;
+&lt;div class="clearfix"&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;{/Repeate}
+{ZL.Page id="响应式列表分页"/}</LabelContent>
+    <LabelCount>@ShowNum</LabelCount>
+    <LabelAddUser>0</LabelAddUser>
+    <LabelNodeID>0</LabelNodeID>
+    <Modeltypeinfo>计数判断</Modeltypeinfo>
+    <addroot>循环计算</addroot>
+    <setroot>等于</setroot>
+    <Modelvalue>0</Modelvalue>
+    <Valueroot />
+    <IsOpen>0</IsOpen>
+    <FalseContent />
+    <DataSourceType>GZTravel</DataSourceType>
+    <ConnectString>DBO</ConnectString>
+    <ProceName />
+    <ProceParam>{"PureT1":"ZL_CommonModel","PureT2":"ZL_C_yjmx","T1":"GZTravel.dbo.ZL_CommonModel","T2":"GZTravel.dbo.ZL_C_yjmx","JoinType":"left join","OnField1":"ItemID","OnField2":"ID"}</ProceParam>
+  </Table>
+</NewDataSet>

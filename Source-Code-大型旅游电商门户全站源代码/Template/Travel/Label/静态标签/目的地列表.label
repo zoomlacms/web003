@@ -1,0 +1,143 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <Table>
+    <LabelID>1017</LabelID>
+    <LabelName>目的地列表</LabelName>
+    <LabelType>1</LabelType>
+    <LabelCate>静态标签</LabelCate>
+    <LabelDesc />
+    <LabelParam />
+    <LabelTable />
+    <LabelField />
+    <LabelWhere />
+    <LabelOrder />
+    <LabelContent>&lt;div class="dest_all"&gt;
+&lt;div class="container"&gt;
+&lt;div class="dest_all_t"&gt;全部目的地&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;strong&gt;&lt;a href="{ZL:GetNodeLinkUrl(20)/}"&gt;贵阳&lt;/a&gt;&lt;/strong&gt;
+  &lt;a href="{ZL:GetNodeLinkUrl(109)/}"&gt;贵阳市&lt;/a&gt;
+&lt;a href="{ZL:GetNodeLinkUrl(30)/}" class="active"&gt;开阳&lt;span&gt;&lt;/span&gt;&lt;/a&gt;
+&lt;a href="{ZL:GetNodeLinkUrl(31)/}"&gt;息烽&lt;/a&gt;
+&lt;a href="{ZL:GetNodeLinkUrl(32)/}"&gt;修文&lt;/a&gt;
+&lt;a href="{ZL:GetNodeLinkUrl(33)/}"&gt;清镇&lt;/a&gt;
+
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a href="{ZL:GetNodeLinkUrl(23)/}"&gt;安顺&lt;/a&gt;&lt;/strong&gt;
+&lt;a href="{ZL:GetNodeLinkUrl(111)/}"&gt;安顺市&lt;/a&gt;
+&lt;a href="{ZL:GetNodeLinkUrl(34)/}"&gt;平坝&lt;/a&gt;
+&lt;a href="{ZL:GetNodeLinkUrl(35)/}"&gt;普定&lt;/a&gt;
+&lt;a href="{ZL:GetNodeLinkUrl(36)/}"&gt;关岭&lt;/a&gt;
+&lt;a href="{ZL:GetNodeLinkUrl(37)/}"&gt;镇宁&lt;/a&gt;
+&lt;a href="{ZL:GetNodeLinkUrl(38)/}"&gt;紫云&lt;/a&gt;
+
+&lt;/li&gt;
+&lt;li&gt;
+&lt;strong&gt;&lt;a href="{ZL:GetNodeLinkUrl(22)/}"&gt;遵义&lt;/a&gt;&lt;/strong&gt;
+&lt;a href="{ZL:GetNodeLinkUrl(110)/}"&gt;遵义市&lt;/a&gt;
+&lt;a href="{ZL:GetNodeLinkUrl(39)/}"&gt;赤水&lt;/a&gt;
+&lt;a href="{ZL:GetNodeLinkUrl(40)/}"&gt;桐梓&lt;/a&gt;
+&lt;a href="{ZL:GetNodeLinkUrl(41)/}"&gt;绥阳&lt;/a&gt;
+&lt;a href="{ZL:GetNodeLinkUrl(42)/}"&gt;正安&lt;/a&gt;
+&lt;a href="{ZL:GetNodeLinkUrl(43)/}"&gt;道真&lt;/a&gt;
+&lt;a href="{ZL:GetNodeLinkUrl(44)/}"&gt;务川&lt;/a&gt;
+&lt;a href="{ZL:GetNodeLinkUrl(45)/}"&gt;凤冈&lt;/a&gt;
+&lt;a href="{ZL:GetNodeLinkUrl(46)/}"&gt;湄潭&lt;/a&gt;
+&lt;a href="{ZL:GetNodeLinkUrl(47)/}"&gt;余庆&lt;/a&gt;
+&lt;a href="{ZL:GetNodeLinkUrl(48)/}"&gt;仁怀&lt;/a&gt;
+&lt;a href="{ZL:GetNodeLinkUrl(49)/}"&gt;习水&lt;/a&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;strong&gt;&lt;a href="{ZL:GetNodeLinkUrl(25)/}"&gt;铜仁&lt;/a&gt;&lt;/strong&gt;
+&lt;a href="{ZL:GetNodeLinkUrl(67)/}"&gt;铜仁市&lt;/a&gt;
+&lt;a href="{ZL:GetNodeLinkUrl(59)/}"&gt;江口&lt;/a&gt;
+&lt;a href="{ZL:GetNodeLinkUrl(60)/}"&gt;玉屏&lt;/a&gt;
+&lt;a href="{ZL:GetNodeLinkUrl(61)/}"&gt;石阡&lt;/a&gt;
+&lt;a href="{ZL:GetNodeLinkUrl(62)/}"&gt;思南&lt;/a&gt;
+&lt;a href="{ZL:GetNodeLinkUrl(63)/}"&gt;印江&lt;/a&gt;
+&lt;a href="{ZL:GetNodeLinkUrl(64)/}"&gt;德江&lt;/a&gt;
+&lt;a href="{ZL:GetNodeLinkUrl(65)/}"&gt;沿河&lt;/a&gt;
+&lt;a href="{ZL:GetNodeLinkUrl(66)/}"&gt;松桃&lt;/a&gt;
+
+&lt;/li&gt;
+&lt;li&gt;
+&lt;strong&gt;&lt;a href="{ZL:GetNodeLinkUrl(24)/}"&gt;毕节&lt;/a&gt;&lt;/strong&gt;
+&lt;a href="{ZL:GetNodeLinkUrl(112)/}"&gt;毕节市&lt;/a&gt;
+&lt;a href="{ZL:GetNodeLinkUrl(53)/}"&gt;大方&lt;/a&gt;
+&lt;a href="{ZL:GetNodeLinkUrl(54)/}"&gt;金沙&lt;/a&gt;
+&lt;a href="{ZL:GetNodeLinkUrl(55)/}"&gt;织金&lt;/a&gt;
+&lt;a href="{ZL:GetNodeLinkUrl(56)/}"&gt;纳雍&lt;/a&gt;
+&lt;a href="{ZL:GetNodeLinkUrl(57)/}"&gt;威宁&lt;/a&gt;
+&lt;a href="{ZL:GetNodeLinkUrl(58)/}"&gt;赫章&lt;/a&gt;
+&lt;a href="{ZL:GetNodeLinkUrl(113)/}"&gt;黔西县&lt;/a&gt;
+
+&lt;/li&gt;
+&lt;li&gt;
+&lt;strong&gt;&lt;a href="{ZL:GetNodeLinkUrl(21)/}"&gt;六盘水&lt;/a&gt;&lt;/strong&gt;
+&lt;a href="{ZL:GetNodeLinkUrl(50)/}"&gt;六枝&lt;/a&gt;
+&lt;a href="{ZL:GetNodeLinkUrl(51)/}"&gt;盘县&lt;/a&gt;
+&lt;a href="{ZL:GetNodeLinkUrl(52)/}"&gt;水城&lt;/a&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;strong&gt;&lt;a href="{ZL:GetNodeLinkUrl(26)/}"&gt;黔西南&lt;/a&gt;&lt;/strong&gt;
+&lt;a href="{ZL:GetNodeLinkUrl(68)/}"&gt;兴义&lt;/a&gt;
+&lt;a href="{ZL:GetNodeLinkUrl(69)/}"&gt;兴仁&lt;/a&gt;
+&lt;a href="{ZL:GetNodeLinkUrl(70)/}"&gt;普安&lt;/a&gt;
+&lt;a href="{ZL:GetNodeLinkUrl(71)/}"&gt;晴隆&lt;/a&gt;
+&lt;a href="{ZL:GetNodeLinkUrl(72)/}"&gt;贞丰&lt;/a&gt;
+&lt;a href="{ZL:GetNodeLinkUrl(73)/}"&gt;望谟&lt;/a&gt;
+&lt;a href="{ZL:GetNodeLinkUrl(74)/}"&gt;册亨&lt;/a&gt;
+&lt;a href="{ZL:GetNodeLinkUrl(75)/}"&gt;安龙&lt;/a&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;strong&gt;&lt;a href="{ZL:GetNodeLinkUrl(27)/}"&gt;黔东南&lt;/a&gt;&lt;/strong&gt;
+&lt;a href="{ZL:GetNodeLinkUrl(76)/}"&gt;凯里&lt;/a&gt;
+&lt;a href="{ZL:GetNodeLinkUrl(77)/}"&gt;黄平&lt;/a&gt;
+&lt;a href="{ZL:GetNodeLinkUrl(78)/}"&gt;施秉&lt;/a&gt;
+&lt;a href="{ZL:GetNodeLinkUrl(79)/}"&gt;三穗&lt;/a&gt;
+&lt;a href="{ZL:GetNodeLinkUrl(80)/}" class="active"&gt;镇远&lt;span&gt;&lt;/span&gt;&lt;/a&gt;
+&lt;a href="{ZL:GetNodeLinkUrl(81)/}"&gt;岑巩&lt;/a&gt;
+&lt;a href="{ZL:GetNodeLinkUrl(82)/}"&gt;天柱&lt;/a&gt;
+&lt;a href="{ZL:GetNodeLinkUrl(83)/}"&gt;锦屏&lt;/a&gt;
+&lt;a href="{ZL:GetNodeLinkUrl(84)/}"&gt;剑河&lt;/a&gt;
+&lt;a href="{ZL:GetNodeLinkUrl(85)/}"&gt;台江&lt;/a&gt;
+&lt;a href="{ZL:GetNodeLinkUrl(86)/}"&gt;黎平&lt;/a&gt;
+&lt;a href="{ZL:GetNodeLinkUrl(87)/}"&gt;榕江&lt;/a&gt;
+&lt;a href="{ZL:GetNodeLinkUrl(88)/}"&gt;从江&lt;/a&gt;
+&lt;a href="{ZL:GetNodeLinkUrl(89)/}"&gt;雷山&lt;/a&gt;
+&lt;a href="{ZL:GetNodeLinkUrl(90)/}"&gt;麻江&lt;/a&gt;
+&lt;a href="{ZL:GetNodeLinkUrl(91)/}"&gt;丹寨&lt;/a&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;strong&gt;&lt;a href="{ZL:GetNodeLinkUrl(28)/}"&gt;黔南&lt;/a&gt;&lt;/strong&gt;
+&lt;a href="{ZL:GetNodeLinkUrl(92)/}"&gt;都匀&lt;/a&gt;
+&lt;a href="{ZL:GetNodeLinkUrl(93)/}"&gt;荔波&lt;/a&gt;
+&lt;a href="{ZL:GetNodeLinkUrl(94)/}"&gt;贵定&lt;/a&gt;
+&lt;a href="{ZL:GetNodeLinkUrl(95)/}"&gt;福泉&lt;/a&gt;
+&lt;a href="{ZL:GetNodeLinkUrl(96)/}"&gt;翁安&lt;/a&gt;
+&lt;a href="{ZL:GetNodeLinkUrl(97)/}"&gt;独山&lt;/a&gt;
+&lt;a href="{ZL:GetNodeLinkUrl(98)/}"&gt;平塘&lt;/a&gt;
+&lt;a href="{ZL:GetNodeLinkUrl(99)/}"&gt;罗甸&lt;/a&gt;
+&lt;a href="{ZL:GetNodeLinkUrl(100)/}"&gt;长顺&lt;/a&gt;
+&lt;a href="{ZL:GetNodeLinkUrl(101)/}"&gt;龙里&lt;/a&gt;
+&lt;a href="{ZL:GetNodeLinkUrl(102)/}"&gt;惠水&lt;/a&gt;
+&lt;a href="{ZL:GetNodeLinkUrl(103)/}"&gt;三都&lt;/a&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;</LabelContent>
+    <LabelCount />
+    <LabelAddUser>0</LabelAddUser>
+    <LabelNodeID>0</LabelNodeID>
+    <Modeltypeinfo>计数判断</Modeltypeinfo>
+    <addroot>循环计算</addroot>
+    <setroot>等于</setroot>
+    <Modelvalue />
+    <Valueroot />
+    <IsOpen>0</IsOpen>
+    <FalseContent />
+    <DataSourceType />
+    <ConnectString />
+  </Table>
+</NewDataSet>

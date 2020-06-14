@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+{ZL.Source id="文章模型数据源标签"/}
+<html>
+<head>
+<meta charset="utf-8">
+<title>{SField sid="文章模型数据源标签" FD="Title" page="0"/}_{$SiteName/}</title>
+<!--p><meta name="Keywords" content="{SField sid="节点栏目信息数据源" FD="Meta_Keywords" page="0"/}" /><p-->
+<!--p><meta name="description" content="{SField sid="节点栏目信息数据源" FD="Meta_Description" page="0"/}" /><p-->
+{ZL:Boot()/}
+<link href="{$CssDir/}global.css?Version={ZL.Label id="前端样式版本号"/}" rel="stylesheet"/>
+<script src="{$CssDir/}js/my.js" type="text/javascript"></script>
+<script src="/JS/ZL_ValidateCode.js"></script>
+<script src="/JS/Modal/APIResult.js"></script>
+<script src="/JS/Controls/B_User.js"></script>
+  <script src="/JS/Controls/Control.js"></script>
+  <style type="text/css">
+body{background:#f1f1f1}
+.about_b1{ height:45px; box-shadow: 0 2px 3px rgba(0,0,0,0.2);}
+.about_t1{ height:45px; line-height:45px; margin-left:20%}
+.about_t1 li{ width:90px; font-size:16px; float:left;}
+.about_t1 a{ color:#666; font-weight:400px;}
+.about_t1 a:hover{ color:#111; text-decoration:none}
+.about_t2{ font-size:15px; line-height:26px; font-weight:100; }
+.about_t2 STRONG{ font-size:16px; line-height:30px;font-weight:400; }
+.about_banner{ background:#333}
+.about_banner img{ width:100%}
+#footer { overflow: hidden; background-color: #222; height: 119px; margin: 25px auto 0; color:#777}
+.fttop {    overflow: hidden;    height: 32px;    line-height: 35px;    margin-top: 16px;}
+.wd1200{ width:1200px; margin:0px auto;}
+.fttop a.ftaw { font-size: 14px; color: #bbb; padding-right: 15px; height: 32px; line-height: 32px;}
+.ftbottom { margin-top: 10px;}
+  </style>
+</head>
+<body>
+{ZL.Label id="全站共用头部"/}
+<div class="about_banner"><img src="{$UploadDir/}{SField sid="文章模型数据源标签" FD="pic" page="0"/}"></div>
+<div class="pics_body">
+<div class="about_b1">
+<div class="about_t1">
+<ul>
+<li><a href="{ZL:GetInfoUrl(2180)/}">关于我们</a></li>
+<li><a href="{ZL:GetInfoUrl(2181)/}">免责声明</a></li>
+<li><a href="{ZL:GetInfoUrl(2188)/}">版权声明</a></li>
+<li><a href="{ZL:GetInfoUrl(2189)/}">注册协议</a></li>
+<li><a href="{ZL:GetInfoUrl(2190)/}">加入我们</a></li>
+</ul>
+</div>
+</div>
+
+<div class="container pics_list">
+<div class="about_t2">
+<h1 style="font-size:30px; height:35px; line-height:35px; text-align:center">{SField sid="文章模型数据源标签" FD="Title" page="0"/}</h1>
+{SField sid="文章模型数据源标签" FD="content" page="{SField sid="文章模型数据源标签" FD="K_pages" page="0"/}"/}
+</div>
+
+</div>
+</div>
+
+{ZL.Label id="全站底部"/}
+{ZL.Label id="通用登录弹出层"/}
+
+<script>
+function LoginFun()
+{
+	var buser = new B_User();
+	var model = { name: $("#UName").val(), pwd: $("#UPSD").val(), key: $("#VCode_hid").val(), code: $("#VCode").val() };
+	if (model.name == "" || model.pwd == "") { alert("用户名或密码不能为空!"); return; }
+	buser.Login(model,function(data){
+		if (data == -1) { alert("用户名或密码错误"); }
+		else if (data == -10) {
+			alert("用户名或密码错误");
+			EnableCode();
+		}
+		else if (data == -2)
+		{
+			alert("验证码错误");
+			EnableCode();
+		}
+		else {
+			location.href=location.href;
+		}
+	})
+}
+function EnableCode() {
+	if ($(".code").is(":hidden")) {
+		$(".code").show();
+		$("#VCode_img").click();
+		$("#VCode").ValidateCode();
+	}
+}
+function ShowLogin()
+{
+	$(".home_ulogin").show();
+}
+function CloseLogin()
+{
+	$(".home_ulogin").hide();
+}
+function GetEnterCode(a, id) {
+    if (event.keyCode == 13) {
+        switch (a) { case "click": $("#" + id).trigger("click"); break; case "focus": $("#" + id).focus(); break; }
+        return false;
+    }
+    else { return true; }
+}
+</script>
+</body>
+</html>

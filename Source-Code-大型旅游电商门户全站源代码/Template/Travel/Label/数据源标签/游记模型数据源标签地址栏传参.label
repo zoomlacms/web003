@@ -1,0 +1,30 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <Table>
+    <LabelID>899</LabelID>
+    <LabelName>游记模型数据源标签地址栏传参</LabelName>
+    <LabelType>3</LabelType>
+    <LabelCate>数据源标签</LabelCate>
+    <LabelDesc>文章模型数据源标签</LabelDesc>
+    <LabelParam />
+    <LabelTable>{table1}.dbo.ZL_CommonModel left join {table1}.dbo.ZL_C_yjmx on {table1}.dbo.ZL_CommonModel.ItemID={table1}.dbo.ZL_C_yjmx.ID</LabelTable>
+    <LabelField>{table1}.dbo.ZL_CommonModel.*,{table1}.dbo.ZL_C_yjmx.*</LabelField>
+    <LabelWhere>ZL_CommonModel.GeneralID='{$GetRequest(GID)$}'</LabelWhere>
+    <LabelOrder />
+    <LabelContent />
+    <LabelCount>0</LabelCount>
+    <LabelAddUser>0</LabelAddUser>
+    <LabelNodeID>0</LabelNodeID>
+    <Modeltypeinfo>计数判断</Modeltypeinfo>
+    <addroot>循环计算</addroot>
+    <setroot>等于</setroot>
+    <Modelvalue />
+    <Valueroot />
+    <IsOpen>0</IsOpen>
+    <FalseContent />
+    <DataSourceType>GZTravel</DataSourceType>
+    <ConnectString />
+    <ProceName />
+    <ProceParam>{"PureT1":"ZL_CommonModel","PureT2":"ZL_C_yjmx","T1":"GZTravel.dbo.ZL_CommonModel","T2":"GZTravel.dbo.ZL_C_yjmx","JoinType":"left join","OnField1":"ItemID","OnField2":"ID"}</ProceParam>
+  </Table>
+</NewDataSet>

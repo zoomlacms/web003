@@ -1,0 +1,78 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <Table>
+    <LabelID>1001</LabelID>
+    <LabelName>全站共用头部</LabelName>
+    <LabelType>1</LabelType>
+    <LabelCate>静态标签</LabelCate>
+    <LabelDesc>全站共用</LabelDesc>
+    <LabelParam />
+    <LabelTable />
+    <LabelField />
+    <LabelWhere />
+    <LabelOrder />
+    <LabelContent>&lt;script src="http://siteapp.baidu.com/static/webappservice/uaredirect.js" type="text/javascript"&gt;&lt;/script&gt;
+&lt;script type="text/javascript"&gt;uaredirect("http://www.toxingbaike.com/wap/index.html");&lt;/script&gt;
+&lt;script type="text/javascript" src="/js/uisearch.js"&gt;&lt;/script&gt;
+&lt;div id="header"&gt;
+	&lt;div id="navbar"&gt;
+		&lt;div class="layout-fluid"&gt;
+&lt;nav class="navbar navbar-default" id="home_nav"&gt;
+&lt;div class="container"&gt;
+&lt;!-- Brand and toggle get grouped for better mobile display --&gt;
+&lt;div class="navbar-header"&gt;
+&lt;button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"&gt;
+&lt;span class="sr-only"&gt;Toggle navigation&lt;/span&gt;
+&lt;span class="icon-bar"&gt;&lt;/span&gt;
+&lt;span class="icon-bar"&gt;&lt;/span&gt;
+&lt;span class="icon-bar"&gt;&lt;/span&gt;
+  &lt;/button&gt;
+&lt;a class="navbar-brand" href="/"&gt;&lt;img src="/Template/Travel/style/images/logo.png" height="42" alt="To行贵州旅游" /&gt;&lt;/a&gt;
+&lt;/div&gt;
+&lt;!-- Collect the nav links, forms, and other content for toggling --&gt;
+&lt;div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"&gt;
+&lt;ul class="nav navbar-nav"&gt;
+  &lt;li &gt;&lt;a href="/"&gt;首页&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="{ZL:GetNodeLinkUrl(1)/}"&gt;风景&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="{ZL:GetNodeLinkUrl(2)/}"&gt;记忆&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="{ZL:GetNodeLinkUrl(3)/}"&gt;事件&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="{ZL:GetNodeLinkUrl(4)/}"&gt;影像&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="{ZL:GetNodeLinkUrl(5)/}"&gt;舌尖&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="{ZL:GetNodeLinkUrl(6)/}"&gt;物产&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+            &lt;div id="sb-search" class="sb-search"&gt;
+              &lt;form role="search" action="/Class_28/NodeElite.aspx" method="get" target="_blank"&gt;
+                    &lt;input type="text" class="sb-search-input" placeholder="关键词……" id="keyword" name="k" /&gt;
+                &lt;button type="submit" class="sb-icon-search"&gt;&lt;/button&gt;
+                &lt;/form&gt;              
+            &lt;/div&gt;
+&lt;ul class="navbar-nav2"&gt;
+{ZL.Label id="用户登录状态带头像"/}
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;!-- /.navbar-collapse --&gt;
+&lt;/div&gt;&lt;!-- /.container-fluid --&gt;
+&lt;/nav&gt;		
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="h60"&gt;&lt;/div&gt;
+&lt;script type="text/javascript"&gt;
+new UISearch( document.getElementById( 'sb-search' ) );
+&lt;/script&gt;</LabelContent>
+    <LabelCount />
+    <LabelAddUser>0</LabelAddUser>
+    <LabelNodeID>0</LabelNodeID>
+    <Modeltypeinfo>计数判断</Modeltypeinfo>
+    <addroot>循环计算</addroot>
+    <setroot>等于</setroot>
+    <Modelvalue />
+    <Valueroot />
+    <IsOpen>0</IsOpen>
+    <FalseContent />
+    <DataSourceType />
+    <ConnectString />
+    <ProceName />
+    <ProceParam />
+  </Table>
+</NewDataSet>

@@ -1,0 +1,58 @@
+贵州旅游大全修改记录
+
+160312
+D:\WebRoot\Template\Travel\全站首页.html
+D:\WebRoot\Template\Travel\style\global.css
+D:\WebRoot\Template\Travel\style\puck.css 删除
+D:\WebRoot\Template\Travel\style\js\new_page.js
+D:\WebRoot\Template\Travel\style\js\common.js 删除
+
+
+160311
+1、/Manage/
+D:\WebRoot\Manage\Guest\BkCheck.aspx
+D:\WebRoot\Manage\Guest\BkCheck.aspx.cs
+
+D:\WebRoot\Manage\I\ASCX\TemplateView.ascx  
+D:\WebRoot\Manage\I\ASCX\TemplateView.ascx.cs  增加
+
+D:\WebRoot\Manage\Content\AddContent.aspx
+D:\WebRoot\Manage\Content\AddContent.aspx.cs   增加
+D:\WebRoot\Manage\Content\EditContent.aspx
+D:\WebRoot\Manage\Content\EditContent.aspx.cs
+
+
+2、/Guest/
+D:\WebRoot\Guest\Baike\BKEditor.aspx
+D:\WebRoot\Guest\Baike\Details.aspx
+
+3、/User/
+D:\WebRoot\User\Content\Note\note.aspx
+D:\WebRoot\User\Content\Note\note.aspx.cs
+
+4、/Template/Traval/
+D:\WebRoot\Template\Travel\全站首页.html
+D:\WebRoot\Template\Travel\Label\Directory.label
+D:\WebRoot\Template\Travel\Label\贵旅专用\输出景点搜索结果列表.label
+D:\WebRoot\Template\Travel\Label\贵旅专用\输出指定关键百科列表.label 增加
+D:\WebRoot\Template\Travel\栏目列表\地区景点列表页.html
+D:\WebRoot\Template\Travel\栏目列表\景点图库列表页.html
+D:\WebRoot\Template\Travel\栏目列表\全站搜索列表页.html
+D:\WebRoot\Template\Travel\栏目列表\资讯通用列表页.html
+D:\WebRoot\Template\Travel\内容页\美食内容页.html
+D:\WebRoot\Template\Travel\内容页\默认景点模型内容页.html
+D:\WebRoot\Template\Travel\内容页\默认图库模型内容页.html
+D:\WebRoot\Template\Travel\内容页\默认游记模型内容页.html
+D:\WebRoot\Template\Travel\内容页\特产内容页.html
+D:\WebRoot\Template\Travel\频道首页\Wap频道_首页.html
+D:\WebRoot\Template\Travel\频道首页\毕节地区频道_首页.html
+D:\WebRoot\Template\Travel\频道首页\地区频道_首页.html
+D:\WebRoot\Template\Travel\频道首页\攻略_首页.html
+D:\WebRoot\Template\Travel\频道首页\关于我们_首页.html
+D:\WebRoot\Template\Travel\频道首页\贵阳地区频道_首页.html
+D:\WebRoot\Template\Travel\频道首页\画册频道_首页.html
+D:\WebRoot\Template\Travel\频道首页\美食频道_首页.html
+D:\WebRoot\Template\Travel\频道首页\特产频道_首页.html
+D:\WebRoot\Template\Travel\频道首页\图库频道首页.html
+D:\WebRoot\Template\Travel\频道首页\游记频道_首页.html
+D:\WebRoot\Template\Travel\频道首页\资讯频道_首页.html

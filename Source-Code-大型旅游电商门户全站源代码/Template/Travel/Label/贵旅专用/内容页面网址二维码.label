@@ -1,0 +1,30 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <Table>
+    <LabelID>986</LabelID>
+    <LabelName>内容页面网址二维码</LabelName>
+    <LabelType>2</LabelType>
+    <LabelCate>贵旅专用</LabelCate>
+    <LabelDesc />
+    <LabelParam>GeneralID,1,1,</LabelParam>
+    <LabelTable>ZL_CommonModel</LabelTable>
+    <LabelField>*</LabelField>
+    <LabelWhere> ZL_CommonModel.GeneralID=@GeneralID</LabelWhere>
+    <LabelOrder />
+    <LabelContent>&lt;img src={ZL:GetQCUrl({$SiteURL/}{ZL:GetInfoUrl(@GeneralID)/},120)/} alt='{Field="Title"/}' /&gt;</LabelContent>
+    <LabelCount>1</LabelCount>
+    <LabelAddUser>0</LabelAddUser>
+    <LabelNodeID>0</LabelNodeID>
+    <Modeltypeinfo>计数判断</Modeltypeinfo>
+    <addroot>循环计算</addroot>
+    <setroot>等于</setroot>
+    <Modelvalue />
+    <Valueroot />
+    <IsOpen>0</IsOpen>
+    <FalseContent />
+    <DataSourceType />
+    <ConnectString />
+    <ProceName />
+    <ProceParam />
+  </Table>
+</NewDataSet>

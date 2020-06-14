@@ -1,0 +1,96 @@
+﻿<%@ master language="C#" autoeventwireup="true" inherits="Common_Master_Empty, App_Web_gropjfyb" clientidmode="Static" %><html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link type="text/css" rel="stylesheet" href="/dist/css/bootstrap.min.css" />
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+<![endif]-->
+<link rel="stylesheet" href="/dist/css/font-awesome.min.css"/>
+<link href="/Template/Travel/style/global.css?id=20150909" rel="stylesheet"/>
+<style type="text/css">* {font-family:'Microsoft YaHei';}</style>
+<script src="/JS/jquery-1.11.1.min.js"></script>
+<script src="/dist/js/bootstrap.min.js"></script>
+<asp:ContentPlaceHolder id="head" runat="server"></asp:ContentPlaceHolder>
+</head>
+<body>
+<nav class="navbar navbar-default navbar-fixed-top user_nav">
+<div class="container">
+<!-- Brand and toggle get grouped for better mobile display -->
+<div class="navbar-header">
+<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+<span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+<a class="navbar-brand" href="/"><img src="<%:Call.LogoUrl %>" alt="<%:Call.SiteName %>" /></a>
+</div>
+<!-- Collect the nav links, forms, and other content for toggling -->
+<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+<ul class="nav navbar-nav">
+<li><a href="/User/">主页</a></li>
+<li><a href="/User/Content/MyContent.aspx?NodeID=2">游记</a></li>
+<li><a href="/User/Content/MyContent.aspx?NodeID=4">图片</a></li>
+<li><a href="/Ask">问答</a></li>
+<li><a href="/User/Content/CommentList.aspx">点评</a></li>
+</ul>
+<form action="/Search/SearchList.aspx" class="navbar-form navbar-left" role="search" method="get" target="_blank">
+<div class="form-group">
+<input type="text" class="form-control" placeholder="黄果树瀑布" name="KeyWord" />
+</div>
+<button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+</form>
+<ul class="nav navbar-nav navbar-right">
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">消息 <span class="caret"></span></a>
+<ul class="dropdown-menu" role="menu">
+<li></li>
+<li><a href="/user/Message/Message.aspx">我的消息</a></li>
+</ul>
+</li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle user_face" data-toggle="dropdown" role="button" aria-expanded="false"><%Call.Label("{ZL.Label id=\"获取当前用户头像\" /}");%> <span class="caret"></span></a>
+<ul class="dropdown-menu" role="menu" style="right:-5px;">
+<li><span></span></li>
+<li><a href="/User/"><i class="fa fa-home"></i> 我的主页</a></li>
+<li><a href="/User/Content/AddContent.aspx?ModelID=46&NodeID=2"><i class="fa fa-edit"></i> 发表游记</a></li>
+<li><a href="/Ask"><i class="fa fa-question-circle"></i> 我的问答</a></li>
+<li><a href="/User/UserFriend/Default.aspx"><i class="fa fa-users"></i> 我的好友</a></li>
+<li><a href="/User/Content/MyFavori.aspx?type=1"><i class="fa fa-heart"></i> 我的收藏</a></li>
+<li><a href="/User/Order/OrderList.aspx"><i class="fa fa-shopping-cart"></i> 我的订单</a></li>
+<li><a href="/User/LogOut.aspx"><i class="fa fa-sign-out"></i> 安全退出</a></li>
+</ul>
+</li>
+</ul>
+</div><!-- /.navbar-collapse -->
+</div><!-- /.container-fluid -->
+</nav>
+<div class="h84"></div>
+<form id="form1" runat="server">
+<asp:ContentPlaceHolder ID="Content" runat="server"></asp:ContentPlaceHolder>
+<asp:ContentPlaceHolder ID="Script" runat="server"></asp:ContentPlaceHolder>
+</form>
+<div class="myuser_bottom">
+<div class="container">
+<p>
+<span class="pull-left"><img src="/Template/Travel/style/images/userlogo.png" alt="" /></span>
+<span class="pull-left">
+Copyright &copy; 2015 To行贵州旅游大全toxingbaike.cn版权所有 All rights reserved <a href="http://www.miitbeian.gov.cn" rel="nofollow" target="_blank">黔ICP备11055576号</a><br/>全国统一客服电话：<a href="tel:4006345678">4006-345-678</a> <a href="#">网站地图</a>
+</span>
+<span class="pull-right"><img src="/Template/Travel/style/images/foot_img1.png" alt="诚信网站" /><img src="/Template/Travel/style/images/foot_img2.png" alt="可信网站" /></span>
+</p>
+</div>
+</div>
+</body>
+<script>
+function SinIn(e) {
+	$.post("/API/UserSinIn.ashx?action=sinin", { localtion: "1" }, function (data) {
+	if (data == "-1") { alert("你今天已签过到了"); }
+	else if (data != "" && data != "-1") { alert("签到成功！") }
+	else { alert("您尚未登录！！"); }
+	});
+}
+</script>

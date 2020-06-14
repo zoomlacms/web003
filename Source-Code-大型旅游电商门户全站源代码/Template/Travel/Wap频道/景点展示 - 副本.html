@@ -1,0 +1,190 @@
+{ZL.Source id="节点栏目信息数据源"/}{ZL.Source id="景点模型数据源标签地址栏传参"/}
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>{SField sid="景点模型数据源标签地址栏传参" FD="Title" page="0"/}_{$SiteName/}</title>
+<meta name="Keywords" content="{SField sid="节点栏目信息数据源" FD="Meta_Keywords" page="0"/}" />
+<meta name="description" content="{SField sid="节点栏目信息数据源" FD="Meta_Description" page="0"/}" />
+{ZL:Boot()/}
+<link href="{$CssDir/}global.css?Version={ZL.Label id="前端样式版本号"/}" rel="stylesheet"/>
+<style>
+.wap_viewtop { margin-top:5px; position:relative;}
+.wap_viewtop img { width:100%;}
+.wap_viewtop h3 { position:absolute; margin:0; bottom:15px; padding-left:15px; padding-right:15px; width:100%; color:#fff; font-size:1.3em;}
+.wap_viewtop h3 span { font-size:14px;}
+.wap_viewfen { line-height:40px; height:40px; font-size:0.9em;}
+.wap_viewfen_l span { color:#999;}
+.wap_viewfen_l span i { color:#f77000;}
+.wap_viewfen_l a { margin-left:5px;}
+.wap_viewfen_r i { margin-left:5px;}
+.wap_viewcont { background:#fff; padding-top:15px; padding-bottom:15px; border:1px solid #ddd; border-bottom:1px solid #ddd;}
+.wap_viewsys p { text-indent:2em; text-align:justify; text-justify:inter-ideograph; overflow:hidden;}
+.wap_viewbase_t { margin-top:20px; padding-bottom:10px; font-size:16px; font-weight:bold; color:#333; border-bottom:1px solid #ddd;}
+.wap_viewbase_d { margin-top:10px; text-align:justify; text-justify:inter-ideograph; overflow:hidden;}
+.wap_viewbase_u ul { padding-left:0; list-style:none;}
+.wap_viewbase_u li { height:38px; line-height:38px; border-bottom:1px dotted #ababab; overflow:hidden; color:#000;}
+.wap_viewbase_u li span { font-weight:bold; color:#999;}
+.wap_viewbase_c { text-align:justify; text-justify:inter-ideograph; overflow:hidden;}
+.wap_viewbase_c img { max-width:100%;}
+</style>
+</head>
+<body class="wap_body">
+<div class="wap_topnav">
+<a href="javascript:history.go(-1);" class="return_btn"><i class="fa fa-chevron-left"></i></a>
+<a href="{ZL:GetNodeLinkUrl(104)/}"><img src="{$CssDir/}images/userlogo.png" alt="{$SiteName/}" /></a>
+<form method="get" action="/Search/SearchList.aspx" target="_blank">
+<input type="text" class="form-control" placeholder="">
+<button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>														
+</form>
+<div class="dropdown">
+<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">导航 <span class="caret"></span></button>
+<ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+<li><a href="{ZL:GetNodeLinkUrl(104)/}">首页</a></li>
+<li><a href="{ZL:GetNodeLinkUrl(1)/}">目的地</a></li>
+<li><a href="{ZL:GetNodeLinkUrl(2)/}">攻略</a></li>
+<li><a href="{ZL:GetNodeLinkUrl(3)/}">事件</a></li>
+<li><a href="{ZL:GetNodeLinkUrl(4)/}">画册</a></li>
+<li><a href="{ZL:GetLastinfo(20)/}">问答</a></li>
+<li><a href="{ZL:GetNodeLinkUrl(5)/}">美食</a></li>
+<li><a href="{ZL:GetNodeLinkUrl(6)/}">特产</a></li>
+</ul>
+</div>
+</div>
+<div class="h65"></div>
+
+<div class="wap_viewtop">
+<img src="{$CssDir/}images/banner_1.jpg" alt="" />
+<h3>{SField sid="景点模型数据源标签地址栏传参" FD="Title" page="0"/}<span class="pull-right">2586张图片</span></h3>
+</div>
+
+<div class="container wap_viewfen">
+<div class="pull-left wap_viewfen_l">
+<span><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> 8.2分</span>
+<a href="#"><i class="fa fa-edit"></i> 我来补充</a>
+</div>
+<div class="pull-right wap_viewfen_r">
+<a href="#"><i class="fa fa-plus-square"></i></a>
+<a href="#"><i class="fa fa-heart"></i></a>
+<a href="#"><i class="fa fa-thumbs-up"></i></a>
+<a href="#"><i class="fa fa-share-square-o"></i></a>
+</div>
+</div>
+
+<div class="container wap_viewcont">
+<div class="wap_viewsys">
+<p>{SField sid="景点模型数据源标签地址栏传参" FD="synopsis" page="0"/}</p>
+</div>
+<div class="wap_viewbase">
+<div class="wap_viewbase_t">基本信息</div>
+<div class="wap_viewbase_d">您所在的位置是贵阳市，距青岩古镇约 32 公里，开车预计 35 分钟后到达，途中有 5 个加油站，景区附件停车场6个</div>
+<div class="wap_viewbase_u">
+<ul>
+<li><span>景区名称：</span>{SField sid="景点模型数据源标签地址栏传参" FD="Title" page="0"/}</li>
+<li><span>门票价格：</span>{SField sid="景点模型数据源标签地址栏传参" FD="Price" page="0"/}</li>
+<li><span>地理位置：</span>{SField sid="景点模型数据源标签地址栏传参" FD="dlwz" page="0"/}</li>
+<li><span>景点类型：</span>{SField sid="景点模型数据源标签地址栏传参" FD="Type" page="0"/}</li>
+<li><span>景点级别：</span></li>
+<li><span>最佳游玩季节：</span>{SField sid="景点模型数据源标签地址栏传参" FD="ywjj" page="0"/}</li>
+<li><span>建议游玩时长：</span></li>
+<li><span>美食特产：</span>{SField sid="景点模型数据源标签地址栏传参" FD="Food" page="0"/}</li>
+<li><span>相关人物：</span></li>
+<li><span>适宜游玩方式：</span></li>
+<li><span>开放时间：</span>全天开放</li>
+</ul>
+</div>
+<div class="wap_viewbase_t">主要景点</div>
+<div class="wap_viewbase_c">
+{SField sid="景点模型数据源标签地址栏传参" FD="content" page="0"/}
+</div>
+</div>
+</div>
+
+<div class="wap_hot">
+<div class="wap_hot_t">热门目的地</div>
+<div class="container">
+<div class="row padding10">
+<ul>
+{ZL.Label id="wap首页输出热门景点" ShowNum="6" TitleNum="30" ClassName="col-xs-4 padding5" /}
+<div class="clearfix"></div>
+</ul>
+</div>
+</div>
+</div><!--wap_hot end-->
+
+<div class="wap_hot">
+<div class="wap_hot_t">青岩古镇周边景点</div>
+<div class="container">
+<div class="row padding10">
+<ul>
+<li class="col-xs-4 padding5"><a href="#"><img src="../style/images/guiyang.png" alt="" /></a></li>
+<li class="col-xs-4 padding5"><a href="#"><img src="../style/images/libo.png" alt="" /></a></li>
+<li class="col-xs-4 padding5"><a href="#"><img src="../style/images/anshun.png" alt="" /></a></li>
+<li class="col-xs-4 padding5"><a href="#"><img src="../style/images/chishui.png" alt="" /></a></li>
+<li class="col-xs-4 padding5"><a href="#"><img src="../style/images/zhenyuan.png" alt="" /></a></li>
+<li class="col-xs-4 padding5"><a href="#"><img src="../style/images/qiannanzhou.png" alt="" /></a></li>
+<div class="clearfix"></div>
+</ul>
+</div>
+</div>
+</div><!--wap_hot end-->
+
+
+
+
+<div class="container trip_xiangqing">
+<ul class="trip_list">
+<li><span>景点类型：</span><a>古镇</a>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;  <span>门票:</span>10.00元 </li>
+<li><span>美食特产:</span><a>玫瑰糖</a>，状元蹄，<a>鸡辣椒</a>，苗王酒</li>
+<li><span>核心景点:</span>九寺，八庙，<a>五阁</a>，二祠，清岩书院，万寿宫</li>
+<li><span>地理位置：</span>贵州省贵阳市华花溪区青岩镇</li>
+</ul>
+<div class="trip">您所在的位置是<a> 贵阳市</a> 距青岩古镇约 32 公里，开车预计 35 分钟后到达，途中有 5 个加油站</div>
+<img src="{$CssDir/}../style/images/map.png" alt="" class="trip_map">
+<p class="juli_p">与其他周边景点的距离</p>
+<ul class="trip_juli">
+<li><span>天河潭：</span>约28公里</li>
+<li><span>花溪公园：</span>约12公里</li>
+<li><span>黔灵山公园：</span>约36公里</li>
+<li><span>高坡云顶大草原：</span>约22公里</li>
+</ul>
+<div class="gaikuang">
+<h6>景区概况:</h6>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a>青岩古镇</a>，贵州四大古镇之一，位于贵阳市南郊，建于明洪武十年(1378年)，原为军事要塞。古镇内设计精巧，工艺精湛的明清建筑交错密布，寺庙，楼阁，画栋雕梁...<span><a>详情</a></span></p>
+</div>
+</div>
+
+<div class="container wap_hot">
+<div class="wap_hot_t">美食特产</div>
+<div class="row">
+<ul class="food_list">
+<div class="clearfix"></div>
+{ZL.Label id="输出相关美食列表" NodeID="5" ShowNum="3" TitleNum="30"  SysNum="100"  GID="0" ClassName="col-xs-4 padding5"  /}
+</ul>
+</div>
+</div><!--wap_hot end-->
+<div class="container wap_gong">
+<div class="wap_gong_t">青岩古镇攻略</div>
+<div class="wap_gong_w"><a><i class="glyphicon glyphicon-pencil"></i>写攻略</a></div>
+<div style="clear:both"></div>
+<ul class="media-list">
+
+{ZL.Label id="输出指定地区攻略列表_wap" NodeID="2" TitleNum="30" ShowNum="10" /}
+</ul>
+
+<div class="wap_gong_m"><a href="{ZL:GetNodeLinkUrl(2)/}">加载更多<i class="fa fa-angle-down"></i></a></div>
+</div><!--wap_gong end-->
+
+<div class="wap_foot">
+<ul>
+<li><a href="{ZL:GetNodeLinkUrl(104)/}"><i class="fa fa-home"></i><br/>首页</a></li>
+<li><a href="{ZL:GetProposeinfo(1)/}"><i class="fa fa-map"></i><br/>目的地</a></li>
+<li><a href="{ZL:GetLastinfo(4)/}"><i class="fa fa-photo"></i><br/>发图片</a></li>
+<li><a href="{ZL:GetLastinfo(20)/}"><i class="fa fa-question-circle"></i><br/>提问题</a></li>
+<li><a href="/User/Default1.aspx"><i class="fa fa-user"></i><br/>我的</a></li>
+<div class="clearfix"></div>
+</ul>
+</div>
+
+</body>
+</html>

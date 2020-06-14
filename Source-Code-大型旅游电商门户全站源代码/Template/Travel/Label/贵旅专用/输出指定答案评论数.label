@@ -1,0 +1,30 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <Table>
+    <LabelID>949</LabelID>
+    <LabelName>输出指定答案评论数</LabelName>
+    <LabelType>2</LabelType>
+    <LabelCate>贵旅专用</LabelCate>
+    <LabelDesc />
+    <LabelParam>AswID,,1,答案ID|AskID,,1,问题ID|Content,,1,关键字</LabelParam>
+    <LabelTable>{table1}.dbo.ZL_AskCommon</LabelTable>
+    <LabelField>Count(*) As Num</LabelField>
+    <LabelWhere>AswID=@AswID And AskID=@AskID And Content='@Content'</LabelWhere>
+    <LabelOrder />
+    <LabelContent>{Field="Num"/}</LabelContent>
+    <LabelCount>0</LabelCount>
+    <LabelAddUser>0</LabelAddUser>
+    <LabelNodeID>0</LabelNodeID>
+    <Modeltypeinfo>计数判断</Modeltypeinfo>
+    <addroot>循环计算</addroot>
+    <setroot>等于</setroot>
+    <Modelvalue>0</Modelvalue>
+    <Valueroot />
+    <IsOpen>0</IsOpen>
+    <FalseContent />
+    <DataSourceType>GZTravel</DataSourceType>
+    <ConnectString>DBO</ConnectString>
+    <ProceName />
+    <ProceParam>{"PureT1":"ZL_AskCommon","PureT2":"","T1":"GZTravel.dbo.ZL_AskCommon","T2":"","JoinType":"left join","OnField1":"AddTime","OnField2":""}</ProceParam>
+  </Table>
+</NewDataSet>

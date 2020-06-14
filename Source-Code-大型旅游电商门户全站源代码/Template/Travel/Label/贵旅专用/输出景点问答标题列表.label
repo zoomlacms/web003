@@ -1,0 +1,31 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <Table>
+    <LabelID>973</LabelID>
+    <LabelName>输出景点问答标题列表</LabelName>
+    <LabelType>4</LabelType>
+    <LabelCate>贵旅专用</LabelCate>
+    <LabelDesc />
+    <LabelParam>ShowNum,10,1,显示数|GeneralID,0,1,景点ID</LabelParam>
+    <LabelTable>ZL_Ask</LabelTable>
+    <LabelField>AddTime,ID,Qcontent,UserId,UserName</LabelField>
+    <LabelWhere>Status=2 And (Qcontent like '%'+(select Title from ZL_CommonModel where GeneralID=@GeneralID)+'%' or Supplyment like '%'+(select Title from ZL_CommonModel where GeneralID=@GeneralID)+'%')</LabelWhere>
+    <LabelOrder>AddTime DESC</LabelOrder>
+    <LabelContent>{Repeate}
+&lt;li&gt;&lt;a href="/Guest/Ask/SearchDetails.aspx?ID={Field="ID"/}"&gt;{Field="Qcontent"/}&lt;/a&gt;&lt;/li&gt;{/Repeate}</LabelContent>
+    <LabelCount>@ShowNum</LabelCount>
+    <LabelAddUser>0</LabelAddUser>
+    <LabelNodeID>0</LabelNodeID>
+    <Modeltypeinfo>计数判断</Modeltypeinfo>
+    <addroot>循环计算</addroot>
+    <setroot>等于</setroot>
+    <Modelvalue>0</Modelvalue>
+    <Valueroot />
+    <IsOpen>0</IsOpen>
+    <FalseContent />
+    <DataSourceType>GZTravel</DataSourceType>
+    <ConnectString>DBO</ConnectString>
+    <ProceName />
+    <ProceParam>{"PureT1":"ZL_Ask","PureT2":"","T1":"GZTravel.dbo.ZL_Ask","T2":"","JoinType":"left join","OnField1":"AddTime","OnField2":""}</ProceParam>
+  </Table>
+</NewDataSet>

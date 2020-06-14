@@ -1,0 +1,30 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <Table>
+    <LabelID>884</LabelID>
+    <LabelName>根据关键字循环输出指定美食特产</LabelName>
+    <LabelType>2</LabelType>
+    <LabelCate>贵旅专用</LabelCate>
+    <LabelDesc />
+    <LabelParam>KeyWord,,1,关键字|TitleNum,30,1,标题长|SysNum,100,1,简介数|ClassName,col-lg-3 col-md-3 col-sm-3 col-xs-12 padding10,1,Class|NodeID,5,1,节点ID</LabelParam>
+    <LabelTable>{table1}.dbo.ZL_Node</LabelTable>
+    <LabelField>NodeID</LabelField>
+    <LabelWhere>NodeID in (select NodeID from ZL_CommonModel left join ZL_C_jdmx on ItemID=ID where ModelID=45 And (NodeID=1 or FirstNodeID=1) And Title like '%@KeyWord%')</LabelWhere>
+    <LabelOrder />
+    <LabelContent>{Repeate}{ZL.Label id="根据节点名称输出指定地点美食特产" NodeID="{Field="NodeID"/}" TitleNum="@TitleNum" SysNum="@SysNum" ClassName="@ClassName" TypeID="@NodeID" /}{/Repeate}</LabelContent>
+    <LabelCount>0</LabelCount>
+    <LabelAddUser>0</LabelAddUser>
+    <LabelNodeID>0</LabelNodeID>
+    <Modeltypeinfo>计数判断</Modeltypeinfo>
+    <addroot>循环计算</addroot>
+    <setroot>等于</setroot>
+    <Modelvalue>0</Modelvalue>
+    <Valueroot />
+    <IsOpen>0</IsOpen>
+    <FalseContent />
+    <DataSourceType>GZTravel</DataSourceType>
+    <ConnectString>DBO</ConnectString>
+    <ProceName />
+    <ProceParam>{"PureT1":"ZL_Node","PureT2":"","T1":"GZTravel.dbo.ZL_Node","T2":"","JoinType":"left join","OnField1":"AddMoney","OnField2":""}</ProceParam>
+  </Table>
+</NewDataSet>

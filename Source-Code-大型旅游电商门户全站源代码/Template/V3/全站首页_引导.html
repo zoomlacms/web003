@@ -1,0 +1,147 @@
+﻿<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="msapplication-TileColor" content="#1A0066"/>
+<meta name="msapplication-TileImage" content="/images/win8_symbol_140x140.png"/>
+<title>逐浪CMS-为匠者生|移动互联网时代最优门户与WEB开发平台页</title>
+{$MetaKeywords/}
+{$MetaDescription/}
+{ZL:Boot()/}
+<link href="/dist/css/animate.min.css" rel="stylesheet"/>
+<style>
+body{ background:#8eb131;}
+.down{font-size:1em; margin-top:50%; text-align:center; margin-top:40%;}
+.down{-webkit-animation-name: bounceInDown;animation-name: bounceInDown;}
+.left{-webkit-animation-name: bounceInLeft;animation-name: bounceInLeft;}
+.right{-webkit-animation-name: bounceInRight;animation-name: bounceInRight;}
+.down{ -webkit-animation-duration:3s; animation-duration: 3s; -webkit-animation-fill-mode: both; animation-fill-mode: both; }
+.right{ -webkit-animation-duration:6s; animation-duration: 6s; -webkit-animation-fill-mode: both; animation-fill-mode: both; }
+.a1,.a2,.a3{ float:left; height:100vh; text-align:center; font-size:6em; color:#fff;}
+.a1{width:33VW; background:#f58220; font-size:12em;}
+.a2{width:32VW; background:#f2ab13;}
+.a3{width:33VW; background:#; font-size:12em;}
+.a1 a,.a3 a{ margin-bottom:9.8em;}
+.show { margin-top:20VH;}
+.a2 span{padding-top:20px;}
+.a2 h2{padding-top:20px;}
+h2{ font-family:"Roboto Slab","Helvetica Neue",Helvetica,"Hiragino Sans GB",Arial,sans-serif;}
+p{ padding:20px;font-size:0.09em;}
+.a2 p{font-size:0.18em;}
+@media screen and (max-width:600px){ 
+.a1,.a2,.a3{ float:left; width:100VW; height:30vh; text-align:center; font-size:4em; color:#fff;}
+h2{ margin-top:0;margin-bottom:0; font-size:0.4em;}
+p{padding-top:0; padding-bottom:0;}
+.a2 p{ padding-bottom:0;}
+.a2 h2{padding-top:1.2em;}
+.show{margin-top:auto;}
+.down{font-size:0.5em;}
+p{font-size:0.2em;}
+.a2 p{font-size:0.4em;}
+}
+</style>
+<link type="text/css" rel="stylesheet" href="/App_Themes/User.css" />
+</head>
+<body> 
+<div class="user_mimenu user_home_mimenu hidden-xs">
+<div class="navbar navbar-fixed-top" role="navigation">
+<button type="button" class="btn btn-default" id="mimenu_btn">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+<div class="user_mimenu_left">
+<ul class="list-unstyled">
+<li><a href="/user/" target="_blank">会员中心</a></li>
+<li><a href="/Home" target="_blank">能力中心</a></li>
+<li><a href="/Index" target="_blank">社区论坛</a></li>
+<li><a href="/Ask" target="_blank">问答互动</a></li>
+<li><a href="/Guest" target="_blank">留言反馈</a></li>
+<li><a href="/Baike" target="_blank">百科中心</a></li>
+<li><a href="/Office" target="_blank">OA办公</a></li>
+<li><a href="{$ManageDir/}Default.aspx" target="_blank">后台管理</a></li>
+</ul>
+</div>
+<div class="navbar-header">
+<button class="navbar-toggle in" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+<span class="sr-only">移动下拉</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+</div>
+</div> 
+</div>
+
+<div class="container-fulid">
+<div class="a1">
+<div class="show animated left">
+<i class="fa fa-cubes"></i>
+<h2>新可视开发模式！</h2>
+<p>为企业部署APP提代使得，不植入任何后台广告，确保企业的权益收益不植入任何后台广告，确保企业的权益收益</p>
+<a href="/design/?ID=2aac33e9-dced-4d2c-90df-07d9ac16bc4d" target="_blank" class="btn btn-success">体验不凡！</a>
+</div>
+</div>
+
+<div class="a2">
+<div class="show animated down">
+<span class="fa-stack fa-lg">
+  <i class="fa fa-square-o fa-stack-2x"></i>
+  <i class="fa fa-flag fa-stack-1x"></i>
+</span>
+<h2>门户平台开发</h2>
+<p>为企业部署APP提代使得，不植入任何后台广告，确保企业的权益收益不植入任何后台广告，确保企业的权益收益</p>
+<a href="{ZL:GetProposeinfo(1)/}"  class="btn btn-success">进入门户平台</a>
+</div>
+</div>
+
+<div class="a3">
+<div class="show animated right">
+<i class="fa fa fa-send"></i>
+<h2>移动APP生成</h2>
+<p>为企业部署APP提代使得，不植入任何后台广告，确保企业的权益收益不植入任何后台广告，确保企业的权益收益</p>
+<div class="btn-group" role="group" aria-label="...">
+  <a href="http://app.zoomla.cn" class="btn btn-default" target="_blank">在线生成</a>
+  <a href="/app/" class="btn btn-default">本地部署</a>
+</div>
+
+</div>
+</div>
+
+</div>
+</body>
+</html>
+<script> 
+$().ready(function (e) {//菜单颜色配置
+	var colorArr=new Array('#c47f3e','#669933','#27a9e3','#f05033','#990066','#9999FF','#E48632','#990000','#22afc2','#6633FF','#9900FF','#1FA67A');
+	var count=$(".user_menu_sub li").length;
+	for(var i=0; i<count; i++){
+		$(".user_menu").eq(i).css("background",colorArr[i%12]);	
+	}
+    if ($(".user_menu_sub li").length < 1)
+        $(".u_menu_more").remove();
+})
+$("#mimenu_btn").click(function(e) { 
+	if($(".user_mimenu_left").width()>0){ 
+ 		$(".user_mimenu_left ul").fadeOut(100);
+		$(".user_mimenu_left").animate({width:0},200); 	
+	}
+	else{ 
+		$(".user_mimenu_left").animate({width:150},300); 
+		$(".user_mimenu_left ul").fadeIn();
+	}
+});
+//会员菜单更多显示/隐藏
+$("#more_btn").click(function(e) {
+	if($(".user_menu_sub").css("display")=="none"){  
+	    $(".user_menu_sub").slideDown();
+		$(this).find("i").removeClass("fa-angle-double-down");
+		$(this).find("i").addClass("fa-angle-double-up");
+	}
+	else {  
+	    $(".user_menu_sub").slideUp(200); 
+		$(this).find("i").removeClass("fa-angle-double-up");
+		$(this).find("i").addClass("fa-angle-double-down");
+	}
+});
+</script>

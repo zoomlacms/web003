@@ -1,0 +1,111 @@
+{ZL.Source id="节点栏目信息数据源"/}
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>{SField sid="节点栏目信息数据源" FD="NodeName" page="0"/}_{$SiteName/}</title>
+<meta name="Keywords" content="{SField sid="节点栏目信息数据源" FD="Meta_Keywords" page="0"/}" />
+<meta name="description" content="{SField sid="节点栏目信息数据源" FD="Meta_Description" page="0"/}" />
+{ZL:Boot()/}
+<link href="{$CssDir/}global.css?Version={ZL.Label id="前端样式版本号"/}" rel="stylesheet"/>
+</head>
+
+
+<body class="wap_body">
+<div class="wap_topnav">
+<a href="javascript:history.go(-1);" class="return_btn"><i class="fa fa-chevron-left"></i></a>
+<a href="{ZL:GetNodeLinkUrl(104)/}"><img src="{$CssDir/}images/userlogo.png" alt="{$SiteName/}" /></a>
+<form method="get" action="/Search/SearchList.aspx" target="_blank">
+<input type="text" class="form-control" placeholder="">
+<button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+</form>
+<div class="dropdown">
+<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">导航 <span class="caret"></span></button>
+<ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+<li><a href="{ZL:GetNodeLinkUrl(104)/}">首页</a></li>
+<li class="active"><a href="{ZL:GetProposeinfo(1)/}">目的地</a></li>
+<li><a href="{ZL:GetLastinfo(2)/}">攻略</a></li>
+<li><a href="{ZL:GetNodeLinkUrl(3)/}">事件</a></li>
+<li><a href="{ZL:GetNodeLinkUrl(4)/}">画册</a></li>
+<li><a href="{ZL:GetLastinfo(20)/}">问答</a></li>
+<li><a href="{ZL:GetLastinfo(5)/}">美食</a></li>
+<li><a href="{ZL:GetLastinfo(6)/}">特产</a></li>
+</ul>
+</div>
+</div>
+<div style="height:65px;"></div>
+
+<div id="carousel-example-generic" class="carousel slide wap_banner" data-ride="carousel">
+<!-- Indicators -->
+<ol class="carousel-indicators">
+<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+<li data-target="#carousel-example-generic" data-slide-to="2"></li>
+</ol>
+
+<!-- Wrapper for slides -->
+<div class="carousel-inner" role="listbox">
+{ZL.Label id="输出最新游记滚动列表_wap" NodeID="2" ShowNum="3" TitleNum="30" /}
+</div>
+
+<!-- Controls -->
+<a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+<span class="sr-only">Previous</span>
+</a>
+<a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+<span class="sr-only">Next</span>
+</a>
+</div>
+<!-- search -->
+<div class="container wap_mudi_search">
+<form method="get" action="/Search/SearchList.aspx" target="_blank">
+<input type="text" class="form-control" placeholder="我想去......" name="KeyWord" />
+<button type="button" class="btn btn-default"><i class="fa fa-search"></i></button>
+</form>
+<p><a href="/Search/SearchList.aspx?KeyWord={$GetUrlencode(黄果树瀑布)$}">黄果树瀑布</a><a href="/Search/SearchList.aspx?KeyWord={$GetUrlencode(小七孔)$}">小七孔</a><a href="/Search/SearchList.aspx?KeyWord={$GetUrlencode(荔波)$}">荔波</a><a href="/Search/SearchList.aspx?KeyWord={$GetUrlencode(西江苗寨)$}">西江苗寨</a></p>
+</div><!-- searchend -->
+
+<!-- column1 -->
+<div class="wap_mudi_column">
+<div class="wap_hot_t">热门目的地</div>
+<div class="container wap_mudi_ul">
+{ZL.Label id="输出指定节点热门景点列表_wap版_分页" NodeID="{SField sid="节点栏目信息数据源" FD="NodeID" page="0"/}" TitleNum="30" ShowNum="10" ClassName="col-xs-6 padding10" /}
+</div>
+</div><!-- column1 end -->
+
+
+
+<div class="wap_mudi_theme">
+<div class="wap_hot_t">主题旅游</div>
+<div class="container">
+<div class="row padding5">
+<div class="col-xs-7 padding10"><a href="#"><img src="{$CssDir/}images/theme_img1.jpg" alt="徒步旅游" /><span>徒步旅游</span></a></div>
+<div class="col-xs-5 padding10"><a href="#"><img src="{$CssDir/}images/theme_img2.jpg" alt="亲子游" /><span>亲子游</span></a></div>
+<div class="col-xs-5 padding10"><a href="#"><img src="{$CssDir/}images/theme_img3.jpg" alt="野外拓展" /><span>野外拓展</span></a></div>
+<div class="col-xs-7 padding10"><a href="#"><img src="{$CssDir/}images/theme_img4.jpg" alt="自驾游" /><span>自驾游</span></a></div>
+</div>
+</div>
+</div><!--wap_mudi_theme end -->
+
+
+<div class="h70"></div>
+<div class="wap_foot"><!-- foot -->
+<ul>
+<li><a href="{ZL:GetNodeLinkUrl(104)/}"><i class="fa fa-home"></i><br/>首页</a></li>
+<li class="active"><a href="{ZL:GetProposeinfo(1)/}"><i class="fa fa-map"></i><br/>目的地</a></li>
+<li><a href="{ZL:GetLastinfo(4)/}"><i class="fa fa-photo"></i><br/>发图片</a></li>
+<li><a href="{ZL:GetLastinfo(20)/}"><i class="fa fa-question-circle"></i><br/>提问题</a></li>
+<li><a href="/User/Default1.aspx"><i class="fa fa-user"></i><br/>我的</a></li>
+<div class="clearfix"></div>
+</ul>
+</div><!-- foot end-->
+
+</body>
+</html>
+<script>
+$().ready(function(e) {
+    $(".wap_banner .carousel-inner .item:first-child").addClass("active");
+});
+</script>

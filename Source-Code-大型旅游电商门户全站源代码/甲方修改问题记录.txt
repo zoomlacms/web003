@@ -1,0 +1,11 @@
+1，User\Content\Note\diag\cutpic.aspx  alert("图像过小,请上传1920*680以上的高清图"); 修改成 alert("图像过小,请上传1920*650以上的高清图");
+
+2，Template\Travel\style\global.css   .Raiders_conb样式修改
+
+3，Template\Travel\style\global.css   .home_ulogin样式修改
+
+4, UE.getEditor('EditorContent', { toolbars: [['FullScreen', 'Undo', 'Redo', 'paragraph', 'fontfamily', 'fontsize', 'Bold', 'Italic', 'NumberedList', 'BulletedList', 'Smiley', 'ShowBlocks', 'Maximize', 'underline', 'fontborder', 'strikethrough', '|', 'justifyleft', 'justifycenter', 'justifyright', 'justifyjustify', 'insertcode', 'simpleupload', 'insertimage', 'insertvideo', 'emotion', 'attachment', 'map']] });
+修改为：
+UE.getEditor('EditorContent', { toolbars: [['FullScreen', 'Undo', 'Redo', 'paragraph', 'fontfamily', 'fontsize', 'Bold', 'Italic', 'NumberedList', 'BulletedList', 'Smiley', 'ShowBlocks', 'Maximize', 'underline', 'fontborder', 'strikethrough', '|', 'justifyleft', 'justifycenter', 'justifyright', 'justifyjustify','removeformat','autotypeset','simpleupload', 'insertimage', 'insertvideo', 'emotion', 'attachment', 'map']] });
+
+增加 'removeformat'，清除格式工具，'autotypeset', //自动排版 删除 'insertcode', //代码语言

@@ -1,0 +1,189 @@
+{ZL.Source id="节点栏目信息数据源"/}
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>{SField sid="节点栏目信息数据源" FD="NodeName" page="0"/}_{$SiteName/}</title>
+<meta name="Keywords" content="{SField sid="节点栏目信息数据源" FD="Meta_Keywords" page="0"/}" />
+<meta name="description" content="{SField sid="节点栏目信息数据源" FD="Meta_Description" page="0"/}" />
+{ZL:Boot()/}
+<link href="{$CssDir/}global.css?Version={ZL.Label id="前端样式版本号"/}" rel="stylesheet"/>
+<script src="{$CssDir/}js/my.js" type="text/javascript"></script>
+<script src="/JS/ZL_ValidateCode.js"></script>
+<script src="/JS/Controls/B_User.js"></script>
+<script src="/JS/Controls/Control.js"></script>
+</head>
+<body>
+{ZL.Label id="全站共用头部"/}
+<div class="h74"></div>
+<div class="food_banner">
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+<!-- Indicators -->
+<!-- Wrapper for slides -->
+<div class="carousel-inner" role="listbox">
+<div class="item active Raiders_banner1">
+<div class="carousel-caption">
+<div class="container">
+<div class="media">
+<div class="media-left"><a href="#"><img class="media-object" src="/Template/Travel/style/images/userface.jpg" alt="..."></a></div>
+<div class="media-body media-middle">
+<h4 class="media-heading"><a href="#">13天的青岩古镇之旅——超美多图！！！</a></h4>
+<p>2015-12-08 18:40:56</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="item Raiders_banner1">
+<div class="carousel-caption">
+<div class="container">
+<div class="media">
+<div class="media-left"><a href="#"><img class="media-object" src="/Template/Travel/style/images/userface.jpg" alt="..."></a></div>
+<div class="media-body media-middle">
+<h4 class="media-heading"><a href="#">13天的青岩古镇之旅——超美多图！！！</a></h4>
+<p>2015-12-08 18:40:56</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="item Raiders_banner1">
+<div class="carousel-caption">
+<div class="container">
+<div class="media">
+<div class="media-left"><a href="#"><img class="media-object" src="/Template/Travel/style/images/userface.jpg" alt="..."></a></div>
+<div class="media-body media-middle">
+<h4 class="media-heading"><a href="#">13天的青岩古镇之旅——超美多图！！！</a></h4>
+<p>2015-12-08 18:40:56</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="container">
+<!-- Controls -->
+<a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev"></a>
+<a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next"></a>
+</div>
+</div>
+</div><!--food_banner end-->
+
+<div class="container food_bg">
+<div class="eara_two">
+<ol class="breadcrumb">
+<li><a href="/">{$SiteName/}</a></li>
+{ZL.Label id="输出多级节点导航_V3" NodeID="{SField sid="节点栏目信息数据源" FD="NodeID" page="0"/}" ShowNum="30" /}
+</ol>
+<div class="eara_two_n">
+<ul>
+<li><a href="/">首页</a></li>
+<li><a href="#">概况</a></li>
+<li><a href="{ZL:GetNodeLinkUrl(1)/}">景点</a></li>
+<li><a href="{ZL:GetNodeLinkUrl(4)/}">画册</a></li>
+<li><a href="{ZL:GetNodeLinkUrl(2)/}">攻略</a></li>
+<li><a href="/Ask">问答</a></li>
+<li><a href="{ZL:GetNodeLinkUrl(3)/}">事件</a></li>
+<li><a href="{ZL:GetNodeLinkUrl(5)/}">美食</a></li>
+<li><a href="{ZL:GetNodeLinkUrl(6)/}">特产</a></li>
+<div class="clearfix"></div>
+</ul>
+</div>
+
+<div class="news_main">
+<div class="row">
+<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 news_main_l">
+<div class="news_mainl_c">
+<ul class="media-list">
+{ZL.Label id="资讯频道输出指定节点图片列表_带简介_分页" NodeID="{SField sid="节点栏目信息数据源" FD="NodeID" page="0"/}" ShowNum="20" TitleNum="46" SysNum="200" /}
+</ul>
+</div>
+</div>
+<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 news_main_r">
+<div class="news_mainr_ad"><a href="#"><img src="{$CssDir/}images/acerBox2.jpg" alt="" /></a></div>
+<div class="news_mainr_j">
+<div class="news_mainr_jt">推荐新闻<span class="pull-right"><a href="#">更多>></a></span></div>
+<div class="news_mainr_jf">
+{ZL.Label id="资讯频道输出指定节点推荐信息" NodeID="3" ShowNum="1" TitleNum="26" SysNum="100" /}
+</div>
+<div class="news_mainr_jc">
+<ul>
+{ZL.Label id="输出指定节点标题_无时间属性" NodeID="3" TitleNum="40" ShowNum="9" /}</ul>
+</div>
+</div>
+<div class="news_mainr_hot">
+<div class="news_mainr_ht">热点文章</div>
+<ul>
+{ZL.Label id="输出指定节点标题_带排序点击" NodeID="3" TitleNum="40" /}
+</ul>
+</div>
+<!--
+<div class="news_mainr_pics">
+<div class="news_mainr_pt">组图新闻</div>
+<div class="row padding5">
+<ul>
+{ZL.Label id="资讯频道输出组图列表" NodeID="3" ShowNum="4" TitleNum="20" ClassName="col-lg-6 col-md-6 col-sm-6 col-xs-12 padding10" /}
+</ul>
+</div>
+</div>-->
+
+</div>
+</div>
+</div>
+</div>
+</div>
+
+{ZL.Label id="全站底部"/}
+{ZL.Label id="通用登录弹出层"/}
+</body>
+</html>
+<script>
+function LoginFun()
+{
+	var buser = new B_User();
+	var model = { name: $("#UName").val(), pwd: $("#UPSD").val(), key: $("#VCode_hid").val(), code: $("#VCode").val() };
+	if (model.name == "" || model.pwd == "") { alert("用户名或密码不能为空!"); return; }
+	buser.Login(model,function(data){
+		if (data == -1) { alert("用户名或密码错误"); }
+		else if (data == -10) {
+			alert("用户名或密码错误");
+			EnableCode();
+		}
+		else if (data == -2)
+		{
+			alert("验证码错误");
+			EnableCode();
+		}
+		else {
+			location.href=location.href;
+		}
+	})
+}
+function EnableCode() {
+	if ($(".code").is(":hidden")) {
+		$(".code").show();
+		$("#VCode_img").click();
+		$("#VCode").ValidateCode();
+	}
+}
+function ShowLogin()
+{
+	$(".home_ulogin").show();
+}
+function CloseLogin()
+{
+	$(".home_ulogin").hide();
+}
+function GetEnterCode(a, id) {
+    if (event.keyCode == 13) {
+        switch (a) { case "click": $("#" + id).trigger("click"); break; case "focus": $("#" + id).focus(); break; }
+        return false;
+    }
+    else { return true; }
+}
+$(".media-object").each(function(index, element) {
+    if($(this).attr("src")=="/UploadFiles/nopic.gif")
+		$(this).parent().parent().hide();
+});
+</script>

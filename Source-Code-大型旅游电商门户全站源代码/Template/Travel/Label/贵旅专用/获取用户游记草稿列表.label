@@ -1,0 +1,33 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <Table>
+    <LabelID>941</LabelID>
+    <LabelName>获取用户游记草稿列表</LabelName>
+    <LabelType>2</LabelType>
+    <LabelCate>贵旅专用</LabelCate>
+    <LabelDesc />
+    <LabelParam>ShowNum,10,1,显示数|TitleNum,30,1,标题长|NodeID,2,1,节点ID</LabelParam>
+    <LabelTable>{table1}.dbo.ZL_CommonModel</LabelTable>
+    <LabelField>CreateTime,GeneralID,NodeID,Title=(case Title when '' then '未命名草稿' else Title end)</LabelField>
+    <LabelWhere>(NodeID=2 or FirstNodeID=2) And Status=-3 And ModelID=46 And Inputer='{ZL:GetuserName()/}'</LabelWhere>
+    <LabelOrder>CreateTime DESC</LabelOrder>
+    <LabelContent>{Repeate}&lt;li&gt;
+&lt;h3&gt;{ZL:CutText({Field="Title"/},@TitleNum,)/} &lt;a href="/User/Content/Note/note.aspx?id={Field="GeneralID"/}&amp;nodeid=2"&gt;&lt;i class="fa fa-edit"&gt;&lt;/i&gt; 继续写&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;{ZL:FormatDate({Field="CreateTime"/},yyyy-MM-dd HH:mm:ss)/}&lt;/p&gt;
+&lt;/li&gt;{/Repeate}</LabelContent>
+    <LabelCount>@ShowNum</LabelCount>
+    <LabelAddUser>0</LabelAddUser>
+    <LabelNodeID>0</LabelNodeID>
+    <Modeltypeinfo>计数判断</Modeltypeinfo>
+    <addroot>循环计算</addroot>
+    <setroot>等于</setroot>
+    <Modelvalue>0</Modelvalue>
+    <Valueroot />
+    <IsOpen>0</IsOpen>
+    <FalseContent />
+    <DataSourceType>GZTravel</DataSourceType>
+    <ConnectString>DBO</ConnectString>
+    <ProceName />
+    <ProceParam>{"PureT1":"ZL_CommonModel","PureT2":"","T1":"GZTravel.dbo.ZL_CommonModel","T2":"","JoinType":"left join","OnField1":"because_back","OnField2":""}</ProceParam>
+  </Table>
+</NewDataSet>

@@ -1,0 +1,27 @@
+﻿{ZL.Source id="节点栏目信息数据源"/}
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>{SField sid="节点栏目信息数据源" FD="NodeName" page="0"/}_{$SiteName/}</title>
+<meta name="Keywords" content="{SField sid="节点栏目信息数据源" FD="Meta_Keywords" page="0"/}" />
+<meta name="description" content="{SField sid="节点栏目信息数据源" FD="Meta_Description" page="0"/}" />
+{ZL:Boot()/}
+<link href="{$CssDir/}global.css?Version={ZL.Label id="前端样式版本号"/}" rel="stylesheet"/>
+</head>
+<body>
+<div class="search_list">
+<ul>
+{ZL.Label id="根据关键字输出标题列表" KeyWord="{$GetUrldecode({$GetRequest(KeyWord)$})$}" TitleNum="50" /}
+</ul>
+</div>
+</body>
+</html>
+<script>
+$().ready(function(e) {
+    parent.SetHeight(document.body.offsetHeight);
+});
+$(".search_list li a").each(function(index, element) {
+    $(this).html($(this).html().replace('{$GetUrldecode({$GetRequest(KeyWord)$})$}','<span>{$GetUrldecode({$GetRequest(KeyWord)$})$}</span>'));
+});
+</script>

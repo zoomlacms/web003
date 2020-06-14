@@ -1,0 +1,128 @@
+{ZL.Source id="节点栏目信息数据源"/}
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>{SField sid="节点栏目信息数据源" FD="NodeName" page="0"/}_{$SiteName/}</title>
+<meta name="Keywords" content="{SField sid="节点栏目信息数据源" FD="Meta_Keywords" page="0"/}" />
+<meta name="description" content="{SField sid="节点栏目信息数据源" FD="Meta_Description" page="0"/}" />
+{ZL:Boot()/}
+<link href="{$CssDir/}global.css?Version={ZL.Label id="前端样式版本号"/}" rel="stylesheet"/>
+<style>
+.trip_xiala{float:right;margin-top:-70px;margin-right:-20px}
+.trip_xiala .btn{border:none;background:none}
+.wap_logo{margin-bottom:-60px;margin-left:130px;margin-top:20px;width:30%}
+.trip_nav .form-control{width:50px;margin-right:60px;}
+.wap_nav_link{font-size:24px;font-weight:bold;}
+.trip_connect_title{padding-top:80px}
+.trip_nav{height:80px;}
+.trip_nav .navbar-toggle { float:none; margin-top:20px; margin-right:0; }
+.trip_nav.navbar-form {   border:none; } 
+.h30{height:30px;background:#ededef;margin-top:-30px;}
+.trip_nav .navbar-form .btn { position:absolute; left:0; top:10px; border:none; background:none;margin-left:300px;margin-top:5px; }
+.trip_nav .navbar-form .form-control { padding-left:10px; border-radius:60px; position:absolute}
+.trip_wap_input{float:right;margin-top:-50px;margin-left:300px;}
+
+.wap_ask p span{color:red}
+.time{font-size:9px;color:#999999;margin-left:40px;}
+.answer{float:right}
+.answe a{text-decoration:none;}
+.body_trip{background:#ededef;}
+.wap_hot_m a{text-decoration:none;height:30px; }
+.answet_input{width:100%;height:40px;background:#cccccc;border:none;border-radius:5px;padding-left:10px;}
+.my_answer{padding-bottom:20px;float:left;width:100%}
+</style>
+</head>
+
+
+<body class="wap_body">
+<div class="wap_topnav">
+<a href="javascript:history.go(-1);" class="return_btn"><i class="fa fa-chevron-left"></i></a>
+<a href="{ZL:GetNodeLinkUrl(104)/}"><img src="{$CssDir/}images/userlogo.png" alt="{$SiteName/}" /></a>
+<form method="get" action="/Search/SearchList.aspx" target="_blank">
+<input type="text" class="form-control" placeholder="">
+<button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>														
+</form>
+<div class="dropdown">
+<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">导航 <span class="caret"></span></button>
+<ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+<li><a href="{ZL:GetNodeLinkUrl(104)/}">首页</a></li>
+<li><a href="{ZL:GetProposeinfo(1)/}">目的地</a></li>
+<li class="active"><a href="{ZL:GetLastinfo(2)/}">攻略</a></li>
+<li><a href="{ZL:GetNodeLinkUrl(3)/}">事件</a></li>
+<li><a href="{ZL:GetNodeLinkUrl(4)/}">画册</a></li>
+<li><a href="{ZL:GetLastinfo(20)/}">问答</a></li>
+<li><a href="{ZL:GetLastinfo(5)/}">美食</a></li>
+<li><a href="{ZL:GetLastinfo(6)/}">特产</a></li>
+</ul>
+</div>
+</div>
+<div class="container trip_connect_title">
+<h4>游记评论:青岩古镇一日游</h4>
+</div>
+<div class="container wap_ask">
+
+<ul>
+
+<li><div class="answer"><a href="#">回复</a></div>
+<p><a href="#"><img src="../style/images/userface.jpg" alt="?????" />智慧妈咪</a><span>LV5</span></p>
+<p class="time">2015-12-24</p>
+<p>这是一个很优美的花园，修整规则的植物，道路中间是流淌的水池,虽然气候渐凉，但花朵依旧点缀在绿草之间</p>
+</li>
+<li><div class="answer"><a href="#">回复</a></div>
+<p><a href="#"><img src="../style/images/userface.jpg" alt="" />智慧妈咪</a><span>LV5</span></p>
+<p class="time">2015-12-24</p>
+<p>这是一个很优美的花园，修整规则的植物，道路中间是流淌的水池,虽然气候渐凉，但花朵依旧点缀在绿草之间</p>
+</li>
+<li><div class="answer"><a href="#">回复</a></div>
+<p><a href="#"><img src="../style/images/userface.jpg" alt="" />智慧妈咪</a><span>LV5</span></p>
+<p class="time">2015-12-24</p>
+<p>这是一个很优美的花园，修整规则的植物，道路中间是流淌的水池,虽然气候渐凉，但花朵依旧点缀在绿草之间</p>
+</li>
+<li><div class="answer"><a href="#">回复</a></div>
+<p><a href="#"><img src="../style/images/userface.jpg" alt="" />智慧妈咪</a><span>LV5</span></p>
+<p class="time">2015-12-24</p>
+<p>这是一个很优美的花园，修整规则的植物，道路中间是流淌的水池,虽然气候渐凉，但花朵依旧点缀在绿草之间</p>
+</li>
+<li><div class="answer"><a href="#">回复</a></div>
+<p><a href="#"><img src="../style/images/userface.jpg" alt="" />智慧妈咪</a><span>LV5</span></p>
+<p class="time">2015-12-24</p>
+<p>这是一个很优美的花园，修整规则的植物，道路中间是流淌的水池,虽然气候渐凉，但花朵依旧点缀在绿草之间</p>
+</li>
+<li><div class="answer"><a href="#">回复</a></div>
+<p><a href="#"><img src="../style/images/userface.jpg" alt="" />智慧妈咪</a><span>LV5</span></p>
+<p class="time">2015-12-24</p>
+<p>这是一个很优美的花园，修整规则的植物，道路中间是流淌的水池,虽然气候渐凉，但花朵依旧点缀在绿草之间</p>
+</li>
+<li><div class="answer"><a href="#">回复</a></div>
+<p><a href="#"><img src="../style/images/userface.jpg" alt="" />智慧妈咪</a><span>LV5</span></p>
+<p class="time">2015-12-24</p>
+<p>这是一个很优美的花园，修整规则的植物，道路中间是流淌的水池,虽然气候渐凉，但花朵依旧点缀在绿草之间</p>
+</li>
+</ul>
+<div class="wap_hot_m"><a href="#">下拉加载更多<i class="fa fa-angle-down"></i></a></div>
+<hr/>
+
+<div class="container my_answer">
+<input text="text" placeholder="回复游记" class="answet_input"/>
+</div>
+</div><!--wap_ask end-->
+
+<div class="h70"></div>
+<div class="wap_foot"><!-- foot -->
+<ul>
+<li><a href="{ZL:GetNodeLinkUrl(104)/}"><i class="fa fa-home"></i><br/>首页</a></li>
+<li><a href="{ZL:GetNodeLinkUrl(1)/}"><i class="fa fa-map"></i><br/>目的地</a></li>
+<li><a href="{ZL:GetNodeLinkUrl(3)/}"><i class="fa fa-photo"></i><br/>发图片</a></li>
+<li><a href="/Ask"><i class="fa fa-question-circle"></i><br/>提问题</a></li>
+<li><a href="/User/Default1.aspx"><i class="fa fa-user"></i><br/>我的</a></li>
+<div class="clearfix"></div>
+</ul>
+</div><!-- foot end-->
+</body>
+</html>
+<script>
+$().ready(function(e) {
+    $(".wap_banner .carousel-inner .item:first-child").addClass("active");
+});
+</script>

@@ -1,0 +1,36 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <Table>
+    <LabelID>152</LabelID>
+    <LabelName>全站底部</LabelName>
+    <LabelType>1</LabelType>
+    <LabelCate>静态标签</LabelCate>
+    <LabelDesc />
+    <LabelParam />
+    <LabelTable />
+    <LabelField />
+    <LabelWhere />
+    <LabelOrder />
+    <LabelContent>&lt;div id="footer"&gt;
+&lt;div class="ftcenter wd1200"&gt;
+&lt;div class="ftleft"&gt;
+&lt;div class="fttop"&gt;&lt;a class="ftaw ftfleft" title="关于我们" href="{ZL:GetInfoUrl(2180)/}" target="_blank" rel="external nofollow"&gt;关于我们&lt;/a&gt;&lt;a class="ftaw ftfleft" title="免责声明" href="{ZL:GetInfoUrl(2181)/}" target="_blank" rel="external nofollow"&gt;免责声明&lt;/a&gt;&lt;a class="ftaw ftfleft" title="版权声明" href="{ZL:GetInfoUrl(2188)/}" target="_blank" rel="external nofollow"&gt;版权声明&lt;/a&gt;&lt;a class="ftaw ftfleft" title="注册协议" href="{ZL:GetInfoUrl(2189)/}" target="_blank"&gt;注册协议&lt;/a&gt;&lt;a class="ftaw ftfleft" title="加入我们" href="{ZL:GetInfoUrl(2190)/}" target="_blank"&gt;加入我们&lt;/a&gt;&lt;/div&gt;
+&lt;div class="ftbottom"&gt;
+&lt;span class="ftcopy"&gt;To行贵州旅游内容均为用户分享产生，若发现您的权利被侵害，请联系info@sunzonet.com ，我们尽快处理&lt;/span&gt;&lt;/div&gt;
+&lt;div class="ftbottom"&gt;&lt;span class="ftcopy"&gt;Copyright © 2016 &lt;a class="ftsite" href="http://www.toxingbaike.com" title="To行贵州旅" target="_blank"&gt;To行贵州旅游&lt;/a&gt; 黔ICP备16000516&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</LabelContent>
+    <LabelCount />
+    <LabelAddUser>0</LabelAddUser>
+    <LabelNodeID>0</LabelNodeID>
+    <Modeltypeinfo>计数判断</Modeltypeinfo>
+    <addroot>循环计算</addroot>
+    <setroot>等于</setroot>
+    <Modelvalue />
+    <Valueroot />
+    <IsOpen>0</IsOpen>
+    <FalseContent />
+    <DataSourceType />
+    <ConnectString />
+    <ProceName />
+    <ProceParam />
+  </Table>
+</NewDataSet>

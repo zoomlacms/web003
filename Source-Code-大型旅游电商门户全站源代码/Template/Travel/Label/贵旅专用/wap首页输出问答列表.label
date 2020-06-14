@@ -1,0 +1,37 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <Table>
+    <LabelID>889</LabelID>
+    <LabelName>wap首页输出问答列表</LabelName>
+    <LabelType>2</LabelType>
+    <LabelCate>贵旅专用</LabelCate>
+    <LabelDesc />
+    <LabelParam>ShowNum,10,1,显示数|TitleNum,30,1,标题长</LabelParam>
+    <LabelTable>{table1}.dbo.ZL_Ask</LabelTable>
+    <LabelField>AddTime,ID,Qcontent,Supplyment,UserId,UserName</LabelField>
+    <LabelWhere>Status=2</LabelWhere>
+    <LabelOrder>AddTime DESC</LabelOrder>
+    <LabelContent>{Repeate}
+&lt;li&gt;
+&lt;h3&gt;&lt;a href="/Guest/Ask/SearchDetails.aspx?ID={Field="ID"/}"&gt;{ZL:CutText({Field="Qcontent"/},@TitleNum,)/}&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;{ZL.Label id="根据用户ID输出用户头像" UserID="{Field="UserId"/}" /} {Field="UserName"/} &lt;b&gt;最佳答案&lt;/b&gt; {ZL.Label id="输出指定问题答案内容" QID="{Field="ID"/}" /}&lt;/p&gt;
+&lt;p class="text-right"&gt;&lt;span&gt;&lt;i class="fa fa-clock-o"&gt;&lt;/i&gt; 2015-12-24&lt;/span&gt;&lt;span&gt;&lt;i class="fa fa-comment"&gt;&lt;/i&gt; 1414&lt;/span&gt;&lt;/p&gt;
+&lt;/li&gt;
+
+{/Repeate}</LabelContent>
+    <LabelCount>@ShowNum</LabelCount>
+    <LabelAddUser>0</LabelAddUser>
+    <LabelNodeID>0</LabelNodeID>
+    <Modeltypeinfo>计数判断</Modeltypeinfo>
+    <addroot>循环计算</addroot>
+    <setroot>等于</setroot>
+    <Modelvalue>0</Modelvalue>
+    <Valueroot />
+    <IsOpen>0</IsOpen>
+    <FalseContent />
+    <DataSourceType>GZTravel</DataSourceType>
+    <ConnectString>DBO</ConnectString>
+    <ProceName />
+    <ProceParam>{"PureT1":"ZL_Ask","PureT2":"","T1":"GZTravel.dbo.ZL_Ask","T2":"","JoinType":"left join","OnField1":"AddTime","OnField2":""}</ProceParam>
+  </Table>
+</NewDataSet>

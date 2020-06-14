@@ -1,0 +1,1 @@
+﻿<%@ page language="C#" autoeventwireup="true" inherits="Manage_Content_ReleaseByNode, App_Web_fzreldec" enableEventValidation="false" viewStateEncryptionMode="Never" %>

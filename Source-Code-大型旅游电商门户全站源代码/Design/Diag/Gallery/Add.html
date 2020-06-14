@@ -1,0 +1,59 @@
+﻿<div class="header"><label class="title">添加幻灯片</label></div>
+<div class="category-view">
+    <div class="sections">
+        <div class="section-wrapper live-comps">
+            <div class="section-header"><div class="title-line"><div class="title">图片轮播</div></div></div>
+            <div class="items">
+                <div data-type="gallery" class="domItem listItem" style="height:230px;">
+                    <img style="height:200px;" src="/Design/Diag/Gallery/res.png" />
+                </div>
+            </div>
+        </div>
+        <div class="section-wrapper live-comps">
+            <div class="section-header"><div class="title-line"><div class="title">图片布局</div></div></div>
+            <div class="items">
+                <div data-type="galleryGrid" class="domItem preset-item">
+                    <a href="javascript:;"><img src="/Design/res/img/galleyrGridView1.png" /></a>
+                </div>
+                <div data-type="gallery_slide" class="domItem preset-item">
+                    <a href="javascript:;"><img src="/Design/res/img/galleyrGridView2.png" /></a>
+                </div>
+                <div data-type="gallery_photo" class="domItem preset-item">
+                    <a href="javascript:;"><img src="/Design/res/img/galleyrGridView3.png" /></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    function GetModel(item) {
+        //{ name: "", tip: "", orderid: 0, url: "", target: "", click: null,css:"" }
+        //img-->url,href-->click
+        var $item = $(item);
+        var items1 = [
+                { name: "标题1", tip: "", orderid: 1, url: "http://www.zoomla.cn/uploadfiles/phone5.png", target: "", click: null, css: "active" },
+                { name: "标题2", tip: "", orderid: 2, url: "http://www.zoomla.cn/uploadfiles/phone6.png", target: "", click: null, css: "" },
+                { name: "标题3", tip: "", orderid: 3, url: "http://www.zoomla.cn/uploadfiles/phone9.png", target: "", click: null, css: "" }
+        ];
+        var items2 = [
+                        { name: "标题1", tip: "", orderid: 1, url: "/Design/res/Gallery/1.jpg", target: "_blank", click: "http://www.zoomla.cn" },
+                        { name: "标题2", tip: "", orderid: 2, url: "/Design/res/Gallery/2.jpg", target: "_blank", click: "http://www.zoomla.cn" },
+                        { name: "标题3", tip: "", orderid: 3, url: "/Design/res/Gallery/3.jpg", target: "_blank", click: function () { alert("你单击了"); } }
+        ];
+        var model = {
+            dataMod: {
+                items: items1
+            },
+            config: { type: $item.data("type"), compid: "", css: "candrag", style: '' }
+        };
+        if (model.config.type == "galleryGrid") {
+            model.config.style += "width:800px;height:300px;";
+            model.dataMod.items = items2;
+        }
+        else if (model.config.type == "gallery_slide" || model.config.type == "gallery_photo")
+        {
+            model.dataMod.items = items2;
+        }
+        return model;
+    }
+</script>

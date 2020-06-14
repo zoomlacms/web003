@@ -1,0 +1,194 @@
+{ZL.Source id="节点栏目信息数据源"/}{ZL.Source id="景点模型数据源标签地址栏传参"/}
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>{SField sid="景点模型数据源标签地址栏传参" FD="Title" page="0"/}_{$SiteName/}</title>
+<meta name="Keywords" content="{SField sid="节点栏目信息数据源" FD="Meta_Keywords" page="0"/}" />
+<meta name="description" content="{SField sid="节点栏目信息数据源" FD="Meta_Description" page="0"/}" />
+{ZL:Boot()/}
+<link href="{$CssDir/}global.css?Version={ZL.Label id="前端样式版本号"/}" rel="stylesheet"/>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ynCD23qRFoyWBYk0M3bF1VEk"></script>
+<style>
+.Assis_Div{position:fixed;top:60%; left:50%; margin-left:-650px; }
+.Assis_Div .info {border:1px solid #ccc; color:#999; padding:10px; font-size:20px; display:block; text-decoration:none; text-align:center; width:80px;}
+.gray_c{color:#ccc;}
+.modal-dialog{margin:100px auto;}
+</style>
+</head>
+<body class="wap_body">
+<div class="wap_topnav">
+<a href="javascript:history.go(-1);" class="return_btn"><i class="fa fa-chevron-left"></i></a>
+<a href="{ZL:GetNodeLinkUrl(104)/}"><img src="{$CssDir/}images/userlogo.png" alt="{$SiteName/}" /></a>
+<form method="get" action="/Search/SearchList.aspx" target="_blank">
+<input type="text" class="form-control" placeholder="">
+<button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>														
+</form>
+<div class="dropdown">
+<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">导航 <span class="caret"></span></button>
+<ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+<li><a href="{ZL:GetNodeLinkUrl(104)/}">首页</a></li>
+<li><a href="{ZL:GetNodeLinkUrl(1)/}">目的地</a></li>
+<li><a href="{ZL:GetNodeLinkUrl(2)/}">攻略</a></li>
+<li><a href="{ZL:GetNodeLinkUrl(3)/}">事件</a></li>
+<li><a href="{ZL:GetNodeLinkUrl(4)/}">画册</a></li>
+<li><a href="{ZL:GetLastinfo(20)/}">问答</a></li>
+<li><a href="{ZL:GetNodeLinkUrl(5)/}">美食</a></li>
+<li><a href="{ZL:GetNodeLinkUrl(6)/}">特产</a></li>
+</ul>
+</div>
+</div>
+<div class="h65"></div>
+
+<div class="wap_viewtop">
+<img src="{$CssDir/}images/banner_1.jpg" alt="" />
+<h3>{SField sid="景点模型数据源标签地址栏传参" FD="Title" page="0"/}<span class="pull-right">2586张图片</span></h3>
+</div>
+
+<div class="container wap_viewfen">
+<div class="pull-left wap_viewfen_l">
+<span><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> 8.2分</span>
+<a href="#"><i class="fa fa-edit"></i> 我来补充</a>
+</div>
+<div class="pull-right wap_viewfen_r">
+<a href="#"><i class="fa fa-plus-square"></i></a>
+<a href="#"><i class="fa fa-heart"></i></a>
+<a href="#"><i class="fa fa-thumbs-up"></i></a>
+<a href="#"><i class="fa fa-share-square-o"></i></a>
+</div>
+</div>
+
+<div class="container wap_viewcont">
+<div class="wap_viewbase">
+<div class="wap_viewbase_u">
+<ul>
+<li><span>景区名称：</span>{SField sid="景点模型数据源标签地址栏传参" FD="Title" page="0"/}</li>
+<li><span>门票价格：</span>{SField sid="景点模型数据源标签地址栏传参" FD="Price" page="0"/}</li>
+<li><span>美食特产：</span>{SField sid="景点模型数据源标签地址栏传参" FD="Food" page="0"/}</li>
+<li><span>核心景点：</span></li>
+<li><span>地理位置：</span>{SField sid="景点模型数据源标签地址栏传参" FD="dlwz" page="0"/}</li>
+</ul>
+<div class="wap_viewbase_d">您所在的位置是贵阳市，距青岩古镇约 32 公里，开车预计 35 分钟后到达，途中有 5 个加油站，景区附件停车场6个</div>
+<div style="width:100%;height:400px;" id="map"></div>
+
+</div>
+<div class="wap_viewbase_t">主要景点</div>
+<div class="wap_viewbase_c">
+{SField sid="景点模型数据源标签地址栏传参" FD="content" page="0"/}
+</div>
+</div>
+<div class="wap_viewsys">
+<p>{SField sid="景点模型数据源标签地址栏传参" FD="synopsis" page="0"/}</p>
+</div>
+
+</div>
+
+<div class="container wap_viewfood">
+<div class="wap_viewfood_t">美食特产</div>
+<div class="row padding10">
+<ul>
+{ZL.Label id="根据节点输出指定地区美食列表_wap" NodeID="{SField sid="景点模型数据源标签地址栏传参" FD="NodeID" page="0"/}" ShowNum="3" TitleNum="30" ClassName="col-xs-4 padding5" /}
+</ul>
+</div>
+</div>
+
+<div class="container wap_viewgong">
+<div class="wap_viewgong_t">{SField sid="景点模型数据源标签地址栏传参" FD="Title" page="0"/}攻略<span class="pull-right"><a href="#"><i class="fa fa-edit"></i> 写攻略</a></span></div>
+<ul class="media-list">
+{ZL.Label id="输出指定景点游记列表_wap" NodeID="2" ShowNum="4" TitleNum="40" View="{SField sid="景点模型数据源标签地址栏传参" FD="Title" page="0"/}" /}
+</ul>
+</div>
+<div class="container wap_viewping">
+<div class="wap_viewping_t">{SField sid="景点模型数据源标签地址栏传参" FD="Title" page="0"/}点评</div>
+<div class="iframe_comm">
+<iframe id="comm_ifr" scrolling="no" onload="this.height = $(this).contents().height() + 'px';" src="/Comments/CommentFor.aspx?ID={SField sid="景点模型数据源标签地址栏传参" FD="GeneralID"/}" width="100%" align="middle" height="100%" frameborder="0"></iframe>
+</div>
+<div class="Assis_Div"></div>
+
+</div>
+<div class="viewcon_ping" style="">
+<div class="container">
+<div class="viewcon_ping_t"></div>
+</div>
+</div><!--viewcon_ping end-->
+
+<div class="h74"></div>
+<div class="wap_foot">
+<ul>
+<li><a href="{ZL:GetNodeLinkUrl(104)/}"><i class="fa fa-home"></i><br/>首页</a></li>
+<li class="active"><a href="{ZL:GetProposeinfo(1)/}"><i class="fa fa-map"></i><br/>目的地</a></li>
+<li><a href="{ZL:GetLastinfo(4)/}"><i class="fa fa-photo"></i><br/>发图片</a></li>
+<li><a href="{ZL:GetLastinfo(20)/}"><i class="fa fa-question-circle"></i><br/>提问题</a></li>
+<li><a href="/User/Default1.aspx"><i class="fa fa-user"></i><br/>我的</a></li>
+<div class="clearfix"></div>
+</ul>
+</div>
+
+</body>
+</html>
+<script type="text/javascript" src="/JS/Controls/ZL_Dialog.js"></script>
+<script type="text/javascript">
+//创建和初始化地图函数：
+function initMap(){
+  createMap();//创建地图
+  setMapEvent();//设置地图事件
+  addMapControl();//向地图添加控件
+  addMapOverlay();//向地图添加覆盖物
+}
+function createMap(){ 
+	map = new BMap.Map("map"); 
+	map.centerAndZoom(new BMap.Point({SField sid="景点模型数据源标签地址栏传参" FD="dtzb" page="0"/}),19);
+	var point = new BMap.Point({SField sid="景点模型数据源标签地址栏传参" FD="dtzb" page="0"/});
+	var marker = new BMap.Marker(point);  // 创建标注	  
+	map.addOverlay(marker);               // 将标注添加到地图中
+	marker.setAnimation(BMAP_ANIMATION_BOUNCE); //跳动的动画
+}
+function setMapEvent(){
+  map.enableScrollWheelZoom();
+  map.enableKeyboard();
+  map.enableDragging();
+  map.enableDoubleClickZoom()
+}
+function addClickHandler(target,window){
+  target.addEventListener("click",function(){
+	target.openInfoWindow(window);
+  });
+}
+function addMapOverlay(){
+}
+//向地图添加控件
+function addMapControl(){
+  var scaleControl = new BMap.ScaleControl({anchor:BMAP_ANCHOR_BOTTOM_LEFT});
+  scaleControl.setUnit(BMAP_UNIT_IMPERIAL);
+  map.addControl(scaleControl);
+  var navControl = new BMap.NavigationControl({anchor:BMAP_ANCHOR_TOP_LEFT,type:BMAP_NAVIGATION_CONTROL_LARGE});
+  map.addControl(navControl);
+  var overviewControl = new BMap.OverviewMapControl({anchor:BMAP_ANCHOR_BOTTOM_RIGHT,isOpen:true});
+  map.addControl(overviewControl);
+}
+var map;
+initMap();
+
+function initCommInfo(div)
+{
+	$(".Assis_Div").html("");
+	$(".Assis_Div").html(div);
+}
+function ContentAssist(flag)
+{
+	$("#comm_ifr")[0].contentWindow.ContentAssist(flag);
+}
+//弹出登录框
+var loginDiag = new ZL_Dialog();
+function checkLogin()
+{
+	loginDiag.title = "用户登录";
+	loginDiag.url = "/login_Ajax.aspx";
+	loginDiag.ShowModal();
+}
+function LoginSuccess()
+{
+	window.location=location;
+}
+
+</script>

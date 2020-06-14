@@ -1,0 +1,46 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <Table>
+    <LabelID>935</LabelID>
+    <LabelName>用户登录状态带头像</LabelName>
+    <LabelType>1</LabelType>
+    <LabelCate>静态标签</LabelCate>
+    <LabelDesc />
+    <LabelParam />
+    <LabelTable />
+    <LabelField />
+    <LabelWhere />
+    <LabelOrder />
+    <LabelContent>&lt;li class="dropdown" style=" margin-top:6px;"&gt;
+&lt;a href="#" class="dropdown-toggle user_face" data-toggle="dropdown" role="button" aria-expanded="false" style="text-transform:none"&gt;{ZL.Label id="获取当前用户头像" /} &lt;span class="caret"&gt;&lt;/span&gt;&lt;/a&gt;
+&lt;ul class="dropdown-menu" role="menu" style="right:-5px;"&gt;
+&lt;li&gt;&lt;span&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/User/"&gt;&lt;i class="fa fa-home"&gt;&lt;/i&gt; 我的主页&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/User/Content/Note/note.aspx?id=0&amp;nodeid=2"&gt;&lt;i class="fa fa-edit"&gt;&lt;/i&gt; 发表游记&lt;/a&gt;&lt;/li&gt;
+&lt;!--&lt;li&gt;&lt;a href="/Ask"&gt;&lt;i class="fa fa-question-circle"&gt;&lt;/i&gt; 我的问答&lt;/a&gt;&lt;/li&gt;--&gt;
+&lt;li&gt;&lt;a href="/User/UserFriend/Default.aspx"&gt;&lt;i class="fa fa-users"&gt;&lt;/i&gt; 我的好友&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/User/Content/MyFavori.aspx?type=1"&gt;&lt;i class="fa fa-heart"&gt;&lt;/i&gt; 我的收藏&lt;/a&gt;&lt;/li&gt;
+&lt;!--&lt;li&gt;&lt;a href="/User/Order/OrderList.aspx"&gt;&lt;i class="fa fa-shopping-cart"&gt;&lt;/i&gt; 我的订单&lt;/a&gt;&lt;/li&gt;--&gt;
+&lt;li&gt;&lt;a href="/User/LogOut.aspx"&gt;&lt;i class="fa fa-sign-out"&gt;&lt;/i&gt; 安全退出&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;</LabelContent>
+    <LabelCount />
+    <LabelAddUser>0</LabelAddUser>
+    <LabelNodeID>0</LabelNodeID>
+    <Modeltypeinfo>用户登录判断</Modeltypeinfo>
+    <addroot>循环计算</addroot>
+    <setroot>等于</setroot>
+    <Modelvalue>0</Modelvalue>
+    <Valueroot />
+    <IsOpen>1</IsOpen>
+    <FalseContent>&lt;style&gt;.sb-search {right:230px;}&lt;/style&gt;
+&lt;li style=" padding:0px 8px; padding-top:12px; "&gt;&lt;a href="https://api.weibo.com/oauth2/authorize?client_id=1849901260&amp;redirect_uri=http%3A%2F%2Fwww.toxingbaike.com%2Fuser%2FAPPBack.aspx%3FType%3Dsina&amp;response_type=code&amp;display=default" style="padding:0px;"&gt;&lt;span class="fa-stack fa-1x"&gt;&lt;i class="fa fa-weibo"&gt;&lt;/i&gt;&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li style=" padding:0px 8px; padding-top:12px; "&gt;&lt;a href="https://graph.qq.com/oauth2.0/authorize?client_id=101300268&amp;response_type=token&amp;scope=all&amp;redirect_uri=http://toxingbaike.com" style="padding:0px;"&gt;&lt;span class="fa-stack fa-1x"&gt;&lt;i class="fa fa-qq"&gt;&lt;/i&gt;&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li style=" padding:0px 8px; padding-top:12px; "&gt;&lt;a href="javascript:;" onclick="ShowLogin();" style="padding:0px;"&gt;登录&lt;/a&gt;&lt;/li&gt;
+&lt;li style=" padding:0px 8px; padding-top:12px; "&gt;&lt;a href="/User/Register.aspx" style="padding:0px;"&gt;注册&lt;/a&gt;&lt;/li&gt;</FalseContent>
+    <DataSourceType />
+    <ConnectString />
+    <ProceName />
+    <ProceParam />
+  </Table>
+</NewDataSet>
